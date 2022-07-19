@@ -8,6 +8,12 @@ module.exports = {
   /* Your site config here */
   plugins: [`gatsby-plugin-react-helmet`,
   {
+    resolve: `gatsby-plugin-styled-components`,
+    options: {
+      // Add any options here
+    }
+  },
+  {
     resolve: `gatsby-plugin-scroll-reveal`,
     options: {
       threshold: 0.4, // Percentage of an element's area that needs to be visible to launch animation

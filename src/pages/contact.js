@@ -126,7 +126,6 @@ export default class Contact extends Component {
           console.log(response)
         })
         .catch(function (error) {
-          // console.log(error)
           console.log(
             "Disregard cors/post error: your message was submitted through a proxy server :)"
           )
