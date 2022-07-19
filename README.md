@@ -21,7 +21,7 @@
 
 From within the root directory:
 
-1. run "npm install"
+1. run "npm install --legacy-peer-deps"
 
 2. run "gatsby develop"
 
