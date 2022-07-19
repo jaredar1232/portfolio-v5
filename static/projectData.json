@@ -1,0 +1,111 @@
+[
+    {
+    "name": "The Compendium",
+    "width": 85,
+    "video": "https://d1o11p1jeyf1dw.cloudfront.net/TheCompendium.mp4",
+    "github": "https://github.com/jaredar1232/contact-book",
+    "details": {
+      "name": "The Compendium",
+      "description": "build a full stack contact storage application while learning Typescript and React Hooks.",
+      "keyPoints": [
+        "Programmed in Typescript to prevent runtime errors",
+        "Managed state using React Hooks to improve code legibility",
+        "Wrote a custom API to allow for easier scaling in the future",
+        "Architected the backend in pure Node/PostgreSQL to avoid bloat from ORMs"
+      ],
+      "icons": [
+        "Typescript",
+        "PostgreSQL",
+        "Express.js",
+        "React",
+        "Node.js",
+        "Heroku",
+        "Javascript",
+        "HTML5",
+        "CSS3"
+      ]
+    }
+  },
+  {
+    "name": "Streak Tracker",
+    "width": 35,
+    "video": "https://d1o11p1jeyf1dw.cloudfront.net/Streak.mp4",
+    "github": "https://github.com/jaredar1232/Streak-Activity-Tracker",
+    "details": {
+      "name": "Streak Tracker",
+      "description": "produce a minimum viable product under a time constraint. My team and I brainstormed, designed, and built out a functioning competative activity tracker in under a week using tech we had never worked with before",
+      "keyPoints": [
+        "Implemented a monolithic architecture with Git feature branch workflow to produce a more uniform codebase",
+        "Utilized Firebase for authentication, adaptable storage, and session state persistence to attain full features within time constraints",
+        "Practiced mobile first emphasis to ensure the final application didn’t sacrifice key features when displayed on mobile"
+      ],
+      "icons": [
+        "Firebase",
+        "React",
+        "Node.js",
+        "Chakra",
+        "styled-components",
+        "Javascript",
+        "HTML5",
+        "CSS3"
+      ]
+    }
+  },
+  {
+    "name": "System Design",
+    "width": 85,
+    "video": "https://d1o11p1jeyf1dw.cloudfront.net/SystemDesign.mp4",
+    "github": "https://github.com/jaredar1232/System-Design--BestBuy",
+    "details": {
+      "name": "System Design",
+      "description": "working on another developer's unfamiliar codebase, optimize locally between varrying databases and live once deployed on AWS services",
+      "keyPoints": [
+        "Expanded data set from 100 unique records to 10,000,000 unique records",
+        "Reduced database migration time by 80% through CSV generation and batch import (~12 min down to ~2.5 min)",
+        "Optimized and compared query times between Mongoose ODM, MongoDB, and PostgreSQL; achieving sub 0.1ms per request through indexing",
+        "Deployed independent database and servers; scaled from 1 EC2 instance with 2000 rps, 0% error rate, and 126ms latency up to 3 NGINX load balanced EC2 instance servers with 3000 rps, 0% error rate, and 63ms latency"
+      ],
+      "icons": [
+        "Javascript",
+        "MongoDB",
+        "PostgreSQL",
+        "Express.js",
+        "React",
+        "Node.js",
+        "Jest",
+        "AWS",
+        "NGINX",
+        "Faker.js"
+      ]
+    }
+  },
+  {
+    "name": "Nike Mock Up",
+    "width": 85,
+    "video": "https://d1o11p1jeyf1dw.cloudfront.net/Nike.mp4",
+    "github": "https://github.com/jaredar1232/Nike-Mock-Up",
+    "details": {
+      "name": "Nike Mock Up",
+      "description": "push my CSS skills to match that of the best frontline developers employed by the sportswear giant Nike",
+      "keyPoints": [
+        "Constructed a Nike product display page and followed a micro-service architecture to keep concerns separate and modular",
+        "Generated 5000+ random reviews for 100 real Nike products with data persistence in order to simulate a realistic user experience",
+        "Queried a MongoDB database with nested subdocuments by implementing CRUD operations and a RESTful API to give the user appropriate information",
+        "Rendered a single page comprised of 3 micro-services that communicate via url change and proxy server"
+      ],
+      "icons": [
+        "MongoDB",
+        "Express.js",
+        "React",
+        "Node.js",
+        "AWS",
+        "Faker.js",
+        "styled-components",
+        "http-proxy",
+        "Javascript",
+        "HTML5",
+        "CSS3"
+      ]
+    }
+  }
+]
