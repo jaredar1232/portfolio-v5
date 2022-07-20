@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import styled from "styled-components"
 import AProject from "../components/AProject"
 import Modal from "../components/Modal"
@@ -38,39 +38,35 @@ export default class Projects extends Component {
 
   render() {
     return (
-      <>
+      <Fragment>
         <Modal
           modalDetails={this.state.modalDetails}
           closeModal={this.closeModal}
           showModal={this.state.showModal}
         />
-          <ProjectsWrapper>
-              <section className="project-page-section">
-                  <div className="u-center-text">
-                  <h2 className="heading-secondary" id="applications">
-                      Applications
-                  </h2>
-                  </div>
-                  {projectDataArray.map(aProject => (
-                  <AProject
-                      aProject={aProject}
-                      key={aProject.name}
-                      modalOnClick={this.modalOnClick}
-                      showModal={this.state.showModal}
-                  />
-                  ))}
-              </section>
-          </ProjectsWrapper>
-      </>
+        <ProjectsSection>
+              <div className="u-center-text">
+              <h2 className="heading-secondary" id="applications">
+                  Applications
+              </h2>
+              </div>
+              {projectDataArray.map(aProject => (
+              <AProject
+                  aProject={aProject}
+                  key={aProject.name}
+                  modalOnClick={this.modalOnClick}
+                  showModal={this.state.showModal}
+              />
+              ))}
+        </ProjectsSection>
+      </Fragment>
     )
   }
 }
 
-const ProjectsWrapper = styled.div`
-  .project-page-section {
+const ProjectsSection = styled.section`
     background-color: white;
     padding: 10rem 0;
-  }
 
   .u-center-text {
     text-align: center;

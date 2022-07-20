@@ -141,7 +141,7 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <ContactWrapper>
+      <ContactSection>
         {this.state.hideForm ? (
           <section className="section-contact">
             <div className="img-container">
@@ -169,7 +169,6 @@ export default class Contact extends Component {
                     value={this.state.name}
                     onChange={this.handleInputChange}
                     className="form-text"
-                    id="name"
                     onClick={e => this.handleClear(e)}
                     data-sal="slide-left"
                     data-sal-delay="0"
@@ -185,7 +184,6 @@ export default class Contact extends Component {
                     value={this.state.email}
                     onChange={this.handleInputChange}
                     className="form-text"
-                    id="email"
                     onClick={e => this.handleClear(e)}
                     data-sal="slide-left"
                     data-sal-delay="100"
@@ -201,7 +199,6 @@ export default class Contact extends Component {
                     value={this.state.subject}
                     onChange={this.handleInputChange}
                     className="form-text"
-                    id="subject"
                     onClick={e => this.handleClear(e)}
                     data-sal="slide-left"
                     data-sal-delay="200"
@@ -216,7 +213,6 @@ export default class Contact extends Component {
                     value={this.state.message}
                     onChange={this.handleInputChange}
                     className="form-text form-textarea"
-                    id="message"
                     onClick={e => this.handleClear(e)}
                     data-sal="slide-left"
                     data-sal-delay="300"
@@ -233,12 +229,12 @@ export default class Contact extends Component {
             </div>
           </section>
         )}
-      </ContactWrapper>
+      </ContactSection>
     )
   }
 }
 
-const ContactWrapper = styled.div`
+const ContactSection = styled.section`
   .section-contact {
     background-color: #181e2e;
     padding: 10rem 0 10rem 0;

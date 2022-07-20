@@ -28,9 +28,9 @@ export default function Layout( {children, path} ) {
 
         <div className="layout">
             <Navbar path={path}/>
-            <div className='content'>
+            <main>
                 { children }
-            </div>
+            </main>
             <Footer />
         </div>
     </Fragment>

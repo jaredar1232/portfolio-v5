@@ -3,63 +3,58 @@ import styled from "styled-components"
 
 export default function about() {
   return (
-    <AboutMeWrapper>
-      <main>
-        <section className="section-about">
-          <div className="u-center-text">
-            <h2 className="heading-secondary" id="about-me">
-              About Me
-            </h2>
+    <AboutSection>
+      <div className="u-center-text">
+        <h2 className="heading-secondary" id="about-me">
+          About Me
+        </h2>
+      </div>
+      <div className="row">
+        <div className="col-1-of-2 writing">
+          <p
+            className="paragraph"
+            data-sal="slide-left"
+            data-sal-delay="100"
+            data-sal-easing="ease"
+            data-sal-duration="800"
+          >
+            Hello and welcome to my portfolio! After graduating with a
+            STEM background from the University of California Santa
+            Barbara, I found my true passion in coding. I learned the
+            ropes and drilled the fundamentals on my own before deciding
+            to attend one of the top software engineering immersives in
+            the world and further refine my abilities.
+            <br />
+            <br />I enjoy building beautiful software; intuitive for
+            clients to interact with and refreshing for developers to
+            read. I have experience solving problems with a wide variety
+            of technologies and love adding to my tool kit. I'm really
+            interested in tech, medicine, health & fitness, and finance
+            because these are all fields which push personal and societal
+            growth.
+          </p>
+        </div>
+        <div className="col-1-of-2">
+          <div
+            className="composition"
+            data-sal="zoom-in"
+            data-sal-delay="100"
+            data-sal-easing="ease"
+            data-sal-duration="1000"
+          >
+            <img
+              src="https://d1o11p1jeyf1dw.cloudfront.net/Headshot.JPG"
+              alt="Photo 1"
+              className="composition__photo"
+            />
           </div>
-          <div className="row">
-            <div className="col-1-of-2 writing">
-              <p
-                className="paragraph"
-                data-sal="slide-left"
-                data-sal-delay="100"
-                data-sal-easing="ease"
-                data-sal-duration="800"
-              >
-                Hello and welcome to my portfolio! After graduating with a
-                STEM background from the University of California Santa
-                Barbara, I found my true passion in coding. I learned the
-                ropes and drilled the fundamentals on my own before deciding
-                to attend one of the top software engineering immersives in
-                the world and further refine my abilities.
-                <br />
-                <br />I enjoy building beautiful software; intuitive for
-                clients to interact with and refreshing for developers to
-                read. I have experience solving problems with a wide variety
-                of technologies and love adding to my tool kit. I'm really
-                interested in tech, medicine, health & fitness, and finance
-                because these are all fields which push personal and societal
-                growth.
-              </p>
-            </div>
-            <div className="col-1-of-2">
-              <div
-                className="composition"
-                data-sal="zoom-in"
-                data-sal-delay="100"
-                data-sal-easing="ease"
-                data-sal-duration="1000"
-              >
-                <img
-                  src="https://d1o11p1jeyf1dw.cloudfront.net/Headshot.JPG"
-                  alt="Photo 1"
-                  className="composition__photo"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </AboutMeWrapper>
+        </div>
+      </div>
+    </AboutSection>
   )
 }
 
-const AboutMeWrapper = styled.div`
-  .section-about {
+const AboutSection = styled.section`
     background-color: #181e2e;
     padding: 10rem 0 85rem 0;
     color: white;
@@ -68,7 +63,6 @@ const AboutMeWrapper = styled.div`
     @media (max-width: 56.25em) {
       padding: 5rem 0 75rem 0;
     }
-  }
 
   .u-center-text {
     text-align: center;

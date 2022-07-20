@@ -1,70 +1,69 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import Resume from "./Resume.js"
 
 export default class Footer extends Component {
   render() {
     return (
       <FooterWrapper>
-        <footer className="section-footer">
-          <div
-            className="icon-container"
-            data-sal="zoom-in"
-            data-sal-delay="0"
-            data-sal-easing="ease"
-            data-sal-duration="500"
+        <Resume/>
+        <div
+          className="icon-container"
+          data-sal="zoom-in"
+          data-sal-delay="0"
+          data-sal-easing="ease"
+          data-sal-duration="500"
+        >
+          <a
+            href="https://www.linkedin.com/in/jared-rothenberg"
+            className="footer-icon"
+            target="_blank"
+            rel="noreferrer"
           >
-            <a
-              href="https://www.linkedin.com/in/jared-rothenberg"
-              className="footer-icon"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i
-                className="fa fa-linkedin"
-                data-sal="zoom-in"
-                data-sal-delay="500"
-                data-sal-easing="ease"
-                data-sal-duration="1000"
-              ></i>
-            </a>
+            <i
+              className="fa fa-linkedin"
+              data-sal="zoom-in"
+              data-sal-delay="500"
+              data-sal-easing="ease"
+              data-sal-duration="1000"
+            ></i>
+          </a>
 
-            <a
-              href="https://github.com/jaredar1232"
-              className="footer-icon"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i
-                className="fa fa-github"
-                data-sal="zoom-in"
-                data-sal-delay="500"
-                data-sal-easing="ease"
-                data-sal-duration="1000"
-              ></i>
-            </a>
-            <a href="mailto:jaredar@gmail.com" className="footer-icon">
-              <i
-                className="fa fa-envelope"
-                data-sal="zoom-in"
-                data-sal-delay="500"
-                data-sal-easing="ease"
-                data-sal-duration="1000"
-              ></i>
-            </a>
-          </div>
+          <a
+            href="https://github.com/jaredar1232"
+            className="footer-icon"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i
+              className="fa fa-github"
+              data-sal="zoom-in"
+              data-sal-delay="500"
+              data-sal-easing="ease"
+              data-sal-duration="1000"
+            ></i>
+          </a>
+          <a href="mailto:jaredar@gmail.com" className="footer-icon">
+            <i
+              className="fa fa-envelope"
+              data-sal="zoom-in"
+              data-sal-delay="500"
+              data-sal-easing="ease"
+              data-sal-duration="1000"
+            ></i>
+          </a>
+        </div>
 
-          <div className="u-center-text">
-            Copyright &copy; 2020, &nbsp; Jared Rothenberg. &nbsp; All Rights
-            Reserved
-          </div>
-        </footer>
+        <div className="u-center-text">
+          Copyright &copy; 2020, &nbsp; Jared Rothenberg. &nbsp; All Rights
+          Reserved
+        </div>
       </FooterWrapper>
     )
   }
 }
 
-const FooterWrapper = styled.div`
-  .section-footer {
+const FooterWrapper = styled.footer`
     background-color: rgb(20, 20, 20);
     padding: 5rem 0 5rem 0;
     color: white;
@@ -72,7 +71,6 @@ const FooterWrapper = styled.div`
     @media (max-width: 56.25em) {
       padding: 2rem 0 2rem 0;
     }
-  }
 
   .icon-container {
     display: grid;

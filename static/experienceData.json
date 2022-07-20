@@ -1,0 +1,29 @@
+[
+    {
+    "name": "The Zebra",
+    "width": 85,
+    "video": "https://d1o11p1jeyf1dw.cloudfront.net/TheCompendium.mp4",
+    "github": "https://github.com/jaredar1232/contact-book",
+    "details": {
+      "name": "The Compendium",
+      "description": "build a full stack contact storage application while learning Typescript and React Hooks.",
+      "keyPoints": [
+        "Programmed in Typescript to prevent runtime errors",
+        "Managed state using React Hooks to improve code legibility",
+        "Wrote a custom API to allow for easier scaling in the future",
+        "Architected the backend in pure Node/PostgreSQL to avoid bloat from ORMs"
+      ],
+      "icons": [
+        "Typescript",
+        "PostgreSQL",
+        "Express.js",
+        "React",
+        "Node.js",
+        "Heroku",
+        "Javascript",
+        "HTML5",
+        "CSS3"
+      ]
+    }
+  }
+]

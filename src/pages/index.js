@@ -4,19 +4,19 @@ import { Link } from "gatsby"
 
 export default function Home() {
   return (
-      <TopFoldWrapper>
+      <HomeSection>
             <div className="header__text-box">
-              <h1 className="heading">
-                <span className="heading__main">Jared Rothenberg</span>
-                <span className="heading__sub">Software Engineer</span>
-              </h1>
+              <div className="heading">
+                <h1 className="heading__main">Jared Rothenberg</h1>
+                <h2 className="heading__sub">Software Engineer</h2>
+              </div>
               <Link to="/about" className="btn btn--animated">Explore</Link>
             </div>
-      </TopFoldWrapper>
+      </HomeSection>
   )
 }
 
-const TopFoldWrapper = styled.header`
+const HomeSection = styled.section`
   height: 100vh;
   background-image: linear-gradient(
       to right bottom,
@@ -38,7 +38,7 @@ const TopFoldWrapper = styled.header`
   .heading {
     color: #fff;
     text-transform: uppercase;
-    /* backface-visibility: hidden; */
+    backface-visibility: hidden;
 
     @media (max-width: 56.25em) {
       margin: 6rem 0 12rem 0;

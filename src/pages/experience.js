@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import AProject from "../components/AProject"
 import Modal from "../components/Modal"
-import projectDataArray from "../../static/projectData.json"
+import projectDataArray from "../../static/experienceData.json"
 
 export default class Experience extends Component {
   constructor(props) {
@@ -44,8 +44,7 @@ export default class Experience extends Component {
           closeModal={this.closeModal}
           showModal={this.state.showModal}
         />
-        <ProjectsWrapper>
-            <section className="project-page-section">
+        <ExperienceSection>
                 <div className="u-center-text">
                 <h2 className="heading-secondary" id="applications">
                     Experience
@@ -59,18 +58,15 @@ export default class Experience extends Component {
                     showModal={this.state.showModal}
                 />
                 ))}
-            </section>
-        </ProjectsWrapper>
+        </ExperienceSection>
       </>
     )
   }
 }
 
-const ProjectsWrapper = styled.div`
-  .project-page-section {
+const ExperienceSection = styled.section`
     background-color: white;
     padding: 10rem 0;
-  }
 
   .u-center-text {
     text-align: center;
