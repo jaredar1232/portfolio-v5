@@ -48,7 +48,7 @@ export default class Experience extends Component {
             <section className="project-page-section">
                 <div className="u-center-text">
                 <h2 className="heading-secondary" id="applications">
-                    Work Experience
+                    Experience
                 </h2>
                 </div>
                 {projectDataArray.map(aProject => (

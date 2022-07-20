@@ -5,52 +5,47 @@ import { Link } from "gatsby"
 export default function Home() {
   return (
       <TopFoldWrapper>
-          <header className="header">
             <div className="header__text-box">
-              <h1 className="heading-primary">
-                <span className="heading-primary--main">Jared Rothenberg</span>
-                <span className="heading-primary--sub">Software Engineer</span>
+              <h1 className="heading">
+                <span className="heading__main">Jared Rothenberg</span>
+                <span className="heading__sub">Software Engineer</span>
               </h1>
-              <Link to="/about" className="btn btn--white btn--animated">Explore</Link>
+              <Link to="/about" className="btn btn--animated">Explore</Link>
             </div>
-          </header>
       </TopFoldWrapper>
   )
 }
 
-const TopFoldWrapper = styled.div`
-  .header {
-    height: 100vh;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(14, 17, 25, 0.899),
-        rgba(21, 26, 40, 0.194)
-      ),
-      url("/LandingImageBlueMedium.webp");
-    background-size: cover;
-    background-position: right;
-  }
+const TopFoldWrapper = styled.header`
+  height: 100vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(14, 17, 25, 0.899),
+      rgba(21, 26, 40, 0.194)
+    ),
+    url("/LandingImageBlueMedium.webp");
+  background-size: cover;
+  background-position: right;
 
   .header__text-box {
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
   }
 
-  .heading-primary {
+  .heading {
     color: #fff;
     text-transform: uppercase;
-    margin-bottom: 6rem;
-    backface-visibility: hidden;
+    /* backface-visibility: hidden; */
 
     @media (max-width: 56.25em) {
       margin: 6rem 0 12rem 0;
     }
   }
 
-  .heading-primary--main {
+  .heading__main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -68,7 +63,20 @@ const TopFoldWrapper = styled.div`
     }
   }
 
-  .heading-primary--sub {
+  @keyframes moveInTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-20rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  .heading__sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -87,18 +95,6 @@ const TopFoldWrapper = styled.div`
     }
   }
 
-  @keyframes moveInTop {
-    0% {
-      opacity: 0;
-      transform: translateY(-20rem);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -109,37 +105,19 @@ const TopFoldWrapper = styled.div`
     }
   }
 
-  @keyframes moveInButton {
-    0% {
-      opacity: 1;
-      font-size: 0px;
-      border-radius: 100px;
-      background-color: transparent;
-      color: black;
-      border-color: transparent;
-    }
-
-    100% {
-      opacity: 1;
-      font-size: 1.6rem;
-      border-radius: 0;
-      color: lightgrey;
-      background-color: rgba(0, 0, 0, 0.3);
-      border-color: darkgrey;
-    }
-  }
 
   .btn:link,
   .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
+    margin-top: 20rem;
     display: inline-block;
     border-radius: 0rem;
     transition: all 0.2s;
     position: relative;
     font-size: 1.6rem;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     color: lightgrey;
     border: darkgrey solid 1px;
     -webkit-backface-visibility: hidden;
@@ -167,37 +145,24 @@ const TopFoldWrapper = styled.div`
     border: darkgrey solid 1px;
   }
 
-  .btn--white {
-    background-color: rgba(0, 0, 0, 0.2);
-    color: rgba(0, 0, 0, 0.468);
-  }
-
+  // needed for the button hover animation
   .btn::after {
     content: "";
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 0rem;
+    border-radius: 0;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
     transition: all 0.4s;
-    background-color: rgba(0, 0, 0, 0.5);
     color: transparent;
     border: lightgrey solid 1px;
   }
 
-  .btn--white::after {
-    background-color: rgba(0, 0, 0, 0.2);
 
-    @media (min-width: 56.26em) {
-      animation: moveInButton 1s;
-      animation-fill-mode: backwards;
-      animation-delay: 3.5s;
-    }
-  }
-
+  // this is the expanding effect when hovered over
   @media (hover: hover) {
     .btn:hover::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -210,6 +175,37 @@ const TopFoldWrapper = styled.div`
       animation: moveInButton 1s;
       animation-fill-mode: backwards;
       animation-delay: 3.5s;
+    }
+  }
+
+
+  @keyframes moveInButtonAfter {
+    0% {
+      opacity: 0;
+    }
+
+    99% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes moveInButton {
+    0% {
+      opacity: 0;
+      background-color: transparent;
+      color: transparent;
+      border-color: transparent;
+    }
+
+    100% {
+      opacity: 1;
+      color: lightgrey;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-color: darkgrey;
     }
   }
 `
