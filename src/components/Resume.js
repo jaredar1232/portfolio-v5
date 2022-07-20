@@ -66,7 +66,7 @@ const ResumeWrapper = styled.div`
     display: inline-block;
     width: 100%;
     height: 100%;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 400;
     text-transform: uppercase;
     background-image: linear-gradient(
@@ -77,7 +77,7 @@ const ResumeWrapper = styled.div`
     -webkit-background-clip: text;
     color: transparent;
     text-align: center;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem .5rem;
     border-radius: 10px;
     transition: all 0.3s;
     text-decoration: none;

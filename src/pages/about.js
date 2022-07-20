@@ -18,20 +18,19 @@ export default function about() {
             data-sal-easing="ease"
             data-sal-duration="800"
           >
-            Hello and welcome to my portfolio! After graduating with a
-            STEM background from the University of California Santa
-            Barbara, I found my true passion in coding. I learned the
-            ropes and drilled the fundamentals on my own before deciding
-            to attend one of the top software engineering immersives in
-            the world and further refine my abilities.
+            Hello and welcome to my portfolio!
             <br />
-            <br />I enjoy building beautiful software; intuitive for
-            clients to interact with and refreshing for developers to
-            read. I have experience solving problems with a wide variety
-            of technologies and love adding to my tool kit. I'm really
-            interested in tech, medicine, health & fitness, and finance
-            because these are all fields which push personal and societal
-            growth.
+            <br />
+            I am a software engineer with a background in Economics 
+            and Philosophy from the University of California Santa 
+            Barbara. My foundation in programming was instilled in 
+            me at HackReactor with most of what I now know being self 
+            taught.
+            <br />
+            <br />
+            I love working on cool poducts that cross the intersectons 
+            of tech, medicine, health & fitness, and finance. In addition to  
+            being long term interests, they're areas I feel help improve society.
           </p>
         </div>
         <div className="col-1-of-2">
@@ -43,7 +42,7 @@ export default function about() {
             data-sal-duration="1000"
           >
             <img
-              src="https://d1o11p1jeyf1dw.cloudfront.net/Headshot.JPG"
+              src="./Headshot.webp"
               alt="Photo 1"
               className="composition__photo"
             />
@@ -69,7 +68,7 @@ const AboutSection = styled.section`
   }
 
   .heading-secondary {
-    font-size: 5.5rem;
+    font-size: 5rem;
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;

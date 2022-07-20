@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import AProject from "../components/AProject"
+import AJob from "../components/AJob"
 import Modal from "../components/Modal"
-import projectDataArray from "../../static/experienceData.json"
+import experienceDataArray from "../../static/experienceData.json"
 
 export default class Experience extends Component {
   constructor(props) {
@@ -50,8 +50,8 @@ export default class Experience extends Component {
                     Experience
                 </h2>
                 </div>
-                {projectDataArray.map(aProject => (
-                <AProject
+                {experienceDataArray.map(aProject => (
+                <AJob
                     aProject={aProject}
                     key={aProject.name}
                     modalOnClick={this.modalOnClick}
@@ -66,7 +66,7 @@ export default class Experience extends Component {
 
 const ExperienceSection = styled.section`
     background-color: white;
-    padding: 10rem 0;
+    padding: 10rem 0 10rem 0;;
 
   .u-center-text {
     text-align: center;

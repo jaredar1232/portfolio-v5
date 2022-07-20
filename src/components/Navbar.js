@@ -50,17 +50,20 @@ const NavWrapper = styled.nav`
   font-size: 2rem;
   text-align: center;
   
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  /* padding: 1rem 0; */
+  // lets it go over the projects/jobs
   z-index: 1;
 
   // glass effect
   background-color: rgba(209, 218, 227, 0.198);
   backdrop-filter: blur(5px);  
 
-  // conditional box shadow for white or black background
+  // conditional box shadow for white or black background & background colors incase text color and background color match
   ${({ navColor }) => navColor === 'black' ? `
-    box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);` : 'box-shadow: 0px 5px 10px rgba(3, 3, 3, 0.568);'
+    box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);
+    background-color: rgba(209, 218, 227, 0.198);`
+    : 
+    `box-shadow: 0px 5px 10px rgba(3, 3, 3, 0.568);
+    background-color: rgba(169, 180, 190, 0.291);`
   }
 
   // nav bar animation
@@ -83,12 +86,7 @@ const NavWrapper = styled.nav`
 
   .nav__link {
     text-decoration: none;
-    /* position: relative; */
-    /* z-index: 2; */
-
-    /* margin: -2rem 0; */
     padding: .5rem 0;
-    /* border-left: 1px black solid; */
 
     &:visited {
       text-decoration: none;
@@ -103,7 +101,6 @@ const NavWrapper = styled.nav`
         -webkit-background-clip: text;
         color: transparent;
         transform: translateY(-2px);
-        /* box-shadow: 0 0.5rem 2rem rgba(255, 255, 255, 0.4); */
     }
   }
 

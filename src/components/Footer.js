@@ -65,7 +65,7 @@ export default class Footer extends Component {
 
 const FooterWrapper = styled.footer`
     background-color: rgb(20, 20, 20);
-    padding: 5rem 0 5rem 0;
+    padding: 3rem 0 3rem 0;
     color: white;
 
     @media (max-width: 56.25em) {
