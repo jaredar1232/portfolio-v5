@@ -50,10 +50,10 @@ export default class Experience extends Component {
                     Experience
                 </h2>
                 </div>
-                {experienceDataArray.map(aProject => (
+                {experienceDataArray.map(aJob => (
                 <AJob
-                    aProject={aProject}
-                    key={aProject.name}
+                    aJob={aJob}
+                    key={aJob.name}
                     modalOnClick={this.modalOnClick}
                     showModal={this.state.showModal}
                 />

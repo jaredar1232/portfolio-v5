@@ -30,7 +30,9 @@ export default function Navbar({path}) {
     <NavWrapper navColor={navColor}>
         <Link to="/about" className={`nav__link ${navColor}`} activeClassName="selected" >About</Link>
         <Link to="/experience" className={`nav__link ${navColor}`} activeClassName="selected" >Experience</Link>
-        <Link to="/" className={`nav__link ${navColor}`} activeClassName="selected" >Home</Link>
+        <Link to="/" className={`nav__link ${navColor}`} activeClassName="selected" >
+          <img className='home__logo' src={`./logo-${navColor}.webp`}/>
+        </Link>
         <Link to="/projects" className={`nav__link ${navColor}`} activeClassName="selected" >Projects</Link>
         <Link to="/contact" className={`nav__link ${navColor}`} activeClassName="selected" >Contact</Link>
     </NavWrapper>
@@ -120,19 +122,11 @@ const NavWrapper = styled.nav`
       }
   }
 
-  /* @keyframes moveInNavText {
-    0% {
-      color: transparent;
-      width: 0;
-    }
-
-    100% {
-      color: white;
-      width: 100%;
-    } */
-  /* } */
-  /* a:link - a normal, unvisited link
-a:visited - a link the user has visited
-a:hover - a link when the user mouses over it
-a:active */
+  .home__logo {
+    width: 3.5rem;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    padding-bottom: .9rem;
+  }
 `

@@ -57,7 +57,6 @@ const ResumeWrapper = styled.div`
     }
 
     @media (max-width: 56.25em) {
-      // margin-top: 10rem;
       width: 30rem;
     }
   }
@@ -77,7 +76,7 @@ const ResumeWrapper = styled.div`
     -webkit-background-clip: text;
     color: transparent;
     text-align: center;
-    padding: 0.2rem .5rem;
+    padding: 0.4rem .5rem .2rem .5rem;
     border-radius: 10px;
     transition: all 0.3s;
     text-decoration: none;
