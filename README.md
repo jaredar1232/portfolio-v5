@@ -21,7 +21,8 @@
 
 From within the root directory:
 
-1. run "npm install --legacy-peer-deps"
+1. run "npm install --legacy-peer-deps" OR if on a work computer with a global .npmrc: "npm install --registry https://registry.npmjs.org --legacy-peer-deps"
+    if you run the first command on a work computer and push up your package-lock it will create issues.
 
 2. run "gatsby develop"
 
