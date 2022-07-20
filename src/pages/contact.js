@@ -2,6 +2,11 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import axios from "axios"
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
 export default class Contact extends Component {
   constructor(props) {
     super(props)
@@ -98,46 +103,67 @@ export default class Contact extends Component {
   }
 
   // checks for blank fields, then for valid email, then submits
+  // handleSubmit(event) {
+  //   if (this.handleFormInputs()) {
+  //     // only submits when a false isnt thrown for an empty message
+  //   } else if (!/^([a-zA-Z0-9]+@[a-zA-Z]+\.com){1}$/.test(this.state.email)) {
+  //     alert("Please enter a valid email")
+  //   } else {
+  //     alert("Message Submitted!")
+  //     axios
+  //       .post(
+  //         "https://jared-rothenberg-portfolio-ser.herokuapp.com/api",
+  //         // "http://localhost:1232/api",
+  //         {
+  //           name: this.state.name,
+  //           email: this.state.email,
+  //           subject: this.state.subject,
+  //           message: this.state.message,
+  //         },
+  //         {
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //         }
+  //       )
+  //       .then(function (response) {
+  //         console.log(response)
+  //       })
+  //       .catch(function (error) {
+  //         console.log(
+  //           "Disregard cors/post error: your message was submitted through a proxy server :)"
+  //         )
+  //       })
+  //     this.setState({
+  //       name: "",
+  //       email: "",
+  //       subject: "",
+  //       message: "",
+  //     })
+  //   }
+  // }
+
+  
   handleSubmit(event) {
-    event.preventDefault()
-    // if (this.handleFormInputs()) {
-    //   // only submits when a false isnt thrown for an empty message
-    // } else if (!/^([a-zA-Z0-9]+@[a-zA-Z]+\.com){1}$/.test(this.state.email)) {
-    //   alert("Please enter a valid email")
-    // } else {
-    //   alert("Message Submitted!")
-    //   axios
-    //     .post(
-    //       "https://jared-rothenberg-portfolio-ser.herokuapp.com/api",
-    //       // "http://localhost:1232/api",
-    //       {
-    //         name: this.state.name,
-    //         email: this.state.email,
-    //         subject: this.state.subject,
-    //         message: this.state.message,
-    //       },
-    //       {
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //         },
-    //       }
-    //     )
-    //     .then(function (response) {
-    //       console.log(response)
-    //     })
-    //     .catch(function (error) {
-    //       console.log(
-    //         "Disregard cors/post error: your message was submitted through a proxy server :)"
-    //       )
-    //     })
-    //   this.setState({
-    //     name: "",
-    //     email: "",
-    //     subject: "",
-    //     message: "",
-    //   })
-    // }
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+    .then(() => alert("Success!"))
+    .catch(error => alert(error));
+
+    this.setState({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          })
+
+    event.preventDefault();
   }
+
+  handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
   render() {
     return (
@@ -158,6 +184,8 @@ export default class Contact extends Component {
                 <input
                   type="text"
                   name="name"
+                  value={this.state.name}
+                  onChange={this.handleChange}
                   className="form-text"
                   data-sal="slide-left"
                   data-sal-delay="0"
@@ -171,6 +199,8 @@ export default class Contact extends Component {
                     <input
                       type="email"
                       name="email"
+                      value={this.state.email}
+                      onChange={this.handleChange}
                       className="form-text"
                       data-sal="slide-left"
                       data-sal-delay="100"
@@ -184,6 +214,8 @@ export default class Contact extends Component {
                     <input
                       type="text"
                       name="subject"
+                      value={this.state.subject}
+                      onChange={this.handleChange}
                       className="form-text"
                       data-sal="slide-left"
                       data-sal-delay="200"
@@ -195,6 +227,8 @@ export default class Contact extends Component {
                     Message<span className="asterisk">*</span>
                     <textarea
                       name="message"
+                      value={this.state.message}
+                      onChange={this.handleChange}
                       className="form-text form-textarea"
                       data-sal="slide-left"
                       data-sal-delay="300"
