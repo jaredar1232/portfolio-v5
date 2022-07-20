@@ -100,49 +100,119 @@ export default class Contact extends Component {
   // checks for blank fields, then for valid email, then submits
   handleSubmit(event) {
     event.preventDefault()
-    if (this.handleFormInputs()) {
-      // only submits when a false isnt thrown for an empty message
-    } else if (!/^([a-zA-Z0-9]+@[a-zA-Z]+\.com){1}$/.test(this.state.email)) {
-      alert("Please enter a valid email")
-    } else {
-      alert("Message Submitted!")
-      axios
-        .post(
-          "https://jared-rothenberg-portfolio-ser.herokuapp.com/api",
-          // "http://localhost:1232/api",
-          {
-            name: this.state.name,
-            email: this.state.email,
-            subject: this.state.subject,
-            message: this.state.message,
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then(function (response) {
-          console.log(response)
-        })
-        .catch(function (error) {
-          console.log(
-            "Disregard cors/post error: your message was submitted through a proxy server :)"
-          )
-        })
-      this.setState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      })
-    }
+    // if (this.handleFormInputs()) {
+    //   // only submits when a false isnt thrown for an empty message
+    // } else if (!/^([a-zA-Z0-9]+@[a-zA-Z]+\.com){1}$/.test(this.state.email)) {
+    //   alert("Please enter a valid email")
+    // } else {
+    //   alert("Message Submitted!")
+    //   axios
+    //     .post(
+    //       "https://jared-rothenberg-portfolio-ser.herokuapp.com/api",
+    //       // "http://localhost:1232/api",
+    //       {
+    //         name: this.state.name,
+    //         email: this.state.email,
+    //         subject: this.state.subject,
+    //         message: this.state.message,
+    //       },
+    //       {
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //         },
+    //       }
+    //     )
+    //     .then(function (response) {
+    //       console.log(response)
+    //     })
+    //     .catch(function (error) {
+    //       console.log(
+    //         "Disregard cors/post error: your message was submitted through a proxy server :)"
+    //       )
+    //     })
+    //   this.setState({
+    //     name: "",
+    //     email: "",
+    //     subject: "",
+    //     message: "",
+    //   })
+    // }
   }
 
   render() {
     return (
       <ContactSection>
-        {this.state.hideForm ? (
+        <section className="section-contact">
+          <div className="u-center-text">
+            <h2 className="heading-secondary" id="contact-me">
+              Contact Me
+            </h2>
+          </div>
+
+          <div className="form-container">
+            <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.handleSubmit}>
+              <input type="hidden" name="form-name" value="contact" />
+
+              <label>
+                Name<span className="asterisk">*</span>
+                <input
+                  type="text"
+                  name="name"
+                  className="form-text"
+                  data-sal="slide-left"
+                  data-sal-delay="0"
+                  data-sal-easing="ease"
+                  data-sal-duration="500"
+                />
+              </label>
+
+              <label>
+                    Email<span className="asterisk">*</span>
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-text"
+                      data-sal="slide-left"
+                      data-sal-delay="100"
+                      data-sal-easing="ease"
+                      data-sal-duration="500"
+                    />
+              </label>
+
+              <label>
+                    Subject<span className="asterisk">*</span>
+                    <input
+                      type="text"
+                      name="subject"
+                      className="form-text"
+                      data-sal="slide-left"
+                      data-sal-delay="200"
+                      data-sal-easing="ease"
+                      data-sal-duration="500"
+                    />
+                  </label>
+                  <label>
+                    Message<span className="asterisk">*</span>
+                    <textarea
+                      name="message"
+                      className="form-text form-textarea"
+                      data-sal="slide-left"
+                      data-sal-delay="300"
+                      data-sal-easing="ease"
+                      data-sal-duration="500"
+                    />
+                  </label>
+                  <div className="center-submit">
+                    <button type="submit" className="form-submit">
+                      Submit
+                    </button>
+                  </div>
+
+            </form>
+          </div>
+        </section>
+
+        {/* {this.state.hideForm ? (
           <section className="section-contact">
             <div className="img-container">
               <img className="hideform-img" src={`/HideForm.png`}></img>
@@ -233,7 +303,7 @@ export default class Contact extends Component {
               </form>
             </div>
           </section>
-        )}
+        )} */}
       </ContactSection>
     )
   }
