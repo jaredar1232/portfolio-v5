@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import { SEO } from "../components/seo"
+import headshot from "../../static/Headshot.webp"
 
 export default function about() {
   return (
@@ -10,8 +11,10 @@ export default function about() {
           About Me
         </h2>
       </div>
+
       <div className="row">
-        <div className="col-1-of-2 writing">
+
+        <div className="col-1-of-2">
           <p
             className="paragraph"
             data-sal="slide-left"
@@ -34,6 +37,7 @@ export default function about() {
             being long term interests, they're areas I feel help improve society.
           </p>
         </div>
+
         <div className="col-1-of-2">
           <div
             className="composition"
@@ -43,12 +47,13 @@ export default function about() {
             data-sal-duration="1000"
           >
             <img
-              src="./Headshot.webp"
+              src={headshot}
               alt="Headshot of Jared"
               className="composition__photo"
             />
           </div>
         </div>
+
       </div>
     </AboutSection>
   )
