@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 export default function NotFound() {
   return (
     <div>
-      <h2>404</h2>
-      <p>Sorry, that page doesn't exist</p>
+      <h1>404 PAGE NOT FOUND</h1>
+      <Link to="/">Go Back Home</Link>
     </div>
   )
 }
