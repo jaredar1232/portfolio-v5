@@ -6,7 +6,7 @@ export default class Footer extends Component {
   render() {
     return (
       <FooterWrapper>
-        <Resume/>
+        <Resume />
         <div
           className="icon-container"
           data-sal="zoom-in"
@@ -66,7 +66,7 @@ export default class Footer extends Component {
 const FooterWrapper = styled.footer`
     background-color: rgb(20, 20, 20);
     padding: 3rem 0 3rem 0;
-    color: white;
+    color: white; 
 
     @media (max-width: 56.25em) {
       padding: 2rem 0 2rem 0;

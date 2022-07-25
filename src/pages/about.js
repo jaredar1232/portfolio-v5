@@ -21,15 +21,15 @@ export default function about() {
             Hello and welcome to my portfolio!
             <br />
             <br />
-            I am a software engineer with a background in Economics 
-            and Philosophy from the University of California Santa 
-            Barbara. My foundation in programming was instilled in 
-            me at HackReactor with most of what I now know being self 
+            I am a software engineer with a background in Economics
+            and Philosophy from the University of California Santa
+            Barbara. My foundation in programming was instilled in
+            me at HackReactor with most of what I now know being self
             taught.
             <br />
             <br />
-            I love working on cool poducts that cross the intersectons 
-            of tech, medicine, health & fitness, and finance. In addition to  
+            I love working on cool poducts that cross the intersectons
+            of tech, medicine, health & fitness, and finance. In addition to
             being long term interests, they're areas I feel help improve society.
           </p>
         </div>

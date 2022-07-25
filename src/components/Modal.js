@@ -39,15 +39,15 @@ export default class Modal extends Component {
               {" "}
               {modalDetails.keyPoints
                 ? modalDetails.keyPoints.map(item => (
-                    <li key={item.index}>&bull;&ensp;{item}</li>
-                  ))
+                  <li key={item.index}>&bull;&ensp;{item}</li>
+                ))
                 : null}
             </ul>
             <div className="icons">
               {modalDetails.icons
                 ? modalDetails.icons.map(anIcon => (
-                    <Icons anIcon={anIcon} key={anIcon} />
-                  ))
+                  <Icons anIcon={anIcon} key={anIcon} />
+                ))
                 : null}
             </div>
           </div>
@@ -99,15 +99,15 @@ const ModalWrapper = styled.div`
     justify-content: center;
 
     &__content {
-      max-width: 130rem;
-      width: 70%;
-      height: 60%;
-      background-color: white;
-      box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-      position: relative;
-      border-radius: 10px;
-      overflow: auto;
-      animation: modalEffect 0.6s;
+        max-width: 130rem;
+        width: 70%;
+        height: 60%;
+        background-color: white;
+        box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+        position: relative;
+        border-radius: 10px;
+        overflow: auto;
+        animation: modalEffect 0.6s;
 
       ::-webkit-scrollbar {
         width: 0px;

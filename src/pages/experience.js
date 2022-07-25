@@ -45,19 +45,19 @@ export default class Experience extends Component {
           showModal={this.state.showModal}
         />
         <ExperienceSection>
-                <div className="u-center-text">
-                <h2 className="heading-secondary" id="applications">
-                    Experience
-                </h2>
-                </div>
-                {experienceDataArray.map(aJob => (
-                <AJob
-                    aJob={aJob}
-                    key={aJob.name}
-                    modalOnClick={this.modalOnClick}
-                    showModal={this.state.showModal}
-                />
-                ))}
+          <div className="u-center-text">
+            <h2 className="heading-secondary" id="applications">
+              Experience
+            </h2>
+          </div>
+          {experienceDataArray.map(aJob => (
+            <AJob
+              aJob={aJob}
+              key={aJob.name}
+              modalOnClick={this.modalOnClick}
+              showModal={this.state.showModal}
+            />
+          ))}
         </ExperienceSection>
       </>
     )

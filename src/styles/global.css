@@ -27,19 +27,31 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #777;
-  padding: 0rem;
-  box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    padding: 0rem;
+    box-sizing: border-box;
 }
 
+/* site and site-content are used to keep the footer outside the bodys flow and at the bottom of the page */
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.site-content {
+    flex: 1;
+}
+
+
 ::-webkit-scrollbar {
-  width: 0;
+    width: 0;
 }
 
 .no-scroll {
-  overflow: hidden;
+    overflow: hidden;
 }
 

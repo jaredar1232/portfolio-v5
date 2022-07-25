@@ -2,11 +2,11 @@ import { Link } from 'gatsby'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-export default function Navbar({path}) {
+export default function Navbar({ path }) {
   let [navColor, setNavColor] = useState("white")
 
   useEffect(() => {
-    switch(path){
+    switch (path) {
       case "/about/":
         setNavColor("white")
         break;
@@ -22,19 +22,19 @@ export default function Navbar({path}) {
       case "/contact/":
         setNavColor("white")
         break;
-    } 
-  
+    }
+
   }, [path])
 
   return (
     <NavWrapper navColor={navColor}>
-        <Link to="/about" className={`nav__link ${navColor}`} activeClassName="selected" >About</Link>
-        <Link to="/experience" className={`nav__link ${navColor}`} activeClassName="selected" >Experience</Link>
-        <Link to="/" className={`nav__link ${navColor}`} activeClassName="selected" >
-          <img className='home__logo' src={`./logo-${navColor}.webp`}/>
-        </Link>
-        <Link to="/projects" className={`nav__link ${navColor}`} activeClassName="selected" >Projects</Link>
-        <Link to="/contact" className={`nav__link ${navColor}`} activeClassName="selected" >Contact</Link>
+      <Link to="/about" className={`nav__link ${navColor}`} activeClassName="active" >About</Link>
+      <Link to="/experience" className={`nav__link ${navColor}`} activeClassName="active" >Experience</Link>
+      <Link to="/" className="home_logo_container">
+        <img className='home__logo' src={`./logo-${navColor}.webp`} />
+      </Link>
+      <Link to="/projects" className={`nav__link ${navColor}`} activeClassName="active" >Projects</Link>
+      <Link to="/contact" className={`nav__link ${navColor}`} activeClassName="active" >Contact</Link>
     </NavWrapper>
   )
 }
@@ -51,22 +51,22 @@ const NavWrapper = styled.nav`
 
   font-size: 2rem;
   text-align: center;
-  
+
   // lets it go over the projects/jobs
   z-index: 1;
 
   // glass effect
   background-color: rgba(209, 218, 227, 0.198);
-  backdrop-filter: blur(5px);  
+  backdrop-filter: blur(5px);
 
   // conditional box shadow for white or black background & background colors incase text color and background color match
-  ${({ navColor }) => navColor === 'black' ? `
+  ${({ navColor }) =>
+    navColor === "black"
+      ? `
     box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);
     background-color: rgba(209, 218, 227, 0.198);`
-    : 
-    `box-shadow: 0px 5px 10px rgba(3, 3, 3, 0.568);
-    background-color: rgba(169, 180, 190, 0.291);`
-  }
+      : `box-shadow: 0px 5px 10px rgba(3, 3, 3, 0.568);
+    background-color: rgba(169, 180, 190, 0.291);`}
 
   // nav bar animation
   animation: moveInNavBar 1.5s;
@@ -75,20 +75,20 @@ const NavWrapper = styled.nav`
   @keyframes moveInNavBar {
     0% {
       background-color: transparent;
-      transform: scale(.2);
+      transform: scale(0.2);
       opacity: 0;
     }
 
     100% {
       background-color: rgba(209, 218, 227, 0.198);
       transform: scale(1);
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 
   .nav__link {
     text-decoration: none;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
 
     &:visited {
       text-decoration: none;
@@ -96,13 +96,13 @@ const NavWrapper = styled.nav`
 
     &:hover {
       background-image: linear-gradient(
-          to right bottom,
-          rgb(102, 201, 255),
-          rgb(120, 139, 249)
-        );
-        -webkit-background-clip: text;
-        color: transparent;
-        transform: translateY(-2px);
+        to right bottom,
+        rgb(102, 201, 255),
+        rgb(120, 139, 249)
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+      transform: translateY(-2px);
     }
   }
 
@@ -117,16 +117,31 @@ const NavWrapper = styled.nav`
   .white {
     color: white;
 
-      &:visited {
-        color: white;
-      }
+    &:visited {
+      color: white;
+    }
+  }
+
+  // needs to remain under .black and .white for the cascade to work
+  .active {
+    background-image: linear-gradient(
+      to right bottom,
+      rgb(102, 201, 255),
+      rgb(120, 139, 249)
+    );
+    -webkit-background-clip: text;
+    color: transparent;
   }
 
   .home__logo {
-    width: 3.5rem;
+    width: 6rem;
     height: 100%;
     position: absolute;
     z-index: 2;
-    padding-bottom: .9rem;
+    transform: translate(-50%);
+
+    &:hover {
+      transform: scale(1.2) translate(-40%, -4%);
+    }
   }
 `

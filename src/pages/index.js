@@ -4,15 +4,15 @@ import { Link } from "gatsby"
 
 export default function Home() {
   return (
-      <HomeSection>
-            <div className="header__text-box">
-              <div className="heading">
-                <h1 className="heading__main">Jared Rothenberg</h1>
-                <h2 className="heading__sub">Software Engineer</h2>
-              </div>
-              <Link to="/about" className="btn btn--animated">Explore</Link>
-            </div>
-      </HomeSection>
+    <HomeSection>
+      <div className="header__text-box">
+        <div className="heading">
+          <h1 className="heading__main">Jared Rothenberg</h1>
+          <h2 className="heading__sub">Software Engineer</h2>
+        </div>
+        <Link to="/about" className="btn btn--animated">Explore</Link>
+      </div>
+    </HomeSection>
   )
 }
 

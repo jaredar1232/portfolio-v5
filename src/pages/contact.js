@@ -4,8 +4,8 @@ import axios from "axios"
 
 const encode = (data) => {
   return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 }
 export default class Contact extends Component {
   constructor(props) {
@@ -22,22 +22,22 @@ export default class Contact extends Component {
 
 
 
-  
+
   handleSubmit(event) {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
     })
-    .then(() => alert("Success!"))
-    .catch(error => alert(error));
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
 
     this.setState({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-          })
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
 
     event.preventDefault();
   }
@@ -74,52 +74,52 @@ export default class Contact extends Component {
               </label>
 
               <label>
-                    Email<span className="asterisk">*</span>
-                    <input
-                      type="email"
-                      name="email"
-                      value={this.state.email}
-                      onChange={this.handleChange}
-                      className="form-text"
-                      data-sal="slide-left"
-                      data-sal-delay="100"
-                      data-sal-easing="ease"
-                      data-sal-duration="500"
-                    />
+                Email<span className="asterisk">*</span>
+                <input
+                  type="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  className="form-text"
+                  data-sal="slide-left"
+                  data-sal-delay="100"
+                  data-sal-easing="ease"
+                  data-sal-duration="500"
+                />
               </label>
 
               <label>
-                    Subject<span className="asterisk">*</span>
-                    <input
-                      type="text"
-                      name="subject"
-                      value={this.state.subject}
-                      onChange={this.handleChange}
-                      className="form-text"
-                      data-sal="slide-left"
-                      data-sal-delay="200"
-                      data-sal-easing="ease"
-                      data-sal-duration="500"
-                    />
-                  </label>
-                  <label>
-                    Message<span className="asterisk">*</span>
-                    <textarea
-                      name="message"
-                      value={this.state.message}
-                      onChange={this.handleChange}
-                      className="form-text form-textarea"
-                      data-sal="slide-left"
-                      data-sal-delay="300"
-                      data-sal-easing="ease"
-                      data-sal-duration="500"
-                    />
-                  </label>
-                  <div className="center-submit">
-                    <button type="submit" className="form-submit">
-                      Submit
-                    </button>
-                  </div>
+                Subject<span className="asterisk">*</span>
+                <input
+                  type="text"
+                  name="subject"
+                  value={this.state.subject}
+                  onChange={this.handleChange}
+                  className="form-text"
+                  data-sal="slide-left"
+                  data-sal-delay="200"
+                  data-sal-easing="ease"
+                  data-sal-duration="500"
+                />
+              </label>
+              <label>
+                Message<span className="asterisk">*</span>
+                <textarea
+                  name="message"
+                  value={this.state.message}
+                  onChange={this.handleChange}
+                  className="form-text form-textarea"
+                  data-sal="slide-left"
+                  data-sal-delay="300"
+                  data-sal-easing="ease"
+                  data-sal-duration="500"
+                />
+              </label>
+              <div className="center-submit">
+                <button type="submit" className="form-submit">
+                  Submit
+                </button>
+              </div>
 
             </form>
           </div>

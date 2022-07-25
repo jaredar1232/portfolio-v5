@@ -45,19 +45,19 @@ export default class Projects extends Component {
           showModal={this.state.showModal}
         />
         <ProjectsSection>
-              <div className="u-center-text">
-              <h2 className="heading-secondary" id="applications">
-                  Applications
-              </h2>
-              </div>
-              {projectDataArray.map(aProject => (
-              <AProject
-                  aProject={aProject}
-                  key={aProject.name}
-                  modalOnClick={this.modalOnClick}
-                  showModal={this.state.showModal}
-              />
-              ))}
+          <div className="u-center-text">
+            <h2 className="heading-secondary" id="applications">
+              Applications
+            </h2>
+          </div>
+          {projectDataArray.map(aProject => (
+            <AProject
+              aProject={aProject}
+              key={aProject.name}
+              modalOnClick={this.modalOnClick}
+              showModal={this.state.showModal}
+            />
+          ))}
         </ProjectsSection>
       </Fragment>
     )

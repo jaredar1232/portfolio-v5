@@ -8,62 +8,62 @@ export default class AJob extends Component {
 
     return (
       <AJobSection jobWidth={jobWidth}>
-          <h3 className="heading-tertiary">{aJob.name}</h3>
-          <div className="image-container">
-            <video
-              playsInline
-              muted
-              loop
-              paused={`${!this.props.showModal}`}
-              autoPlay
-              className="project"
+        <h3 className="heading-tertiary">{aJob.name}</h3>
+        <div className="image-container">
+          <video
+            playsInline
+            muted
+            loop
+            paused={`${!this.props.showModal}`}
+            autoPlay
+            className="project"
+          >
+            <source src={aJob.video} type="video/mp4"></source>
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="btn-container">
+          <div className="btn-position">
+            <a
+              href={aJob.website}
+              className="btn-text"
+              target="_blank"
+              rel="noreferrer"
             >
-              <source src={aJob.video} type="video/mp4"></source>
-              Your browser does not support the video tag.
-            </video>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24"
+                height="24">
+                <path data-name="layer1"
+                  fill="none" stroke="#202020" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="5" d="M2 20v36h60V20M2 8h60v12H2z"></path>
+                <path data-name="layer2" fill="none" stroke="#202020" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="5" d="M44 30l7 8-7 8M20 30l-7 8 7 8m16-18l-8 20"></path>
+                <circle data-name="layer1" cx="8" cy="14" r="1" fill="none" stroke="#202020"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></circle>
+                <circle data-name="layer1" cx="15" cy="14" r="1" fill="none"
+                  stroke="#202020" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></circle>
+                <circle data-name="layer1" cx="22" cy="14" r="1" fill="none"
+                  stroke="#202020" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></circle>
+              </svg>
+              &nbsp; Visit
+            </a>
           </div>
-          <div className="btn-container">
-            <div className="btn-position">
-              <a
-                href={aJob.website}
-                className="btn-text"
-                target="_blank"
-                rel="noreferrer"
+          <div className="btn-position">
+            <a
+              className="btn--2"
+              onClick={() => this.props.modalOnClick(aJob.details)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24"
-                  height="24">
-                    <path data-name="layer1"
-                    fill="none" stroke="#202020" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width="5" d="M2 20v36h60V20M2 8h60v12H2z"></path>
-                    <path data-name="layer2" fill="none" stroke="#202020" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="5" d="M44 30l7 8-7 8M20 30l-7 8 7 8m16-18l-8 20"></path>
-                    <circle data-name="layer1" cx="8" cy="14" r="1" fill="none" stroke="#202020"
-                    stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></circle>
-                    <circle data-name="layer1" cx="15" cy="14" r="1" fill="none"
-                    stroke="#202020" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></circle>
-                    <circle data-name="layer1" cx="22" cy="14" r="1" fill="none"
-                    stroke="#202020" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></circle>
-                </svg>
-                &nbsp; Visit
-              </a>
-            </div>
-            <div className="btn-position">
-              <a
-                className="btn--2"
-                onClick={() => this.props.modalOnClick(aJob.details)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z" />
-                </svg>
-                &nbsp; Details
-              </a>
-            </div>
+                <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z" />
+              </svg>
+              &nbsp; Details
+            </a>
           </div>
+        </div>
       </AJobSection>
     )
   }
