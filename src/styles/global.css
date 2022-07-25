@@ -45,7 +45,7 @@ body {
 /* site and site-content are used to keep the footer outside the bodys flow and at the bottom of the page */
 .site {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
 }
 
