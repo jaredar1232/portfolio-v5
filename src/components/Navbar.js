@@ -30,7 +30,7 @@ export default function Navbar({ path }) {
     <NavWrapper navColor={navColor}>
       <Link to="/about" className={`nav__link ${navColor}`} activeClassName="active" >About</Link>
       <Link to="/experience" className={`nav__link ${navColor}`} activeClassName="active" >Experience</Link>
-      <Link to="/" className="home_logo_container">
+      <Link to="/">
         <img className='home__logo' src={`./logo-${navColor}.webp`} alt="logo" />
       </Link>
       <Link to="/projects" className={`nav__link ${navColor}`} activeClassName="active" >Projects</Link>
@@ -76,19 +76,6 @@ const NavWrapper = styled.nav`
   animation: moveInNavBar 1s;
   animation-fill-mode: backwards;
   animation-delay: 2.5s;
-  @keyframes moveInNavBar {
-    0% {
-      background-color: transparent;
-      transform: scale(0.2);
-      opacity: 0;
-    }
-
-    100% {
-      background-color: rgba(209, 218, 227, 0.198);
-      transform: scale(1);
-      opacity: 0.5;
-    }
-  }
 
   .nav__link {
     text-decoration: none;
@@ -138,14 +125,25 @@ const NavWrapper = styled.nav`
   }
 
   .home__logo {
-    width: 6rem;
-    height: 100%;
     position: absolute;
-    z-index: 2;
     transform: translate(-50%);
 
     &:hover {
       transform: scale(1.2) translate(-40%, -4%);
+    }
+  }
+
+  @keyframes moveInNavBar {
+    0% {
+      background-color: transparent;
+      transform: scale(0.2);
+      opacity: 0;
+    }
+
+    100% {
+      background-color: rgba(209, 218, 227, 0.198);
+      transform: scale(1);
+      opacity: 0.5;
     }
   }
 `
