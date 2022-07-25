@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import { SEO } from "../components/SEO"
+import { SEO } from "../components/seo"
 
 export default function about() {
   return (
@@ -61,10 +61,6 @@ export const Head = () => (
 const AboutSection = styled.section`
     // adjust this padding if you change the writing
     padding: 10rem 0 83.6rem 0;
-
-    /* TODO: REMOVE */
-    /* padding-top: 10rem; */
-    /* height: 93vh; */
 
     background-color: #181e2e;
     color: white;
@@ -143,18 +139,6 @@ const AboutSection = styled.section`
       }
     }
   }
-
-  /* TODO: REMOVE - seems like it doesnt do anything */
-
-  /* .writing {
-    margin-right: 6rem;
-    margin-top: 3rem;
-
-    @media (max-width: 56.25em) {
-      margin-right: 3rem;
-      margin-top: 0rem;
-    }
-  } */
 
   .composition {
     position: relative;
