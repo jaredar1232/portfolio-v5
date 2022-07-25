@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import AJob from "../components/AJob"
 import Modal from "../components/Modal"
-import { Seo } from "../components/Seo"
+import { SEO } from "../components/SEO"
 import experienceDataArray from "../../static/experienceData.json"
 
 export default class Experience extends Component {
@@ -66,7 +66,7 @@ export default class Experience extends Component {
 }
 
 export const Head = () => (
-  <Seo />
+  <SEO />
 )
 
 const ExperienceSection = styled.section`

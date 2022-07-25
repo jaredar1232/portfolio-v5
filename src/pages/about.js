@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import { Seo } from "../components/Seo"
+import { SEO } from "../components/SEO"
 
 export default function about() {
   return (
@@ -55,7 +55,7 @@ export default function about() {
 }
 
 export const Head = () => (
-  <Seo />
+  <SEO />
 )
 
 const AboutSection = styled.section`

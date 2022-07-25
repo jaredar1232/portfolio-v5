@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import { Seo } from "../components/Seo"
+import { SEO } from "../components/SEO"
 
 const encode = (data) => {
   return Object.keys(data)
@@ -130,7 +130,7 @@ export default class Contact extends Component {
 }
 
 export const Head = () => (
-  <Seo />
+  <SEO />
 )
 
 const ContactSection = styled.section`

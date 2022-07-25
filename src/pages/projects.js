@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react"
 import styled from "styled-components"
 import AProject from "../components/AProject"
 import Modal from "../components/Modal"
-import { Seo } from "../components/Seo"
+import { SEO } from "../components/SEO"
 import projectDataArray from "../../static/projectData.json"
 
 export default class Projects extends Component {
@@ -66,7 +66,7 @@ export default class Projects extends Component {
 }
 
 export const Head = () => (
-  <Seo />
+  <SEO />
 )
 
 const ProjectsSection = styled.section`
