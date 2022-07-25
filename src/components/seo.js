@@ -24,7 +24,7 @@ export const SEO = ({ title, description, pathname, children }) => {
             <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
             <meta
                 name="viewport"
-                content="width=device-width, initial-scale=1, user-scalable=0"
+                content="width=device-width, initial-scale=1"
             ></meta>
             <html lang="en" dir="ltr" />
             <title>{seo.title}</title>
