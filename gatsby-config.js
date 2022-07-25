@@ -23,7 +23,7 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    title: `Jared Rothenberg`,
+    title: `Jared Rothenberg | Portfiolio`,
     description: `Jared Rothenberg's portfolio to display previous work experience`,
     siteUrl: `https://www.jaredar.com`,
   },
