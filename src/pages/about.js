@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import { SEO } from "../components/seo"
 
 export default function about() {
   return (
@@ -52,6 +53,10 @@ export default function about() {
     </AboutSection>
   )
 }
+
+export const Head = () => (
+  <SEO />
+)
 
 const AboutSection = styled.section`
     // adjust this padding if you change the writing

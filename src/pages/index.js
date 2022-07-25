@@ -68,19 +68,6 @@ const HomeSection = styled.section`
     }
   }
 
-  @keyframes moveInTop {
-    0% {
-      opacity: 0;
-      transform: translateY(-20rem);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-
   .heading__sub {
     display: block;
     font-size: 2rem;
@@ -99,17 +86,6 @@ const HomeSection = styled.section`
       letter-spacing: 0.8rem;
     }
   }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
 
   .btn:link,
   .btn:visited {
@@ -180,6 +156,27 @@ const HomeSection = styled.section`
     }
   }
 
+  @keyframes moveInTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-20rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 
   @keyframes moveInButtonAfter {
     0% {
