@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import { SEO } from "../components/SEO"
+import { SEO } from "../components/seo"
 
 const encode = (data) => {
   return Object.keys(data)

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { SEO } from "../components/SEO"
+import { SEO } from "../components/seo"
 import { Link } from "gatsby"
 
 export default function Home() {
