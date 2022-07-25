@@ -191,7 +191,6 @@ const ContactSection = styled.section`
     box-sizing: border-box;
     font-size: 2rem;
     margin-bottom:2.5rem;
-    font-family: "Lato", sans-serif;
   }
 
   .form-textarea {
