@@ -11,7 +11,7 @@ export const SEO = ({ title, description, pathname, children }) => {
     }
 
     return (
-        <Helmet title="Jared Rothenberg" >
+        <Helmet >
             <link
                 href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
                 rel="stylesheet"
