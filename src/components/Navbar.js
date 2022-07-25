@@ -1,26 +1,30 @@
 import { Link } from 'gatsby'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import whiteLogo from "../../static/logo-white.webp"
+import blackLogo from "../../static/logo-black.webp"
 
 export default function Navbar({ path }) {
-  let [navColor, setNavColor] = useState("white")
+  let [navTextColor, setNavTextColor] = useState("white")
+  let [logo, setLogo] = useState(whiteLogo)
 
+  // changes nav text color based on what page we are on
   useEffect(() => {
     switch (path) {
       case "/about/":
-        setNavColor("white")
+        setNavTextColor("white")
         break;
       case "/experience/":
-        setNavColor("black")
+        setNavTextColor("black")
         break;
       case "/":
-        setNavColor("white")
+        setNavTextColor("white")
         break;
       case "/projects/":
-        setNavColor("black")
+        setNavTextColor("black")
         break;
       case "/contact/":
-        setNavColor("white")
+        setNavTextColor("white")
         break;
       default:
         console.error("there is an issue with the navigation color setter")
@@ -28,15 +32,20 @@ export default function Navbar({ path }) {
 
   }, [path])
 
+  // changes logo path/variable based on what the nav text color should be
+  useEffect(() => {
+    navTextColor === "white" ? setLogo(whiteLogo) : setLogo(blackLogo)
+  }, [navTextColor])
+
   return (
-    <NavWrapper navColor={navColor}>
-      <Link to="/about" className={`nav__link ${navColor}`} activeClassName="active" >About</Link>
-      <Link to="/experience" className={`nav__link ${navColor}`} activeClassName="active" >Experience</Link>
+    <NavWrapper navTextColor={navTextColor}>
+      <Link to="/about" className={`nav__link ${navTextColor}`} activeClassName="active" >About</Link>
+      <Link to="/experience" className={`nav__link ${navTextColor}`} activeClassName="active" >Experience</Link>
       <Link to="/">
-        <img className='home__logo' src={`./logo-${navColor}.webp`} alt="logo" />
+        <img className='home__logo' src={logo} alt="logo" />
       </Link>
-      <Link to="/projects" className={`nav__link ${navColor}`} activeClassName="active" >Projects</Link>
-      <Link to="/contact" className={`nav__link ${navColor}`} activeClassName="active" >Contact</Link>
+      <Link to="/projects" className={`nav__link ${navTextColor}`} activeClassName="active" >Projects</Link>
+      <Link to="/contact" className={`nav__link ${navTextColor}`} activeClassName="active" >Contact</Link>
     </NavWrapper>
   )
 }
@@ -66,8 +75,8 @@ const NavWrapper = styled.nav`
   backdrop-filter: blur(5px);
 
   // conditional box shadow for white or black background & background colors incase text color and background color match
-  ${({ navColor }) =>
-    navColor === "black"
+  ${({ navTextColor }) =>
+    navTextColor === "black"
       ? `
     box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);
     background-color: rgba(209, 218, 227, 0.198);`
