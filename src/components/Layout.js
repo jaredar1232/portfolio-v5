@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Navbar from './Navbar'
+import MobileNavBar from './MobileNavBar'
 import Footer from './Footer'
 import { Helmet } from 'react-helmet'
 import '../styles/global.css'
@@ -27,6 +28,7 @@ export default function Layout({ children, path }) {
       </Helmet>
 
       <div className="site">
+        <MobileNavBar />
         <Navbar path={path} />
         <main className='site-content'>
           {children}

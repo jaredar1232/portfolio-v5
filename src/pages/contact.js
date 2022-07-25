@@ -144,7 +144,7 @@ const ContactSection = styled.section`
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    padding: 0 0 5rem 0;
+    padding: 0 0 15rem 0;
     background-image: linear-gradient(
       to right bottom,
       rgb(102, 201, 255),
@@ -154,6 +154,7 @@ const ContactSection = styled.section`
     color: transparent;
 
     @media (max-width: 56.25em) {
+      padding: 0 0 0rem 0;
       font-size: 4rem;
     }
   }

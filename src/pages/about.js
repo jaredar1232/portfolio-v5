@@ -54,17 +54,23 @@ export default function about() {
 }
 
 const AboutSection = styled.section`
+    // adjust this padding if you change the writing
+    padding: 10rem 0 83.6rem 0;
+
+    /* TODO: REMOVE */
+    /* padding-top: 10rem; */
+    /* height: 93vh; */
+
     background-color: #181e2e;
-    padding: 10rem 0 85rem 0;
     color: white;
-    z-index: 7;
 
     @media (max-width: 56.25em) {
-      padding: 5rem 0 75rem 0;
+      padding: 10rem 0 90rem 0;
     }
 
   .u-center-text {
     text-align: center;
+    padding-bottom: 5rem;
   }
 
   .heading-secondary {
@@ -133,7 +139,9 @@ const AboutSection = styled.section`
     }
   }
 
-  .writing {
+  /* TODO: REMOVE - seems like it doesnt do anything */
+
+  /* .writing {
     margin-right: 6rem;
     margin-top: 3rem;
 
@@ -141,7 +149,7 @@ const AboutSection = styled.section`
       margin-right: 3rem;
       margin-top: 0rem;
     }
-  }
+  } */
 
   .composition {
     position: relative;

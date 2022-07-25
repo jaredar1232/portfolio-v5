@@ -41,6 +41,10 @@ export default function Navbar({ path }) {
 
 
 const NavWrapper = styled.nav`
+  @media (max-width: 56.25em) {
+    display: none;
+  }
+
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   position: fixed;

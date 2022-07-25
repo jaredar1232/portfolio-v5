@@ -33,16 +33,16 @@ export default class AJob extends Component {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24"
                 height="24">
                 <path data-name="layer1"
-                  fill="none" stroke="#202020" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="5" d="M2 20v36h60V20M2 8h60v12H2z"></path>
-                <path data-name="layer2" fill="none" stroke="#202020" stroke-linecap="round"
-                  stroke-linejoin="round" stroke-width="5" d="M44 30l7 8-7 8M20 30l-7 8 7 8m16-18l-8 20"></path>
+                  fill="none" stroke="#202020" strokeLinecap="round" strokeLinejoin="round"
+                  strokeWidth="5" d="M2 20v36h60V20M2 8h60v12H2z"></path>
+                <path data-name="layer2" fill="none" stroke="#202020" strokeLinecap="round"
+                  strokeLinejoin="round" strokeWidth="5" d="M44 30l7 8-7 8M20 30l-7 8 7 8m16-18l-8 20"></path>
                 <circle data-name="layer1" cx="8" cy="14" r="1" fill="none" stroke="#202020"
-                  stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></circle>
+                  strokeLinecap="round" strokeLinejoin="round" strokeWidth="5"></circle>
                 <circle data-name="layer1" cx="15" cy="14" r="1" fill="none"
-                  stroke="#202020" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></circle>
+                  stroke="#202020" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5"></circle>
                 <circle data-name="layer1" cx="22" cy="14" r="1" fill="none"
-                  stroke="#202020" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></circle>
+                  stroke="#202020" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5"></circle>
               </svg>
               &nbsp; Visit
             </a>
@@ -86,6 +86,7 @@ const AJobSection = styled.section`
       width: 95%;
     }
 
+    /* TODO: REMOVE */
     // @media (min-width: 56.25em) {
     //   --data-sal: zoom-in;
     //   --sal-delay: 0;
