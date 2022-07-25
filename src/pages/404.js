@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { SEO } from "../components/seo"
+import { Seo } from "../components/Seo"
 
 export default function NotFound() {
   return (
@@ -12,5 +12,5 @@ export default function NotFound() {
 }
 
 export const Head = () => (
-  <SEO />
+  <Seo />
 )

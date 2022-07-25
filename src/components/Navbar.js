@@ -22,6 +22,8 @@ export default function Navbar({ path }) {
       case "/contact/":
         setNavColor("white")
         break;
+      default:
+        console.error("there is an issue with the navigation color setter")
     }
 
   }, [path])

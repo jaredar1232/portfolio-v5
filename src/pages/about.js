@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import { SEO } from "../components/seo"
+import { Seo } from "../components/Seo"
 
 export default function about() {
   return (
@@ -44,7 +44,7 @@ export default function about() {
           >
             <img
               src="./Headshot.webp"
-              alt="Photo 1"
+              alt="Headshot of Jared"
               className="composition__photo"
             />
           </div>
@@ -55,7 +55,7 @@ export default function about() {
 }
 
 export const Head = () => (
-  <SEO />
+  <Seo />
 )
 
 const AboutSection = styled.section`

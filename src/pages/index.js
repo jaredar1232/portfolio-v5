@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { SEO } from "../components/seo"
+import { Seo } from "../components/Seo"
 import { Link } from "gatsby"
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
 }
 
 export const Head = () => (
-  <SEO />
+  <Seo />
 )
 
 const HomeSection = styled.section`
