@@ -1,19 +1,27 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Navbar from './Navbar'
 import MobileNavBar from './MobileNavBar'
 import Footer from './Footer'
-import '../styles/global.css'
+import { GlobalStyle } from '../styles'
 
 export default function Layout({ children, path }) {
 
   return (
-    <div className="site">
-      <MobileNavBar />
-      <Navbar path={path} />
-      <main className='site-content'>
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <Fragment>
+      <GlobalStyle />
+
+      <div className="site">
+
+
+        <MobileNavBar />
+        <Navbar path={path} />
+
+        <main className='site-content'>
+          {children}
+        </main>
+
+        <Footer />
+      </div>
+    </Fragment>
   )
 }
