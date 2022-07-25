@@ -25,6 +25,7 @@ export default function Layout({ children, path }) {
           content="width=device-width, initial-scale=1, user-scalable=0"
         ></meta>
         <html lang="en" />
+        <title>Jared Rothenberg</title>
       </Helmet>
 
       <div className="site">

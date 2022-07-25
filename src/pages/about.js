@@ -28,7 +28,7 @@ export default function about() {
             taught.
             <br />
             <br />
-            I love working on cool poducts that cross the intersectons
+            I love working on cool poducts that cross at the intersectons
             of tech, medicine, health & fitness, and finance. In addition to
             being long term interests, they're areas I feel help improve society.
           </p>

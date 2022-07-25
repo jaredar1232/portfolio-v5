@@ -31,7 +31,7 @@ export default function Navbar({ path }) {
       <Link to="/about" className={`nav__link ${navColor}`} activeClassName="active" >About</Link>
       <Link to="/experience" className={`nav__link ${navColor}`} activeClassName="active" >Experience</Link>
       <Link to="/" className="home_logo_container">
-        <img className='home__logo' src={`./logo-${navColor}.webp`} />
+        <img className='home__logo' src={`./logo-${navColor}.webp`} alt="logo" />
       </Link>
       <Link to="/projects" className={`nav__link ${navColor}`} activeClassName="active" >Projects</Link>
       <Link to="/contact" className={`nav__link ${navColor}`} activeClassName="active" >Contact</Link>
@@ -73,9 +73,9 @@ const NavWrapper = styled.nav`
     background-color: rgba(169, 180, 190, 0.291);`}
 
   // nav bar animation
-  animation: moveInNavBar 1.5s;
+  animation: moveInNavBar 1s;
   animation-fill-mode: backwards;
-  animation-delay: 3s;
+  animation-delay: 2.5s;
   @keyframes moveInNavBar {
     0% {
       background-color: transparent;

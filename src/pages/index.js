@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { SEO } from "../components/seo"
 import { Link } from "gatsby"
 
 export default function Home() {
@@ -15,6 +16,10 @@ export default function Home() {
     </HomeSection>
   )
 }
+
+export const Head = () => (
+  <SEO />
+)
 
 const HomeSection = styled.section`
   height: 100vh;
@@ -52,7 +57,7 @@ const HomeSection = styled.section`
     letter-spacing: 3rem;
 
     @media (min-width: 56.26em) {
-      animation: moveInTop 1.5s ease-out;
+      animation: moveInTop 1s ease-out;
       animation-delay: 0.5s;
       animation-fill-mode: backwards;
     }
@@ -84,8 +89,8 @@ const HomeSection = styled.section`
     margin-top: 1rem;
 
     @media (min-width: 56.26em) {
-      animation: fadeIn 2.5s;
-      animation-delay: 2s;
+      animation: fadeIn 2s;
+      animation-delay: 1.5s;
       animation-fill-mode: backwards;
     }
 
@@ -145,7 +150,6 @@ const HomeSection = styled.section`
     border: darkgrey solid 1px;
   }
 
-  // needed for the button hover animation
   .btn::after {
     content: "";
     display: inline-block;
@@ -161,8 +165,6 @@ const HomeSection = styled.section`
     border: lightgrey solid 1px;
   }
 
-
-  // this is the expanding effect when hovered over
   @media (hover: hover) {
     .btn:hover::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -174,7 +176,7 @@ const HomeSection = styled.section`
     @media (min-width: 56.26em) {
       animation: moveInButton 1s;
       animation-fill-mode: backwards;
-      animation-delay: 3.5s;
+      animation-delay: 2.5s;
     }
   }
 
