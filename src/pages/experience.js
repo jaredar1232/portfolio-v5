@@ -88,7 +88,6 @@ const ExperienceSection = styled.section`
 
     @media (max-width: 56.25em) {
       font-size: 4rem;
-      color: black;
     }
   }
 `

@@ -135,7 +135,7 @@ const ContactSection = styled.section`
     padding: 10rem 0 5rem 0;
     color: white;
     @media (max-width: 56.25em) {
-      padding: 10rem 0;
+      padding: 10rem 2rem;
     }
   }
 
@@ -186,7 +186,7 @@ const ContactSection = styled.section`
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom:2.5rem;
     font-family: "Lato", sans-serif;
   }
 

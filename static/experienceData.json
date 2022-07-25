@@ -1,5 +1,5 @@
 [
-    {
+  {
     "name": "The Zebra",
     "width": 85,
     "video": "https://d1o11p1jeyf1dw.cloudfront.net/TheZebra.mp4",
@@ -8,10 +8,14 @@
       "name": "The Compendium",
       "description": "",
       "keyPoints": [
-        "Programmed in Typescript to prevent runtime errors",
-        "Managed state using React Hooks to improve code legibility",
-        "Wrote a custom API to allow for easier scaling in the future",
-        "Architected the backend in pure Node/PostgreSQL to avoid bloat from ORMs"
+        "Adapt to working on my 3rd Zebra team, learning a new codebase and ramping up on a stack to suit company needs",
+        "Provide mentorship to junior engineers through pair programming, code reviews, and 1:1 syncs",
+        "Co-built the world’s first 3rd party insurance-policy sales funnel that requires zero agent interaction to sell, this satisfies the 87% of users that would prefer to buy online vs. calling",
+        "Used Javascript(React) and Python(FastAPI) across multiple code bases to refactor values and APIs affecting key user information—this was done to condense the source of truth to one location and prevent data collisions",
+        "Increased policy sales and improved user experience by pioneering the company’s first transactional email using a custom API to interface with Iterable (email sending service)",
+        "Contributed daily to discussions and codebases following current best practices such as agile methodology, standups, Gitlab version manager (~18 micro-services), JIRA ticket workflow, and writing Confluence documentation",
+        "Used Javascript, HTML, CSS, and Wagtail to create and edit landing page templates (including our homepage redesign) in accordance with designer’s provided specifications and Optimizely A/B test results to measurably increase user engagement",
+        "Participated in company Frontend and Backend extracurriculars that focused on org-wide initiatives; most recently, helped to rework the company interview process to increase candidate quality and equalize opportunity"
       ],
       "icons": [
         "React",

@@ -47,7 +47,7 @@ export default class Projects extends Component {
         <ProjectsSection>
           <div className="u-center-text">
             <h2 className="heading-secondary" id="applications">
-              Applications
+              Projects
             </h2>
           </div>
           {projectDataArray.map(aProject => (
@@ -67,6 +67,10 @@ export default class Projects extends Component {
 const ProjectsSection = styled.section`
     background-color: white;
     padding: 10rem 0;
+
+    @media (max-width: 56.25em) {
+      padding: 10rem 0 5rem 0;
+    }
 
   .u-center-text {
     text-align: center;
@@ -88,7 +92,6 @@ const ProjectsSection = styled.section`
 
     @media (max-width: 56.25em) {
       font-size: 4rem;
-      color: black;
     }
   }
 `

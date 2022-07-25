@@ -65,7 +65,7 @@ const AboutSection = styled.section`
     color: white;
 
     @media (max-width: 56.25em) {
-      padding: 10rem 0 90rem 0;
+      padding: 10rem 0 75rem 0;
     }
 
   .u-center-text {

@@ -31,7 +31,7 @@ export default class Modal extends Component {
             </div>
             <h3 className="heading-tertiary">{modalDetails.name}</h3>
             <div className="description">
-              <b>The Goal:&ensp;</b>
+              <b>Overview:&ensp;</b>
               {modalDetails.description}
             </div>
 
@@ -218,11 +218,15 @@ const ModalWrapper = styled.div`
   }
 
   .keypoints {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 400;
     color: black;
     list-style-type: none;
     padding: 0 3rem 5rem 3rem;
+
+    @media (max-width: 56.25em) {
+      font-size: 1.5rem;
+    }
 
     li {
       padding-top: 1rem;
