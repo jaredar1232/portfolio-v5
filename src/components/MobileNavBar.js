@@ -138,7 +138,7 @@ const NavbarWrapper = styled.div`
       right: 3.5rem;
       background-image: radial-gradient(rgb(94, 183, 231), rgb(114, 132, 233));
       z-index: 100;
-      transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+      transition: transform 0.4s cubic-bezier(0.83, 0, 0.17, 1);
 
       animation: navButtonBackgroundAppearMobile 0s;
       animation-fill-mode: backwards;
@@ -154,7 +154,7 @@ const NavbarWrapper = styled.div`
 
       opacity: 0;
       width: 0;
-      transition: all 0.8s;
+      transition: all 0.4s;
     }
 
     &__list {
