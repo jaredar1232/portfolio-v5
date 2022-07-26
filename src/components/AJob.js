@@ -111,7 +111,7 @@ const AJobSection = styled.section`
     color: black;
 
     @media (max-width: 56.25em) {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
   }
 
