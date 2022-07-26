@@ -62,7 +62,7 @@ body {
     overflow: hidden;
 }
 
-// remove button styling
+/* remove button styling */
 button,
 input[type="submit"],
 input[type="reset"] {
