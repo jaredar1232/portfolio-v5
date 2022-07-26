@@ -214,7 +214,7 @@ const ModalWrapper = styled.div`
     font-size: 2rem;
     font-weight: 400;
     color: black;
-    padding: 3rem 3rem 5rem 3rem;
+    padding: 3rem 4rem 5rem 4rem;
   }
 
   .keypoints {
@@ -222,7 +222,7 @@ const ModalWrapper = styled.div`
     font-weight: 400;
     color: black;
     list-style-type: none;
-    padding: 0 3rem 5rem 3rem;
+    padding: 0 4rem 5rem 4rem;
 
     @media (max-width: 56.25em) {
       font-size: 1.5rem;
