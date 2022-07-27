@@ -47,83 +47,81 @@ export default class Contact extends Component {
   render() {
     return (
       <ContactSection>
-        <section className="section-contact">
-          <div className="u-center-text">
-            <h2 className="heading-secondary" id="contact-me">
-              Contact Me
-            </h2>
-          </div>
+        <div className="u-center-text">
+          <h2 className="heading-secondary" id="contact-me">
+            Contact Me
+          </h2>
+        </div>
 
-          <div className="form-container">
-            <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.handleSubmit}>
-              <input type="hidden" name="form-name" value="contact" />
+        <div className="form-container">
+          <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.handleSubmit}>
+            <input type="hidden" name="form-name" value="contact" />
 
-              <label>
-                Name<span className="asterisk">*</span>
-                <input
-                  type="text"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.handleChange}
-                  className="form-text"
-                  data-sal="slide-left"
-                  data-sal-delay="0"
-                  data-sal-easing="ease"
-                  data-sal-duration="500"
-                />
-              </label>
+            <label>
+              Name<span className="asterisk">*</span>
+              <input
+                type="text"
+                name="name"
+                value={this.state.name}
+                onChange={this.handleChange}
+                className="form-text"
+                data-sal="slide-left"
+                data-sal-delay="0"
+                data-sal-easing="ease"
+                data-sal-duration="500"
+              />
+            </label>
 
-              <label>
-                Email<span className="asterisk">*</span>
-                <input
-                  type="email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleChange}
-                  className="form-text"
-                  data-sal="slide-left"
-                  data-sal-delay="100"
-                  data-sal-easing="ease"
-                  data-sal-duration="500"
-                />
-              </label>
+            <label>
+              Email<span className="asterisk">*</span>
+              <input
+                type="email"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                className="form-text"
+                data-sal="slide-left"
+                data-sal-delay="100"
+                data-sal-easing="ease"
+                data-sal-duration="500"
+              />
+            </label>
 
-              <label>
-                Subject<span className="asterisk">*</span>
-                <input
-                  type="text"
-                  name="subject"
-                  value={this.state.subject}
-                  onChange={this.handleChange}
-                  className="form-text"
-                  data-sal="slide-left"
-                  data-sal-delay="200"
-                  data-sal-easing="ease"
-                  data-sal-duration="500"
-                />
-              </label>
-              <label>
-                Message<span className="asterisk">*</span>
-                <textarea
-                  name="message"
-                  value={this.state.message}
-                  onChange={this.handleChange}
-                  className="form-text form-textarea"
-                  data-sal="slide-left"
-                  data-sal-delay="300"
-                  data-sal-easing="ease"
-                  data-sal-duration="500"
-                />
-              </label>
-              <div className="center-submit">
-                <button type="submit" className="form-submit">
-                  Submit
-                </button>
-              </div>
+            <label>
+              Subject<span className="asterisk">*</span>
+              <input
+                type="text"
+                name="subject"
+                value={this.state.subject}
+                onChange={this.handleChange}
+                className="form-text"
+                data-sal="slide-left"
+                data-sal-delay="200"
+                data-sal-easing="ease"
+                data-sal-duration="500"
+              />
+            </label>
+            <label>
+              Message<span className="asterisk">*</span>
+              <textarea
+                name="message"
+                value={this.state.message}
+                onChange={this.handleChange}
+                className="form-text form-textarea"
+                data-sal="slide-left"
+                data-sal-delay="300"
+                data-sal-easing="ease"
+                data-sal-duration="500"
+              />
+            </label>
+            <div className="center-submit">
+              <button type="submit" className="form-submit">
+                Submit
+              </button>
+            </div>
 
-            </form>
-          </div>
-        </section>
+          </form>
+        </div>
       </ContactSection>
     )
   }
@@ -134,13 +132,12 @@ export const Head = () => (
 )
 
 const ContactSection = styled.section`
-  .section-contact {
-    background-color: #181e2e;
-    padding: 10rem 0 5rem 0;
-    color: white;
-    @media (max-width: 56.25em) {
-      padding: 10rem 2rem;
-    }
+  background-color: #181e2e;
+  padding: 10rem 0 5rem 0;
+  color: white;
+  
+  @media (max-width: 56.25em) {
+    padding: 10rem 2rem;
   }
 
   .heading-secondary {

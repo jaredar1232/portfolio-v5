@@ -7,7 +7,7 @@ export default class Icons extends Component {
     return (
       <IconsWrapper>
         <div className="icon-container">
-          <img className="icon-image" src={`/${this.props.anIcon}.png`}></img>
+          <img className="icon-image" src={`/${this.props.anIcon}.png`} alt={`${this.props.anIcon} logo`}></img>
         </div>
         <div className="icon-label">{this.props.anIcon}</div>
       </IconsWrapper>
