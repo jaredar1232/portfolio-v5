@@ -42,7 +42,9 @@ export default class Contact extends Component {
     event.preventDefault();
   }
 
-  handleChange = e => this.setState({ [e.target.name]: e.target.value });
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
 
   render() {
     return (
@@ -121,7 +123,7 @@ export const Head = () => (
 
 const ContactSection = styled.section`
   background-color: #181e2e;
-  padding: 10rem 0 5rem 0;
+  padding: 10rem 0 10rem 0;
   color: white;
 
   @media (max-width: 56.25em) {
