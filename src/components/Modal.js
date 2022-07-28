@@ -135,9 +135,12 @@ const ModalWrapper = styled.div`
     right: 1rem;
     float: right;
 
-    animation: fadeIn 0.2s;
-    animation-fill-mode: backwards;
-    animation-delay: 0.8s;
+    // used to resolve mobile stutter animation (only shows on real phone)
+    @media (max-width: 56.25em) {
+      animation: fadeIn 0.2s;
+      animation-fill-mode: backwards;
+      animation-delay: 0.8s;
+    }
 
     @media (hover: hover) {
       &:hover {
