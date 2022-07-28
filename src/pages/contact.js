@@ -50,7 +50,7 @@ export default class Contact extends Component {
     return (
       <ContactSection>
         <div className="u-center-text">
-          <h2 className="heading-secondary" id="contact-me">
+          <h2 className="heading" id="contact-me">
             Contact Me
           </h2>
         </div>
@@ -123,14 +123,14 @@ export const Head = () => (
 
 const ContactSection = styled.section`
   background-color: #181e2e;
-  padding: 10rem 0 10rem 0;
+  padding: 10rem 0 2rem 0;
   color: white;
 
   @media (max-width: 56.25em) {
-    padding: 10rem 2rem;
+    padding: 10rem 2rem 2rem 2rem;
   }
 
-  .heading-secondary {
+  .heading {
     font-size: 5.5rem;
     text-transform: uppercase;
     font-weight: 700;

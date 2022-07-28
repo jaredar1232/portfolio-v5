@@ -33,7 +33,6 @@ const IconsWrapper = styled.div`
     }
   
     .icon-label {
-      font-weight: 400;
       font-size: 1.6rem;
       color: black;
     }

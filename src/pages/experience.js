@@ -47,7 +47,7 @@ export default class Experience extends Component {
         />
         <ExperienceSection>
           <div className="u-center-text">
-            <h2 className="heading-secondary" id="applications">
+            <h2 className="heading" id="applications">
               Experience
             </h2>
           </div>
@@ -78,7 +78,7 @@ const ExperienceSection = styled.section`
     text-align: center;
   }
 
-  .heading-secondary {
+  .heading {
     font-size: 5.5rem;
     text-transform: uppercase;
     font-weight: 700;

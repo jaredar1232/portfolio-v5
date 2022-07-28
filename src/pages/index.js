@@ -71,7 +71,7 @@ const HomeSection = styled.section`
   .heading__sub {
     display: block;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 300;
     letter-spacing: 1.75rem;
     margin-top: 1rem;
 
@@ -98,6 +98,7 @@ const HomeSection = styled.section`
     transition: all 0.2s;
     position: relative;
     font-size: 1.6rem;
+    font-weight: 400;
     background-color: rgba(0, 0, 0, 0.3);
     color: lightgrey;
     border: darkgrey solid 1px;

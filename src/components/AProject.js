@@ -103,7 +103,6 @@ const AProjectWrapper = styled.div`
 
   .heading-tertiary {
     font-size: 3.5rem;
-    font-weight: 400;
     text-transform: uppercase;
     text-align: center;
     color: black;
@@ -141,7 +140,6 @@ const AProjectWrapper = styled.div`
     &:link,
     &:visited {
       font-size: 2rem;
-      font-weight: 700;
       background-image: linear-gradient(
         to right bottom,
         rgb(102, 201, 255),
@@ -174,7 +172,6 @@ const AProjectWrapper = styled.div`
 
   .btn--2 {
     font-size: 2rem;
-    font-weight: 700;
     background-image: linear-gradient(
       to right bottom,
       rgb(102, 201, 255),

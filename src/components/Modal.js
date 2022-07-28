@@ -198,7 +198,6 @@ const ModalWrapper = styled.div`
 
   .heading-tertiary {
     font-size: 3.5rem;
-    font-weight: 400;
     text-transform: uppercase;
     text-align: center;
     color: black;
@@ -212,14 +211,12 @@ const ModalWrapper = styled.div`
 
   .description {
     font-size: 2rem;
-    font-weight: 400;
     color: black;
     padding: 3rem 4rem 5rem 4rem;
   }
 
   .keypoints {
     font-size: 1.8rem;
-    font-weight: 400;
     color: black;
     list-style-type: none;
     padding: 0 4rem 5rem 4rem;

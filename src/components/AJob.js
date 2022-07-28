@@ -105,7 +105,6 @@ const AJobSection = styled.section`
 
   .heading-tertiary {
     font-size: 3.5rem;
-    font-weight: 400;
     text-transform: uppercase;
     text-align: center;
     color: black;
@@ -145,7 +144,6 @@ const AJobSection = styled.section`
     &:link,
     &:visited {
       font-size: 2rem;
-      font-weight: 700;
       background-image: linear-gradient(
         to right bottom,
         rgb(102, 201, 255),
@@ -178,7 +176,6 @@ const AJobSection = styled.section`
 
   .btn--2 {
     font-size: 2rem;
-    font-weight: 700;
     background-image: linear-gradient(
       to right bottom,
       rgb(102, 201, 255),

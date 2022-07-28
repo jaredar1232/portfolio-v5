@@ -175,7 +175,6 @@ const NavbarWrapper = styled.div`
       &:visited {
         display: inline-block;
         font-size: 3rem;
-        font-weight: 300;
         padding: 1rem 2rem;
         color: white;
         text-decoration: none;

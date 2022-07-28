@@ -47,7 +47,7 @@ export default class Projects extends Component {
         />
         <ProjectsSection>
           <div className="u-center-text">
-            <h2 className="heading-secondary" id="applications">
+            <h2 className="heading" id="applications">
               Projects
             </h2>
           </div>
@@ -81,7 +81,7 @@ const ProjectsSection = styled.section`
     text-align: center;
   }
 
-  .heading-secondary {
+  .heading {
     font-size: 5.5rem;
     text-transform: uppercase;
     font-weight: 700;

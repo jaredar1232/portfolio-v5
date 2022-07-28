@@ -7,7 +7,7 @@ export default function about() {
   return (
     <AboutSection>
       <div className="u-center-text">
-        <h2 className="heading-secondary" id="about-me">
+        <h2 className="heading" id="about-me">
           About Me
         </h2>
       </div>
@@ -75,7 +75,7 @@ const AboutSection = styled.section`
     padding-bottom: 5rem;
   }
 
-  .heading-secondary {
+  .heading {
     font-size: 5rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -93,12 +93,6 @@ const AboutSection = styled.section`
       font-size: 4rem;
       margin-bottom: 1rem;
     }
-  }
-
-  .heading-tertiary {
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-transform: uppercase;
   }
 
   .paragraph {
