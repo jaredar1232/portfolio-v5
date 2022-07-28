@@ -61,26 +61,6 @@ export default class Modal extends Component {
 // .modal-functionality-shown and .modal-functionality-hidden are used for closing modal functionality
 
 const ModalWrapper = styled.div`
-  @keyframes overlayEffect {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes modalEffect {
-    from {
-      transform: scale(0);
-    }
-
-    to {
-      transform: scale(1);
-    }
-  }
-
   .hide-modal {
     display: none;
   }
@@ -100,7 +80,7 @@ const ModalWrapper = styled.div`
 
     &__content {
         max-width: 130rem;
-        width: 70%;
+        width: 60%;
         height: 60%;
         background-color: white;
         box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
@@ -142,9 +122,6 @@ const ModalWrapper = styled.div`
     height: 3.6rem;
     width: 3.6rem;
     background-color: transparent;
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
     background-color: white;
     border: 1px solid black;
     border-radius: 10px;
@@ -153,10 +130,10 @@ const ModalWrapper = styled.div`
     z-index: 100;
     box-shadow: 0.3rem 0.3rem 0.8rem rgba(0, 0, 0, 0.5);
 
-    @media (max-width: 56.25em) {
-      top: 1rem;
-      right: 1rem;
-    }
+    position: sticky;
+    top: 1rem;
+    right: 1rem;
+    float: right;
 
     @media (hover: hover) {
       &:hover {
@@ -234,6 +211,26 @@ const ModalWrapper = styled.div`
   .icons {
     text-align: center;
     padding: 0 2rem;
+  }
+
+  @keyframes overlayEffect {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes modalEffect {
+    from {
+      transform: scale(0);
+    }
+
+    to {
+      transform: scale(1);
+    }
   }
 `
 

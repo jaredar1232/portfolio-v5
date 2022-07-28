@@ -26,7 +26,7 @@ export default class AJob extends Component {
           <div className="btn-position">
             <a
               href={aJob.website}
-              className="btn-text"
+              className="button--visit"
               target="_blank"
               rel="noreferrer"
             >
@@ -49,7 +49,7 @@ export default class AJob extends Component {
           </div>
           <div className="btn-position">
             <button
-              className="btn--2"
+              className="button--details"
               onClick={() => this.props.modalOnClick(aJob.details)}
             >
               <svg
@@ -141,7 +141,7 @@ const AJobSection = styled.section`
     justify-content: center;
   }
 
-  .btn-text {
+  .button--visit {
     &:link,
     &:visited {
       font-size: 2rem;
@@ -161,7 +161,7 @@ const AJobSection = styled.section`
   }
 
   @media (hover: hover) {
-    .btn-text:hover {
+    .button--visit:hover {
       -webkit-background-clip: unset;
       color: white;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -170,12 +170,12 @@ const AJobSection = styled.section`
     }
   }
 
-  .btn-text:active {
+  .button--visit:active {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transform: translateY(0);
   }
 
-  .btn--2 {
+  .button--details {
     font-size: 2rem;
     background-image: linear-gradient(
       to right bottom,
@@ -190,11 +190,12 @@ const AJobSection = styled.section`
     padding: 0.5rem 1rem;
     transition: all 0.2s;
     cursor: pointer;
+    line-height: 1.7;
   }
 
   @media (hover: hover) {
-    .btn--2:hover,
-    .btn--2:focus {
+    .button--details:hover,
+    .button--details:focus {
       -webkit-background-clip: unset;
       color: white;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -203,7 +204,7 @@ const AJobSection = styled.section`
     }
   }
 
-  .btn--2:active {
+  .button--details:active {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transform: translateY(0);
   }

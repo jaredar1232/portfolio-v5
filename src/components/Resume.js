@@ -53,7 +53,7 @@ const ResumeWrapper = styled.div`
     }
 
     @media (max-width: 56.25em) {
-      width: 30rem;
+      width: 22rem;
     }
   }
 
@@ -93,9 +93,6 @@ const ResumeWrapper = styled.div`
       transform: translateY(0);
     }
 
-    @media (max-width: 56.25em) {
-      padding: 1rem;
-    }
   }
   .resume-svg {
     display: inline-block;

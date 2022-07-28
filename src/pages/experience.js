@@ -66,7 +66,7 @@ export default class Experience extends Component {
 }
 
 export const Head = () => (
-  <SEO />
+  <SEO title="Jared Rothenberg | Experience" />
 )
 
 const ExperienceSection = styled.section`

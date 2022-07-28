@@ -11,63 +11,60 @@ export default function about() {
           About Me
         </h2>
       </div>
+      <div className="row-container">
+        <div className="row">
 
-      <div className="row">
-
-        <div className="col-1-of-2">
-          <p
-            className="paragraph"
-          >
-            <span className='fadeInOne'>Hello and welcome to my portfolio!</span>
-            <br />
-            <br />
-            <span className='fadeInTwo'>
-              I am a software engineer with a background in Economics
-              and Philosophy from the University of California Santa
-              Barbara. My foundation in programming was instilled in
-              me at HackReactor with most of what I now know being self
-              taught.
-            </span>
-            <br />
-            <br />
-            <span className='fadeInThree'>
-              I love working on cool products that cross at the intersections
-              of tech, medicine, health & fitness, and finance. In addition to
-              being long term interests, they're areas I feel help improve society.
-            </span>
-          </p>
-        </div>
-
-        <div className="col-1-of-2">
           <div
-            className="composition"
+            className="headshot-container"
           >
             <img
               src={headshot}
               alt="Headshot of Jared"
-              className="composition__photo"
+              className="headshot"
             />
           </div>
-        </div>
 
+          <div className="text-container">
+            <p
+              className="text"
+            >
+              <span className='paragraph fadeInOne'>Hello and welcome to my portfolio!</span>
+              <span className='paragraph fadeInTwo'>
+                I am a software engineer with a background in Economics
+                and Philosophy from the University of California Santa
+                Barbara. My foundation in programming was instilled in
+                me at HackReactor with most of what I now know being self
+                taught.
+              </span>
+              <span className='paragraph fadeInThree'>
+                I love working on cool products that cross at the intersections
+                of tech, medicine, health & fitness, and finance. In addition to
+                being long term interests, they're areas I feel help improve society.
+              </span>
+            </p>
+          </div>
+
+
+
+        </div>
       </div>
     </AboutSection>
   )
 }
 
 export const Head = () => (
-  <SEO />
+  <SEO title="Jared Rothenberg | About" />
 )
 
 const AboutSection = styled.section`
     // adjust this padding if you change the writing
-    padding: 10rem 0 83.6rem 0;
+    padding: 10rem 0 20rem 0;
 
     background-color: #181e2e;
     color: white;
 
     @media (max-width: 56.25em) {
-      padding: 10rem 0 75rem 0;
+      padding: 10rem 0 5rem 0;
     }
 
   .u-center-text {
@@ -95,69 +92,58 @@ const AboutSection = styled.section`
     }
   }
 
-  .paragraph {
-    font-size: 2.5rem;
-    &:not(:first-child) {
-      margin-bottom: 3rem;
-    }
+
+  .row-container {
+    max-width: 70%;
+    margin: 0 auto;
+
     @media (max-width: 56.25em) {
-      font-size: 1.6rem;
-      margin: 0 1rem;
+      max-width: 100%
     }
   }
 
   .row {
-    max-width: 114rem;
-    background-color: #eee;
-    margin: 0 auto;
+    display: flex;
 
-    &:not(:last-child) {
-      margin-bottom: 8rem;
+    @media (max-width: 56.25em) {
+      flex-direction: column;
     }
 
-    .clearfix {
-      &::after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-    }
+  }
 
-    .col-1-of-2 {
-      width: calc((100% - 6rem) / 2);
-      float: right;
-
+  .text-container {
+    flex: 1;
       @media (max-width: 56.25em) {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 2rem;
+        padding: 5rem 3rem 0 3rem;
+        padding-top: 5rem;
       }
+
+      margin: 0 auto;
+    }
+
+  .text {
+    font-size: 2.5rem;
+    @media (max-width: 56.25em) {
+      font-size: 1.6rem;
     }
   }
 
-  .composition {
-    position: relative;
-    &__photo {
-      width: 70%;
-      box-shadow: 0 1.5rem 4rem black;
-      border-radius: 5px;
-      position: absolute;
-      left: 9rem;
-      top: 4rem;
-
-      @media (max-width: 56.25em) {
-        margin-top: 4rem;
-      }
-
-      @media (max-width: 56.25em) {
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        top: 0rem;
-        width: 25rem;
-      }
+  .paragraph {
+    &:not(:first-child) {
+      display: inline-block;
+      margin-top: 2.5rem;
     }
+  }
+
+  .headshot-container {
+    flex: 1;
+    text-align: center;
+  }
+
+  .headshot {
+    max-width: 70%;
+    box-shadow: 0 1.5rem 4rem black;
+    border-radius: 5px;
   }
 
   .fadeInOne {

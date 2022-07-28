@@ -27,7 +27,7 @@ export default class AProject extends Component {
             <div className="btn-position">
               <a
                 href={aProject.github}
-                className="btn-text"
+                className="button-visit"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -44,7 +44,7 @@ export default class AProject extends Component {
             </div>
             <div className="btn-position">
               <button
-                className="btn--2"
+                className="button-details"
                 onClick={() => this.props.modalOnClick(aProject.details)}
               >
                 <svg
@@ -137,7 +137,7 @@ const AProjectWrapper = styled.div`
     justify-self: center;
   }
 
-  .btn-text {
+  .button-visit {
     &:link,
     &:visited {
       font-size: 2rem;
@@ -157,7 +157,7 @@ const AProjectWrapper = styled.div`
   }
 
   @media (hover: hover) {
-    .btn-text:hover {
+    .button-visit:hover {
       -webkit-background-clip: unset;
       color: white;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -166,12 +166,12 @@ const AProjectWrapper = styled.div`
     }
   }
 
-  .btn-text:active {
+  .button-visit:active {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transform: translateY(0);
   }
 
-  .btn--2 {
+  .button-details {
     font-size: 2rem;
     background-image: linear-gradient(
       to right bottom,
@@ -186,11 +186,12 @@ const AProjectWrapper = styled.div`
     padding: 0.5rem 1rem;
     transition: all 0.2s;
     cursor: pointer;
+    line-height: 1.7;
   }
 
   @media (hover: hover) {
-    .btn--2:hover,
-    .btn--2:focus {
+    .button-details:hover,
+    .button-details:focus {
       -webkit-background-clip: unset;
       color: white;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -199,7 +200,7 @@ const AProjectWrapper = styled.div`
     }
   }
 
-  .btn--2:active {
+  .button-details:active {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     transform: translateY(0);
   }

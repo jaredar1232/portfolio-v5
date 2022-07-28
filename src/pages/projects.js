@@ -66,7 +66,7 @@ export default class Projects extends Component {
 }
 
 export const Head = () => (
-  <SEO />
+  <SEO title="Jared Rothenberg | Projects" />
 )
 
 const ProjectsSection = styled.section`

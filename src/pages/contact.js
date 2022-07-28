@@ -118,7 +118,7 @@ export default class Contact extends Component {
 }
 
 export const Head = () => (
-  <SEO />
+  <SEO title="Jared Rothenberg | Contact" />
 )
 
 const ContactSection = styled.section`
