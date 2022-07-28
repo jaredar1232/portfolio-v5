@@ -73,4 +73,5 @@ input[type="reset"] {
     font: inherit;
     cursor: pointer;
     outline: inherit;
+    line-height: inherit;
 }
