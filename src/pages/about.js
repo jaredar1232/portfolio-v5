@@ -31,7 +31,7 @@ export default function about() {
             <br />
             <br />
             <span className='fadeInThree'>
-              I love working on cool poducts that cross at the intersectons
+              I love working on cool products that cross at the intersectons
               of tech, medicine, health & fitness, and finance. In addition to
               being long term interests, they're areas I feel help improve society.
             </span>
