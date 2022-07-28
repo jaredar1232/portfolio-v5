@@ -161,19 +161,19 @@ const AboutSection = styled.section`
   }
 
   .fadeInOne {
-    animation: fadeIn 2s ease-out;
+    animation: fadeIn 1.5s;
     animation-fill-mode: backwards;
   }
 
   .fadeInTwo {
-    animation: fadeIn 2s ease-out;
-    animation-delay: 0.2s;
+    animation: fadeIn 1.5s;
+    animation-delay: 0.1s;
     animation-fill-mode: backwards;
   }
 
   .fadeInThree {
-    animation: fadeIn 2s ease-out;
-    animation-delay: 0.4s;
+    animation: fadeIn 1.5s;
+    animation-delay: 0.2s;
     animation-fill-mode: backwards;
   }
 

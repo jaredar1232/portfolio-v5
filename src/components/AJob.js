@@ -8,7 +8,7 @@ export default class AJob extends Component {
 
     return (
       <AJobSection jobWidth={jobWidth}>
-        <h3 className="heading-tertiary">{aJob.name}</h3>
+        <h3 className="heading-secondary">{aJob.name}</h3>
         <div className="image-container">
           <video
             playsInline
@@ -103,11 +103,12 @@ const AJobSection = styled.section`
   }
 
 
-  .heading-tertiary {
+  .heading-secondary {
     font-size: 3.5rem;
     text-transform: uppercase;
     text-align: center;
     color: black;
+    font-weight: 300;
 
     @media (max-width: 56.25em) {
       font-size: 2.2rem;

@@ -123,7 +123,7 @@ export const Head = () => (
 
 const ContactSection = styled.section`
   background-color: #181e2e;
-  padding: 10rem 0 2rem 0;
+  padding: 10rem 0 5rem 0;
   color: white;
 
   @media (max-width: 56.25em) {
@@ -135,7 +135,7 @@ const ContactSection = styled.section`
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    padding: 0 0 15rem 0;
+    padding: 0 0 5rem 0;
     background-image: linear-gradient(
       to right bottom,
       rgb(102, 201, 255),
@@ -145,7 +145,7 @@ const ContactSection = styled.section`
     color: transparent;
 
     @media (max-width: 56.25em) {
-      padding: 0 0 0rem 0;
+      padding: 0;
       font-size: 4rem;
     }
   }

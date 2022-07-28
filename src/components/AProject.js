@@ -9,7 +9,7 @@ export default class AProject extends Component {
     return (
       <AProjectWrapper projectWidth={projectWidth}>
         <div className="project-container">
-          <h3 className="heading-tertiary">{aProject.name}</h3>
+          <h3 className="heading-secondary">{aProject.name}</h3>
           <div className="image-container">
             <video
               playsInline
@@ -101,11 +101,12 @@ const AProjectWrapper = styled.div`
   }
 
 
-  .heading-tertiary {
+  .heading-secondary {
     font-size: 3.5rem;
     text-transform: uppercase;
     text-align: center;
     color: black;
+    font-weight: 300;
 
     @media (max-width: 56.25em) {
       font-size: 2.5rem;

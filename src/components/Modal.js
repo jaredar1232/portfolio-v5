@@ -29,7 +29,7 @@ export default class Modal extends Component {
             <div className="exit" onClick={() => this.handleClose()}>
               <span className="exit__icon">&nbsp;</span>
             </div>
-            <h3 className="heading-tertiary">{modalDetails.name}</h3>
+            <h3 className="heading">{modalDetails.name}</h3>
             <div className="description">
               <b>Overview:&ensp;</b>
               {modalDetails.description}
@@ -196,13 +196,14 @@ const ModalWrapper = styled.div`
     }
   }
 
-  .heading-tertiary {
+  .heading {
     font-size: 3.5rem;
     text-transform: uppercase;
     text-align: center;
     color: black;
     background-color: transparent;
     padding-top: 3rem;
+    font-weight: 300;
 
     @media (max-width: 56.25em) {
       font-size: 2.5rem;
