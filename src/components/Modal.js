@@ -135,9 +135,9 @@ const ModalWrapper = styled.div`
     right: 1rem;
     float: right;
 
-    animation: fadeIn 0.3s;
+    animation: fadeIn 0.2s;
     animation-fill-mode: backwards;
-    animation-delay: 0.5s;
+    animation-delay: 0.8s;
 
     @media (hover: hover) {
       &:hover {
