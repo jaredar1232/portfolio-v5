@@ -29,7 +29,7 @@ export default class Contact extends Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
     })
-      .then(() => alert("Success!"))
+      .then(() => alert("Message Submitted!"))
       .catch(error => alert(error));
 
     this.setState({
@@ -63,12 +63,9 @@ export default class Contact extends Component {
                 type="text"
                 name="name"
                 value={this.state.name}
+                required="required"
                 onChange={this.handleChange}
-                className="form-text"
-                data-sal="slide-left"
-                data-sal-delay="0"
-                data-sal-easing="ease"
-                data-sal-duration="500"
+                className="form-text input--name"
               />
             </label>
 
@@ -78,12 +75,9 @@ export default class Contact extends Component {
                 type="email"
                 name="email"
                 value={this.state.email}
+                required="required"
                 onChange={this.handleChange}
-                className="form-text"
-                data-sal="slide-left"
-                data-sal-delay="100"
-                data-sal-easing="ease"
-                data-sal-duration="500"
+                className="form-text input--email"
               />
             </label>
 
@@ -93,12 +87,9 @@ export default class Contact extends Component {
                 type="text"
                 name="subject"
                 value={this.state.subject}
+                required="required"
                 onChange={this.handleChange}
-                className="form-text"
-                data-sal="slide-left"
-                data-sal-delay="200"
-                data-sal-easing="ease"
-                data-sal-duration="500"
+                className="form-text input--subject"
               />
             </label>
             <label>
@@ -107,11 +98,8 @@ export default class Contact extends Component {
                 name="message"
                 value={this.state.message}
                 onChange={this.handleChange}
-                className="form-text form-textarea"
-                data-sal="slide-left"
-                data-sal-delay="300"
-                data-sal-easing="ease"
-                data-sal-duration="500"
+                required="required"
+                className="form-text form-textarea input--message"
               />
             </label>
             <div className="center-submit">
@@ -135,7 +123,7 @@ const ContactSection = styled.section`
   background-color: #181e2e;
   padding: 10rem 0 5rem 0;
   color: white;
-  
+
   @media (max-width: 56.25em) {
     padding: 10rem 2rem;
   }
@@ -194,6 +182,41 @@ const ContactSection = styled.section`
     height: 15rem;
   }
 
+  .input--name {
+    animation: slideIn .1s ease-out;
+    animation-fill-mode: backwards;
+    @media (max-width: 56.25em) {
+      animation-delay: 0.3s;
+    }
+  }
+
+  .input--email {
+    animation: slideIn .1s ease-out;
+    animation-delay: 0.1s;
+    animation-fill-mode: backwards;
+    @media (max-width: 56.25em) {
+      animation-delay: 0.4s;
+    }
+  }
+
+  .input--subject {
+    animation: slideIn .1s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: backwards;
+    @media (max-width: 56.25em) {
+      animation-delay: 0.5s;
+    }
+  }
+
+  .input--message {
+    animation: slideIn .1s ease-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: backwards;
+    @media (max-width: 56.25em) {
+      animation-delay: 0.6s;
+    }
+  }
+
   .center-submit {
     text-align: center;
   }
@@ -240,5 +263,16 @@ const ContactSection = styled.section`
     border-radius: 5px;
     margin: 0 auto;
     padding-top: 5rem;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(5rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 `

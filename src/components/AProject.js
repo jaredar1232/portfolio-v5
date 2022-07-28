@@ -83,13 +83,6 @@ const AProjectWrapper = styled.div`
       width: 95%;
     }
 
-    // @media (min-width: 56.25em) {
-    //   --data-sal: zoom-in;
-    //   --sal-delay: 0;
-    //   --sal-easing: ease;
-    //   --sal-duration: 500;
-    // }
-
     @keyframes liftOff {
     0% {
       box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);

@@ -38,8 +38,8 @@ export default class Modal extends Component {
             <ul className="keypoints">
               {" "}
               {modalDetails.keyPoints
-                ? modalDetails.keyPoints.map(item => (
-                  <li key={item.index}>&bull;&ensp;{item}</li>
+                ? modalDetails.keyPoints.map(keyPoint => (
+                  <li key={keyPoint.split()[0]}>&bull;&ensp;{keyPoint}</li>
                 ))
                 : null}
             </ul>

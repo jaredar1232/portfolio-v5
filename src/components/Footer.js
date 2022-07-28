@@ -9,10 +9,6 @@ export default class Footer extends Component {
         <Resume />
         <div
           className="icon-container"
-          data-sal="zoom-in"
-          data-sal-delay="0"
-          data-sal-easing="ease"
-          data-sal-duration="500"
         >
           <a
             href="https://www.linkedin.com/in/jared-rothenberg"
@@ -22,10 +18,6 @@ export default class Footer extends Component {
           >
             <i
               className="fa fa-linkedin"
-              data-sal="zoom-in"
-              data-sal-delay="500"
-              data-sal-easing="ease"
-              data-sal-duration="1000"
             ></i>
           </a>
 
@@ -37,19 +29,11 @@ export default class Footer extends Component {
           >
             <i
               className="fa fa-github"
-              data-sal="zoom-in"
-              data-sal-delay="500"
-              data-sal-easing="ease"
-              data-sal-duration="1000"
             ></i>
           </a>
           <a href="mailto:jaredar@gmail.com" className="footer-icon">
             <i
               className="fa fa-envelope"
-              data-sal="zoom-in"
-              data-sal-delay="500"
-              data-sal-easing="ease"
-              data-sal-duration="1000"
             ></i>
           </a>
         </div>
@@ -139,3 +123,38 @@ const FooterWrapper = styled.footer`
     font-size: 1.2rem;
   }
 `
+
+// Example of how to get the fade in effect I like
+{/* <div
+className="icon-container"
+data-sal="zoom-in"
+data-sal-delay="0"
+data-sal-easing="ease"
+data-sal-duration="500"
+>
+<a
+  href="https://www.linkedin.com/in/jared-rothenberg"
+  className="footer-icon"
+  target="_blank"
+  rel="noreferrer"
+>
+  <i
+    className="fa fa-linkedin"
+    data-sal="zoom-in"
+    data-sal-delay="500"
+    data-sal-easing="ease"
+    data-sal-duration="1000"
+  ></i>
+</a> 
+
+// config settings
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        threshold: 0.4, // Percentage of an element's area that needs to be visible to launch animation
+        once: true, // Defines if animation needs to be launched once
+        disable: false, // Flag for disabling animations
+      },
+    },
+
+*/}

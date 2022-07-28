@@ -17,34 +17,30 @@ export default function about() {
         <div className="col-1-of-2">
           <p
             className="paragraph"
-            data-sal="slide-left"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-            data-sal-duration="800"
           >
-            Hello and welcome to my portfolio!
+            <span className='fadeInOne'>Hello and welcome to my portfolio!</span>
             <br />
             <br />
-            I am a software engineer with a background in Economics
-            and Philosophy from the University of California Santa
-            Barbara. My foundation in programming was instilled in
-            me at HackReactor with most of what I now know being self
-            taught.
+            <span className='fadeInTwo'>
+              I am a software engineer with a background in Economics
+              and Philosophy from the University of California Santa
+              Barbara. My foundation in programming was instilled in
+              me at HackReactor with most of what I now know being self
+              taught.
+            </span>
             <br />
             <br />
-            I love working on cool poducts that cross at the intersectons
-            of tech, medicine, health & fitness, and finance. In addition to
-            being long term interests, they're areas I feel help improve society.
+            <span className='fadeInThree'>
+              I love working on cool poducts that cross at the intersectons
+              of tech, medicine, health & fitness, and finance. In addition to
+              being long term interests, they're areas I feel help improve society.
+            </span>
           </p>
         </div>
 
         <div className="col-1-of-2">
           <div
             className="composition"
-            data-sal="zoom-in"
-            data-sal-delay="100"
-            data-sal-easing="ease"
-            data-sal-duration="1000"
           >
             <img
               src={headshot}
@@ -167,6 +163,32 @@ const AboutSection = styled.section`
         top: 0rem;
         width: 25rem;
       }
+    }
+  }
+
+  .fadeInOne {
+    animation: fadeIn 2s ease-out;
+    animation-fill-mode: backwards;
+  }
+
+  .fadeInTwo {
+    animation: fadeIn 2s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: backwards;
+  }
+
+  .fadeInThree {
+    animation: fadeIn 2s ease-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 `

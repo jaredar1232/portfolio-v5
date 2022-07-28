@@ -5,38 +5,11 @@
     "video": "https://d1o11p1jeyf1dw.cloudfront.net/TheZebra-SWE2.mp4",
     "website": "https://www.thezebra.com",
     "details": {
-      "name": "The Zebra | 05.22 - Present",
-      "description": "I am in the process of ramping up on a new team’s codebase and tech stack while also working on tickets along the way. In addition to working on a given day's ticket, other responsibilities include mentoring juniors, contributing to architecture & guild meetings, and increased ownership. As a level 2 engineer, I am responsible for being specialized in at least one area of the codebase. My company uses Optimizely to run A/B tests and find the best copy and questions to ask a user when collecting their information to give them an insurance rate. Currently, I have taken ownership of de-instrumenting some 30 A/B tests that have been completed but still are yet to be hardcoded. This will improve page load times as well as save money.",
+      "name": "The Zebra | 03.21 - Present",
+      "description": "The Zebra is an insurance tech company creating an and innovating a new market space for insurance. We compare and advise on which insurance would be best for a consumer. Since launching my corporate software engineering career at The Zebra, I have had the unique opportunity to work on 3 different teams. I have worked on high volume landing pages, complex multi-party API’s on the backend, and most recently a user information funnel.",
       "keyPoints": [
-        "Adapt to working on my 3rd Zebra team, learning a new codebase and ramping up on a stack to suit company needs",
-        "Provide mentorship to junior engineers through pair programming, code reviews, and 1:1 syncs"
-      ],
-      "icons": [
-        "Javascript",
-        "HTML5",
-        "CSS3",
-        "Python",
-        "FastAPI",
-        "Wagtail",
-        "Optimizely",
-        "Atlassian",
-        "Iterable"
-      ]
-    }
-  },
-  {
-    "name": "The Zebra — Software Engineer I",
-    "width": 85,
-    "video": "https://d1o11p1jeyf1dw.cloudfront.net/TheZebra-SWE1.mp4",
-    "website": "https://www.thezebra.com",
-    "details": {
-      "name": "The Zebra | 03.21 - 05.22",
-      "description": "When I started at The Zebra, my first team was the SEO Landing Page team. This team used vanilla Javascript and focused on building templates and modular components that non-technical personnel could modify through our content management system. I worked on redesigning the landing pages (including the main homepage), improving tracking of where and what a user did on the website, as well as updating hidden page schemas for web crawlers. Eight months in, the company restructured and I moved to the Policy Bind team. This team was working on a cutting-edge product; allowing users to buy a final rate policy online instead of needing to call in. On this team, I mainly focused on backend work, although I did help do some frontend work when it was immediately relevant to a backend ticket I was doing. I also helped review frontend merge requests when frontend members were out of town. Most of my work was centered around connecting and building custom APIs on the backend to get data between our frontend and 3rd party providers.",
-      "keyPoints": [
-        "Co-built the world’s first 3rd party insurance-policy sales funnel that requires zero agent interaction to sell, this satisfies the 87% of users that would prefer to buy online vs. calling",
-        "Used Javascript(React) and Python(FastAPI) across multiple code bases to refactor values and APIs affecting key user information—this was done to condense the source of truth to one location and prevent data collisions",
+        "Provide mentorship to junior engineers through pair programming, code reviews, and 1:1 syncs",
         "Increased policy sales and improved user experience by pioneering the company’s first transactional email using a custom API to interface with Iterable (email sending service)",
-        "Contributed daily to discussions and codebases following current best practices such as agile methodology, standups, Gitlab version manager (~18 micro-services), JIRA ticket workflow, and writing Confluence documentation",
         "Used Javascript, HTML, CSS, and Wagtail to create and edit landing page templates (including our homepage redesign) in accordance with designer’s provided specifications and Optimizely A/B test results to measurably increase user engagement",
         "Participated in company Frontend and Backend extracurriculars that focused on org-wide initiatives; most recently, helped to rework the company interview process to increase candidate quality and equalize opportunity"
       ],
@@ -46,6 +19,9 @@
         "Javascript",
         "HTML5",
         "CSS3",
+        "Python",
+        "FastAPI",
+        "Wagtail",
         "Optimizely",
         "Atlassian",
         "Iterable"

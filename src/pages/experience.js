@@ -71,7 +71,11 @@ export const Head = () => (
 
 const ExperienceSection = styled.section`
     background-color: white;
-    padding: 10rem 0 10rem 0;;
+    padding: 10rem 0 30rem 0;
+
+    @media (max-width: 56.25em) {
+      padding: 10rem 0 20rem 0;
+    }
 
   .u-center-text {
     text-align: center;

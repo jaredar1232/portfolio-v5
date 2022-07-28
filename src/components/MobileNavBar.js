@@ -35,6 +35,13 @@ export default class Navbar extends Component {
                 className="navigation__item"
                 onClick={() => this.onClickHandler()}
               >
+                <Link to="/" className="navigation__link">Home</Link>
+              </li>
+
+              <li
+                className="navigation__item"
+                onClick={() => this.onClickHandler()}
+              >
                 <Link to="/about" className="navigation__link">About</Link>
               </li>
 
@@ -43,13 +50,6 @@ export default class Navbar extends Component {
                 onClick={() => this.onClickHandler()}
               >
                 <Link to="/experience" className="navigation__link">Experience</Link>
-              </li>
-
-              <li
-                className="navigation__item"
-                onClick={() => this.onClickHandler()}
-              >
-                <Link to="/" className="navigation__link">Home</Link>
               </li>
 
               <li
@@ -109,7 +109,6 @@ const NavbarWrapper = styled.div`
       );
 
       animation: navButtonBackgroundAppearMobile 1s;
-      animation-delay: 3s;
       animation-fill-mode: backwards;
       height: 5rem; // -2
       width: 5rem; // -2
@@ -142,7 +141,7 @@ const NavbarWrapper = styled.div`
 
       animation: navButtonBackgroundAppearMobile 0s;
       animation-fill-mode: backwards;
-      animation-delay: 4s;
+      animation-delay: 1s;
     }
 
     &__nav {

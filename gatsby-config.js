@@ -13,14 +13,6 @@ module.exports = {
         // Add any options here
       }
     },
-    {
-      resolve: `gatsby-plugin-scroll-reveal`,
-      options: {
-        threshold: 0.4, // Percentage of an element's area that needs to be visible to launch animation
-        once: true, // Defines if animation needs to be launched once
-        disable: false, // Flag for disabling animations
-      },
-    },
   ],
   siteMetadata: {
     title: `Jared Rothenberg | Portfiolio`,

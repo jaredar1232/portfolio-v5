@@ -84,9 +84,9 @@ const NavWrapper = styled.nav`
     background-color: rgba(169, 180, 190, 0.291);`}
 
   // nav bar animation
-  animation: moveInNavBar 1s;
+  animation: fadeInNavBar 1s;
   animation-fill-mode: backwards;
-  animation-delay: 2.5s;
+  animation-delay: 1s;
 
   .nav__link {
     text-decoration: none;
@@ -144,17 +144,13 @@ const NavWrapper = styled.nav`
     }
   }
 
-  @keyframes moveInNavBar {
+  @keyframes fadeInNavBar {
     0% {
-      background-color: transparent;
-      transform: scale(0.2);
       opacity: 0;
     }
 
     100% {
-      background-color: rgba(209, 218, 227, 0.198);
-      transform: scale(1);
-      opacity: 0.5;
+      opacity: 1;
     }
   }
 `

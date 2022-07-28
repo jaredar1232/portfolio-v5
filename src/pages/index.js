@@ -57,7 +57,7 @@ const HomeSection = styled.section`
     letter-spacing: 3rem;
 
     @media (min-width: 56.26em) {
-      animation: moveInTop 1s ease-out;
+      animation: fadeUpToDown .5s ease-out;
       animation-delay: 0.5s;
       animation-fill-mode: backwards;
     }
@@ -76,8 +76,8 @@ const HomeSection = styled.section`
     margin-top: 1rem;
 
     @media (min-width: 56.26em) {
-      animation: fadeIn 2s;
-      animation-delay: 1.5s;
+      animation: fadeDownToUp .5s ease-out;
+      animation-delay: 0.5s;
       animation-fill-mode: backwards;
     }
 
@@ -152,14 +152,14 @@ const HomeSection = styled.section`
     @media (min-width: 56.26em) {
       animation: moveInButton 1s;
       animation-fill-mode: backwards;
-      animation-delay: 2.5s;
+      animation-delay: 1s;
     }
   }
 
-  @keyframes moveInTop {
+  @keyframes fadeUpToDown {
     0% {
       opacity: 0;
-      transform: translateY(-20rem);
+      transform: translateY(-5rem);
     }
 
     100% {
@@ -168,26 +168,14 @@ const HomeSection = styled.section`
     }
   }
 
-  @keyframes fadeIn {
+  @keyframes fadeDownToUp {
     0% {
+      transform: translateY(5rem);
       opacity: 0;
     }
 
     100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes moveInButtonAfter {
-    0% {
-      opacity: 0;
-    }
-
-    99% {
-      opacity: 0;
-    }
-
-    100% {
+      transform: translateY(0);
       opacity: 1;
     }
   }
@@ -195,16 +183,10 @@ const HomeSection = styled.section`
   @keyframes moveInButton {
     0% {
       opacity: 0;
-      background-color: transparent;
-      color: transparent;
-      border-color: transparent;
     }
 
     100% {
       opacity: 1;
-      color: lightgrey;
-      background-color: rgba(0, 0, 0, 0.3);
-      border-color: darkgrey;
     }
   }
 `

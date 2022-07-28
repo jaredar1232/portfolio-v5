@@ -7,10 +7,6 @@ export default class Resume extends Component {
       <ResumeWrapper>
         <div
           className="resume-button-container"
-          data-sal="zoom-in"
-          data-sal-delay="100"
-          data-sal-easing="ease"
-          data-sal-duration="500"
         >
           <a
             href="https://d1o11p1jeyf1dw.cloudfront.net/Resume-JaredRothenberg.pdf"
