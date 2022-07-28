@@ -188,6 +188,7 @@ const ContactSection = styled.section`
     animation: slideIn .1s ease-out;
     animation-fill-mode: backwards;
     @media (max-width: 56.25em) {
+      animation: slideIn .2s ease-out;
       animation-delay: 0.3s;
     }
   }
@@ -197,6 +198,7 @@ const ContactSection = styled.section`
     animation-delay: 0.1s;
     animation-fill-mode: backwards;
     @media (max-width: 56.25em) {
+      animation: slideIn .2s ease-out;
       animation-delay: 0.4s;
     }
   }
@@ -206,6 +208,7 @@ const ContactSection = styled.section`
     animation-delay: 0.2s;
     animation-fill-mode: backwards;
     @media (max-width: 56.25em) {
+      animation: slideIn .2s ease-out;
       animation-delay: 0.5s;
     }
   }
@@ -215,6 +218,7 @@ const ContactSection = styled.section`
     animation-delay: 0.3s;
     animation-fill-mode: backwards;
     @media (max-width: 56.25em) {
+      animation: slideIn .2s ease-out;
       animation-delay: 0.6s;
     }
   }
