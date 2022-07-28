@@ -73,7 +73,7 @@ const ModalWrapper = styled.div`
     left: 0;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
-    animation: overlayEffect 0.3s;
+    animation: fadeIn 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,6 +135,10 @@ const ModalWrapper = styled.div`
     right: 1rem;
     float: right;
 
+    animation: fadeIn 0.3s;
+    animation-fill-mode: backwards;
+    animation-delay: 0.5s;
+
     @media (hover: hover) {
       &:hover {
         background-image: linear-gradient(
@@ -183,7 +187,9 @@ const ModalWrapper = styled.div`
     font-weight: 300;
 
     @media (max-width: 56.25em) {
-      font-size: 2.5rem;
+      padding-top: 4rem;
+      font-size: 2.2rem;
+      font-weight: 400;
     }
   }
 
@@ -191,6 +197,10 @@ const ModalWrapper = styled.div`
     font-size: 2rem;
     color: black;
     padding: 3rem 4rem 5rem 4rem;
+
+    @media (max-width: 56.25em) {
+      padding: 2rem;
+    }
   }
 
   .keypoints {
@@ -201,6 +211,7 @@ const ModalWrapper = styled.div`
 
     @media (max-width: 56.25em) {
       font-size: 1.5rem;
+      padding-bottom: 2rem;
     }
 
     li {
@@ -213,7 +224,7 @@ const ModalWrapper = styled.div`
     padding: 0 2rem;
   }
 
-  @keyframes overlayEffect {
+  @keyframes fadeIn {
     from {
       opacity: 0;
     }
