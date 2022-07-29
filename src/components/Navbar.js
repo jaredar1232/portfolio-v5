@@ -96,13 +96,12 @@ const NavWrapper = styled.nav`
     }
 
     &:hover {
-      background-image: linear-gradient(
-        to right bottom,
-        rgb(102, 201, 255),
-        rgb(120, 139, 249)
-      );
+      color: black;
+      background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
       -webkit-background-clip: text;
-      color: transparent;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
       text-decoration: underline;
       transform: translateY(-2px);
     }
@@ -132,6 +131,7 @@ const NavWrapper = styled.nav`
       rgb(120, 139, 249)
     );
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
   }
 

@@ -90,7 +90,6 @@ const ResumeWrapper = styled.div`
         color: white;
         text-decoration: none;
         box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
-        transform: translateY(-2px);
         border-radius: 10px;
 
         svg {

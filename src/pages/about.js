@@ -76,7 +76,6 @@ const AboutSection = styled.section`
     font-weight: 700;
     display: inline-block;
     color: black;
-    color: black;
     background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
     -webkit-background-clip: text;
     background-clip: text;

@@ -244,6 +244,7 @@ const ContactSection = styled.section`
     font-size: 2rem;
     min-width: 8rem;
     transition: all 0.4s;
+    line-height: 1.15;
 
     @media (hover: hover) {
       &:hover {
@@ -253,7 +254,6 @@ const ContactSection = styled.section`
           rgb(101, 116, 204)
         );
         box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
-        transform: translateY(-2px);
         border-radius: 4px;
       }
     }
