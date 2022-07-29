@@ -64,7 +64,7 @@ const NavWrapper = styled.nav`
   width: 90%;
   border-radius: 1rem;
 
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
 
   // lets it go over the projects/jobs

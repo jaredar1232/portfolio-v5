@@ -6,7 +6,7 @@
     "github": "https://github.com/jaredar1232/Nike-Mock-Up",
     "details": {
       "name": "Nike Mock Up",
-      "description": "push my CSS skills to match that of the best frontline developers employed by the sportswear giant Nike",
+      "description": "I aimed to push my CSS skills to match that of the best frontline developers employed by the sportswear giant Nike.",
       "keyPoints": [
         "Constructed a Nike product display page and followed a micro-service architecture to keep concerns separate and modular",
         "Generated 5000+ random reviews for 100 real Nike products with data persistence in order to simulate a realistic user experience",
@@ -35,7 +35,7 @@
     "github": "https://github.com/jaredar1232/contact-book",
     "details": {
       "name": "The Compendium",
-      "description": "build a full stack contact storage application while learning Typescript and React Hooks.",
+      "description": "The goal was to build a full stack contact storage application while learning Typescript and React Hooks.",
       "keyPoints": [
         "Programmed in Typescript to prevent runtime errors",
         "Managed state using React Hooks to improve code legibility",
@@ -62,7 +62,7 @@
     "github": "https://github.com/jaredar1232/Streak-Activity-Tracker",
     "details": {
       "name": "Streak Tracker",
-      "description": "produce a minimum viable product under a time constraint. My team and I brainstormed, designed, and built out a functioning competative activity tracker in under a week using tech we had never worked with before",
+      "description": "The focus was producing a minimum viable product under a time constraint. My team and I brainstormed, designed, and built out a functioning competative activity tracker in under a week using tech we had never worked with before.",
       "keyPoints": [
         "Implemented a monolithic architecture with Git feature branch workflow to produce a more uniform codebase",
         "Utilized Firebase for authentication, adaptable storage, and session state persistence to attain full features within time constraints",
@@ -87,7 +87,7 @@
     "github": "https://github.com/jaredar1232/System-Design--BestBuy",
     "details": {
       "name": "System Design",
-      "description": "working on another developer's unfamiliar codebase, optimize locally between varrying databases and live once deployed on AWS services",
+      "description": "While working on another developer's unfamiliar codebase, I optimized locally between varrying databases as well as live, once deployed on AWS services.",
       "keyPoints": [
         "Expanded data set from 100 unique records to 10,000,000 unique records",
         "Reduced database migration time by 80% through CSV generation and batch import (~12 min down to ~2.5 min)",
