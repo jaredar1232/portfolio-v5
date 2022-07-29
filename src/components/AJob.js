@@ -30,20 +30,7 @@ export default class AJob extends Component {
               target="_blank"
               rel="noreferrer"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24"
-                height="24">
-                <path data-name="layer1"
-                  fill="none" stroke="#202020" strokeLinecap="round" strokeLinejoin="round"
-                  strokeWidth="5" d="M2 20v36h60V20M2 8h60v12H2z"></path>
-                <path data-name="layer2" fill="none" stroke="#202020" strokeLinecap="round"
-                  strokeLinejoin="round" strokeWidth="5" d="M44 30l7 8-7 8M20 30l-7 8 7 8m16-18l-8 20"></path>
-                <circle data-name="layer1" cx="8" cy="14" r="1" fill="none" stroke="#202020"
-                  strokeLinecap="round" strokeLinejoin="round" strokeWidth="5"></circle>
-                <circle data-name="layer1" cx="15" cy="14" r="1" fill="none"
-                  stroke="#202020" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5"></circle>
-                <circle data-name="layer1" cx="22" cy="14" r="1" fill="none"
-                  stroke="#202020" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5"></circle>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 2v5h5v15h-16v-20h11zm1-2h-14v24h20v-18l-6-6z"></path></svg>
               &nbsp; Visit
             </a>
           </div>
@@ -142,31 +129,41 @@ const AJobSection = styled.section`
   }
 
   .button--visit {
-    &:link,
-    &:visited {
       font-size: 2rem;
-      background-image: linear-gradient(
-        to right bottom,
-        rgb(102, 201, 255),
-        rgb(120, 139, 249)
-      );
-      -webkit-background-clip: text;
-      color: transparent;
       display: inline-block;
       text-decoration: none;
       border-bottom: 1px solid rgb(120, 139, 249);
       padding: 0.5rem 1rem;
       transition: all 0.2s;
-    }
+
+      color: black;
+      background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 2.3rem;
+        fill: rgb(120, 139, 249);
+      }
   }
 
   @media (hover: hover) {
     .button--visit:hover {
       -webkit-background-clip: unset;
+      background-clip: white;
+      -webkit-text-fill-color: white;
       color: white;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
       border-radius: 4px;
+
+      svg {
+        fill: white;
+      }
     }
   }
 
@@ -177,13 +174,6 @@ const AJobSection = styled.section`
 
   .button--details {
     font-size: 2rem;
-    background-image: linear-gradient(
-      to right bottom,
-      rgb(102, 201, 255),
-      rgb(120, 139, 249)
-    );
-    -webkit-background-clip: text;
-    color: transparent;
     display: inline-block;
     text-decoration: none;
     border-bottom: 1px solid rgb(120, 139, 249);
@@ -191,16 +181,33 @@ const AJobSection = styled.section`
     transition: all 0.2s;
     cursor: pointer;
     line-height: 1.7;
+
+    display: flex;
+    align-items: center;
+
+    color: black;
+    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    svg {
+      fill: rgb(120, 139, 249);
+    }
   }
 
   @media (hover: hover) {
     .button--details:hover,
     .button--details:focus {
       -webkit-background-clip: unset;
-      color: white;
+      background-clip: unset;
+      -webkit-text-fill-color: white;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
       border-radius: 4px;
+      svg {
+        fill: white;
+      }
     }
   }
 

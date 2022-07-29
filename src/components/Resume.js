@@ -32,7 +32,6 @@ export default class Resume extends Component {
 }
 
 const ResumeWrapper = styled.div`
-    background-color: rgb(20, 20, 20);
     padding: 0rem 0 5rem 0;
     color: white;
     @media (max-width: 56.25em) {
@@ -40,7 +39,7 @@ const ResumeWrapper = styled.div`
     }
 
   .resume-button-container {
-    width: 27%;
+    width: 20%;
     height: auto;
     margin: 0 auto;
     background-color: white;
@@ -64,27 +63,39 @@ const ResumeWrapper = styled.div`
     font-size: 2rem;
     font-weight: 400;
     text-transform: uppercase;
-    background-image: linear-gradient(
-      to right bottom,
-      rgb(102, 201, 255),
-      rgb(120, 139, 249)
-    );
+
+    color: black;
+    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
     -webkit-background-clip: text;
-    color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
     text-align: center;
     padding: 0.4rem .5rem .2rem .5rem;
     border-radius: 10px;
     transition: all 0.3s;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+
+    svg {
+        fill: rgb(120, 139, 249);
+    }
 
     @media (hover: hover) {
       &:hover {
         -webkit-background-clip: unset;
+        background-clip: unset;
+        -webkit-text-fill-color: white;
         color: white;
         text-decoration: none;
         box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
         transform: translateY(-2px);
         border-radius: 10px;
+
+        svg {
+          fill: white;
+        }
       }
     }
 

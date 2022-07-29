@@ -70,7 +70,6 @@ export const Head = () => (
 )
 
 const ProjectsSection = styled.section`
-    background-color: white;
     padding: 10rem 0;
 
     @media (max-width: 56.25em) {
@@ -86,13 +85,11 @@ const ProjectsSection = styled.section`
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    background-image: linear-gradient(
-      to right bottom,
-      rgb(102, 201, 255),
-      rgb(120, 139, 249)
-    );
+    color: black;
+    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
     -webkit-background-clip: text;
-    color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 3rem;
 
     @media (max-width: 56.25em) {

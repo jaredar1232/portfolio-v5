@@ -138,31 +138,39 @@ const AProjectWrapper = styled.div`
   }
 
   .button-visit {
-    &:link,
-    &:visited {
       font-size: 2rem;
-      background-image: linear-gradient(
-        to right bottom,
-        rgb(102, 201, 255),
-        rgb(120, 139, 249)
-      );
-      -webkit-background-clip: text;
-      color: transparent;
       display: inline-block;
       text-decoration: none;
       border-bottom: 1px solid rgb(120, 139, 249);
       padding: 0.5rem 1rem;
       transition: all 0.2s;
-    }
+
+      color: black;
+      background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      display: flex;
+      align-items: center;
+
+      svg {
+        fill: rgb(120, 139, 249);
+      }
   }
 
   @media (hover: hover) {
     .button-visit:hover {
       -webkit-background-clip: unset;
+      -webkit-text-fill-color: white;
       color: white;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
       border-radius: 4px;
+
+      svg {
+        fill: white;
+      }
     }
   }
 
@@ -173,13 +181,6 @@ const AProjectWrapper = styled.div`
 
   .button-details {
     font-size: 2rem;
-    background-image: linear-gradient(
-      to right bottom,
-      rgb(102, 201, 255),
-      rgb(120, 139, 249)
-    );
-    -webkit-background-clip: text;
-    color: transparent;
     display: inline-block;
     text-decoration: none;
     border-bottom: 1px solid rgb(120, 139, 249);
@@ -187,16 +188,32 @@ const AProjectWrapper = styled.div`
     transition: all 0.2s;
     cursor: pointer;
     line-height: 1.7;
+
+    display: flex;
+    align-items: center;
+
+    color: black;
+    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    svg {
+      fill: rgb(120, 139, 249);
+    }
   }
 
   @media (hover: hover) {
     .button-details:hover,
     .button-details:focus {
       -webkit-background-clip: unset;
-      color: white;
+      -webkit-text-fill-color: white;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
       border-radius: 4px;
+      svg {
+        fill: white;
+      }
     }
   }
 

@@ -59,9 +59,7 @@ export const Head = () => (
 const AboutSection = styled.section`
     // adjust this padding if you change the writing
     padding: 10rem 0 20rem 0;
-
-    background-color: #181e2e;
-    color: white;
+    color: black;
 
     @media (max-width: 56.25em) {
       padding: 10rem 0 5rem 0;
@@ -73,17 +71,16 @@ const AboutSection = styled.section`
   }
 
   .heading {
-    font-size: 5rem;
+    font-size: 5.5rem;
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    background-image: linear-gradient(
-      to right bottom,
-      rgb(102, 201, 255),
-      rgb(120, 139, 249)
-    );
+    color: black;
+    color: black;
+    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
     -webkit-background-clip: text;
-    color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 3rem;
 
     @media (max-width: 56.25em) {
@@ -142,7 +139,7 @@ const AboutSection = styled.section`
 
   .headshot {
     max-width: 70%;
-    box-shadow: 0 1.5rem 4rem black;
+    box-shadow: -0.5rem 0.5rem 1.4rem darkgray;
     border-radius: 5px;
   }
 

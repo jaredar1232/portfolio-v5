@@ -122,9 +122,7 @@ export const Head = () => (
 )
 
 const ContactSection = styled.section`
-  background-color: #181e2e;
   padding: 10rem 0 5rem 0;
-  color: white;
 
   @media (max-width: 56.25em) {
     padding: 10rem 2rem 2rem 2rem;
@@ -136,13 +134,11 @@ const ContactSection = styled.section`
     font-weight: 700;
     display: inline-block;
     padding: 0 0 5rem 0;
-    background-image: linear-gradient(
-      to right bottom,
-      rgb(102, 201, 255),
-      rgb(120, 139, 249)
-    );
+    color: black;
+    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
     -webkit-background-clip: text;
-    color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     @media (max-width: 56.25em) {
       padding: 0;
@@ -156,10 +152,9 @@ const ContactSection = styled.section`
 
   .form-container {
     border-radius: 5px;
-    background-color: #181e2e;
     padding: 2rem 0 2rem 0;
     margin: 0 auto;
-    color: white;
+    color: black;
     font-size: 2rem;
     max-width: 55rem;
   }
@@ -178,6 +173,8 @@ const ContactSection = styled.section`
     box-sizing: border-box;
     font-size: 2rem;
     margin-bottom:2.5rem;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);
   }
 
   .form-textarea {
