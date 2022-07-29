@@ -8,6 +8,7 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-minify`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -22,15 +23,3 @@ module.exports = {
     siteUrl: `https://www.jaredar.com`,
   },
 }
-
-// plugins for gatsby image
-// `gatsby-plugin-image`,
-// `gatsby-plugin-sharp`,
-// `gatsby-transformer-sharp`, // Needed for dynamic images
-// {
-//   resolve: `gatsby-source-filesystem`,
-//   options: {
-//     name: `images`,
-//     path: `${__dirname}/src/images/`,
-//   },
-// },
