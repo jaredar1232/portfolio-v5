@@ -183,7 +183,6 @@ const NavbarWrapper = styled.div`
       }
       &:hover,
       &:active {
-        background-color: white;
         color: rgb(102, 201, 255);
       }
     }
