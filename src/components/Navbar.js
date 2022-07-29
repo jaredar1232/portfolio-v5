@@ -56,13 +56,15 @@ const NavWrapper = styled.nav`
     display: none;
   }
 
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  justify-content: space-around;
+
   position: fixed;
-  top: 1rem;
-  left: 5%;
-  width: 90%;
+  top: 2rem;
+  left: 15%;
+  width: 70%;
   border-radius: 1rem;
+  padding: 0.3rem;
 
   font-size: 2.5rem;
   text-align: center;
@@ -89,7 +91,6 @@ const NavWrapper = styled.nav`
 
   .nav__link {
     text-decoration: none;
-    padding: 0.5rem 0;
 
     &:visited {
       text-decoration: none;
@@ -139,9 +140,10 @@ const NavWrapper = styled.nav`
     position: absolute;
     transform: translate(-50%);
     width: 60px;
+    transition: all 0.3s;
 
     &:hover {
-      transform: scale(1.2) translate(-40%, -4%);
+      transform: scale(1.3) translate(-40%, -4%);
     }
   }
 

@@ -36,7 +36,7 @@ body {
     font-display: swap;
     font-weight: 300;
     line-height: 1.7;
-    color: #777;
+    color: rgb(119, 119, 119);
     background-color: rgb(252, 252, 252);
     padding: 0rem;
     box-sizing: border-box;

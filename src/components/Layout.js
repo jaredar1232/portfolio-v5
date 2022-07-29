@@ -6,7 +6,6 @@ import '../styles/global.css'
 import { Normalize } from 'styled-normalize'
 
 export default function Layout({ children, path }) {
-  let [colorMode, setColorMode] = useState("dark")
 
   return (
     <Fragment>
