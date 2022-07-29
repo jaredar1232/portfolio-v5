@@ -6,28 +6,7 @@ import '../styles/global.css'
 import { Normalize } from 'styled-normalize'
 
 export default function Layout({ children, path }) {
-  let [theme, setTheme] = useState({
-    "primary": "#777;",
-    "secondary": "rgb(230, 232, 234, 0.5)",
-    "tertiary": "white"
-  })
-
-  const colorObjectWhite = {
-    "primary": "#777;",
-    "secondary": "rgb(230, 232, 234, 0.5)",
-    "tertiary": "white"
-  }
-
-  const colorObjectBlack = {
-    "primary": "black",
-    "secondary": "darkgrey",
-    "tertiary": "lightgrey"
-  }
-
-  let themeHandler = () => {
-    console.log("changing theme")
-    theme["tertiary"] === "white" ? setTheme(colorObjectBlack) : setTheme(colorObjectWhite)
-  }
+  let [colorMode, setColorMode] = useState("dark")
 
   return (
     <Fragment>
@@ -36,11 +15,11 @@ export default function Layout({ children, path }) {
 
       <div className="site">
         <MobileNavBar />
-        <Navbar path={path} theme={theme} />
-        <main className='site-content' theme={theme}>
+        <Navbar path={path} />
+        <main className='site-content'>
           {children}
         </main>
-        <Footer themeHandler={themeHandler} />
+        <Footer />
       </div>
 
     </Fragment>

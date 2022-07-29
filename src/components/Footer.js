@@ -2,48 +2,49 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import Resume from "./Resume.js"
 
-export default function Footer(props) {
-  return (
-    <FooterWrapper>
-      <Resume />
-      <div
-        className="icon-container"
-      >
-        <a
-          href="https://www.linkedin.com/in/jared-rothenberg"
-          className="footer-icon"
-          target="_blank"
-          rel="noreferrer"
+export default class Footer extends Component {
+  render() {
+    return (
+      <FooterWrapper>
+        <Resume />
+        <div
+          className="icon-container"
         >
-          <i
-            className="fa fa-linkedin"
-          ></i>
-        </a>
+          <a
+            href="https://www.linkedin.com/in/jared-rothenberg"
+            className="footer-icon"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i
+              className="fa fa-linkedin"
+            ></i>
+          </a>
 
-        <a
-          href="https://github.com/jaredar1232"
-          className="footer-icon"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i
-            className="fa fa-github"
-          ></i>
-        </a>
-        <a href="mailto:jaredar@gmail.com" className="footer-icon">
-          <i
-            className="fa fa-envelope"
-          ></i>
-        </a>
-      </div>
-      <button onClick={() => props.themeHandler()}>change theme</button>
+          <a
+            href="https://github.com/jaredar1232"
+            className="footer-icon"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i
+              className="fa fa-github"
+            ></i>
+          </a>
+          <a href="mailto:jaredar@gmail.com" className="footer-icon">
+            <i
+              className="fa fa-envelope"
+            ></i>
+          </a>
+        </div>
 
-      <div className="u-center-text">
-        Copyright &copy; 2020, &nbsp; Jared Rothenberg. &nbsp; All Rights
-        Reserved
-      </div>
-    </FooterWrapper>
-  )
+        <div className="u-center-text">
+          Copyright &copy; 2020, &nbsp; Jared Rothenberg. &nbsp; All Rights
+          Reserved
+        </div>
+      </FooterWrapper>
+    )
+  }
 }
 
 const FooterWrapper = styled.footer`
