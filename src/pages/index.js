@@ -58,7 +58,7 @@ const HomeSection = styled.section`
 
     @media (min-width: 56.26em) {
       animation: fadeUpToDown .5s ease-out;
-      animation-delay: 0.5s;
+      animation-delay: 0.2s;
       animation-fill-mode: backwards;
     }
 
@@ -77,7 +77,7 @@ const HomeSection = styled.section`
 
     @media (min-width: 56.26em) {
       animation: fadeDownToUp .5s ease-out;
-      animation-delay: 0.5s;
+      animation-delay: 0.2s;
       animation-fill-mode: backwards;
     }
 
