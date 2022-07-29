@@ -58,7 +58,6 @@ const HomeSection = styled.section`
 
     @media (min-width: 56.26em) {
       animation: fadeUpToDown .5s ease-out;
-      animation-delay: 0.2s;
       animation-fill-mode: backwards;
     }
 
@@ -77,7 +76,6 @@ const HomeSection = styled.section`
 
     @media (min-width: 56.26em) {
       animation: fadeDownToUp .5s ease-out;
-      animation-delay: 0.2s;
       animation-fill-mode: backwards;
     }
 
@@ -103,6 +101,7 @@ const HomeSection = styled.section`
     color: lightgrey;
     border: darkgrey solid 1px;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 
     @media (max-width: 56.25em) {
       padding: 1rem 3.5rem;
