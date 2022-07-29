@@ -8,7 +8,6 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-minify`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
