@@ -247,30 +247,3 @@ const ModalWrapper = styled.div`
     }
   }
 `
-
-// ;<span>
-//   <img src={`../../public/${anIcon}.png`}></img>
-// </span>
-
-// "details": {
-//   "name": "Nike Mock Up",
-//   "description": "nike description",
-//   "keyPoints": [
-//     "Built a Nike product display page following a micro-service architecture",
-//     "Randomly generated 5000+ reviews to consistently correlate with 100 real nike products",
-//     "Implemented CRUD operations & sort functionality by querying a Mongo database with nested subdocuments ",
-//     "Rendered a single page comprised of 3 services (nav, viewer, reviews) that communicate via url and proxy server "
-//   ],
-//   "icons": [
-//     "MongoDB",
-//     "Express.js",
-//     "React",
-//     "Node.js",
-//     "AWS",
-//     "Faker.js",
-//     "styled-components",
-//     "http-proxy",
-//     "HTML5",
-//     "CSS3"
-//   ]
-// }
