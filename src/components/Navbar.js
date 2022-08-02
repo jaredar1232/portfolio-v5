@@ -91,6 +91,7 @@ const NavWrapper = styled.nav`
 
   .nav__link {
     text-decoration: none;
+    transition: all 0.4s;
 
     &:visited {
       text-decoration: none;
