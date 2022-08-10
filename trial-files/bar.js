@@ -1,33 +1,33 @@
 import React from "react"
 import styled from "styled-components"
-import { SEO } from "../components/seo"
+import { SEO } from "../src/components/seo"
 import { Link } from "gatsby"
 
 export default function Home() {
-    return (
-        <HomeSection>
-            <div className="header__text-box">
-                <div className="heading">
-                    <h1 className="heading__main">Jared Rothenberg</h1>
-                    <h2 className="heading__sub">Software Engineer</h2>
-                </div>
-                <Link to="/about" className="btn btn--animated">Explore</Link>
-            </div>
-            <div className='light x1'></div>
-            <div className='light x2'></div>
-            <div className='light x3'></div>
-            <div className='light x4'></div>
-            <div className='light x5'></div>
-            <div className='light x6'></div>
-            <div className='light x7'></div>
-            <div className='light x8'></div>
-            <div className='light x9'></div>
-        </HomeSection>
-    )
+  return (
+    <HomeSection>
+      <div className="header__text-box">
+        <div className="heading">
+          <h1 className="heading__main">Jared Rothenberg</h1>
+          <h2 className="heading__sub">Software Engineer</h2>
+        </div>
+        <Link to="/about" className="btn btn--animated">Explore</Link>
+      </div>
+      <div className='light x1'></div>
+      <div className='light x2'></div>
+      <div className='light x3'></div>
+      <div className='light x4'></div>
+      <div className='light x5'></div>
+      <div className='light x6'></div>
+      <div className='light x7'></div>
+      <div className='light x8'></div>
+      <div className='light x9'></div>
+    </HomeSection>
+  )
 }
 
 export const Head = () => (
-    <SEO />
+  <SEO />
 )
 
 const HomeSection = styled.section`

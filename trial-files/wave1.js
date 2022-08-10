@@ -1,48 +1,48 @@
 import React from "react"
 import styled from "styled-components"
-import { SEO } from "../components/seo"
+import { SEO } from "../src/components/seo"
 import { Link } from "gatsby"
 
 export default function Home() {
-    return (
-        <HomeSection>
+  return (
+    <HomeSection>
 
 
-            <div class="header">
-                <div className="header__text-box">
-                    <div className="heading">
-                        <h1 className="heading__main">Jared Rothenberg</h1>
-                        <h2 className="heading__sub">Software Engineer</h2>
-                    </div>
-                    <Link to="/about" className="btn btn--animated">Explore</Link>
-                </div>
-                <div class="inner-header flex">
-                    {/* <!--Just the logo.. Don't mind this-->   */}
+      <div class="header">
+        <div className="header__text-box">
+          <div className="heading">
+            <h1 className="heading__main">Jared Rothenberg</h1>
+            <h2 className="heading__sub">Software Engineer</h2>
+          </div>
+          <Link to="/about" className="btn btn--animated">Explore</Link>
+        </div>
+        <div class="inner-header flex">
+          {/* <!--Just the logo.. Don't mind this-->   */}
 
-                </div>
-                {/* <!--Waves Container-->   */}
-                <div>
-                    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                        <defs>
-                            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                        </defs>
-                        <g class="parallax">
-                            <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                            <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                            <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                            <use xlinkHref="#gentle-wave" x="48" y="7" fill="rgb(252, 252, 252)" />
-                        </g>
-                    </svg>
-                </div>
+        </div>
+        {/* <!--Waves Container-->   */}
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+              <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+              <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+              <use xlinkHref="#gentle-wave" x="48" y="7" fill="rgb(252, 252, 252)" />
+            </g>
+          </svg>
+        </div>
 
-            </div>
-        </HomeSection>
-    )
+      </div>
+    </HomeSection>
+  )
 }
 
 export const Head = () => (
-    <SEO />
+  <SEO />
 )
 
 const HomeSection = styled.section`
