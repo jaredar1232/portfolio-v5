@@ -31,7 +31,7 @@ export default function Home() {
                             <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(0,172,193,0.7)" />
                             <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(0,172,193,0.5)" />
                             <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(0,172,193,0.3)" />
-                            <use xlinkHref="#gentle-wave" x="48" y="7" fill="rgba(0,172,193,0.7)" />
+                            <use xlinkHref="#gentle-wave" x="48" y="7" fill="rgba(0,172,193)" />
                         </g>
                     </svg>
                 </div>
