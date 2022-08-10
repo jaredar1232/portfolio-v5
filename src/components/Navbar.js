@@ -5,7 +5,7 @@ import whiteLogo from "../../static/logo-white.webp"
 import blackLogo from "../../static/logo-black.webp"
 
 export default function Navbar({ path }) {
-  let [navTextColor, setNavTextColor] = useState("white")
+  let [navTextColor, setNavTextColor] = useState("black")
   let [logo, setLogo] = useState(whiteLogo)
 
   // changes nav text color based on what page we are on
