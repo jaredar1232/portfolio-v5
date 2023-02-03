@@ -29,7 +29,8 @@ From within the root directory:
 3. must be running node 14 as of last time running. otherwise update dependencies 
 
 
-See other boilerplace generated from hello-world project
+# Leaving "Hello World" boiler plate for future reference:
+
 ## 🚀 Quick start (Gatsby Cloud)
 
 Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
