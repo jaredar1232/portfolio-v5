@@ -29,7 +29,7 @@ From within the root directory:
 3. must be running node 14 as of last time running. otherwise update dependencies 
 
 
-# Leaving "Hello World" boiler plate for future reference:
+# See "Hello World" boiler plate, leaving here for future reference:
 
 ## 🚀 Quick start (Gatsby Cloud)
 
