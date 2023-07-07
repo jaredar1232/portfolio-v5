@@ -30,9 +30,8 @@ export default function about() {
               </span>
               <span className="paragraph fadeInThree">
                 I love working on cool products that cross at the intersections
-                of tech, medicine, health & fitness, and finance. In addition to
-                being long term interests, they're areas I feel help improve
-                society.
+                of tech, health, fitness, and finance. In addition to being long
+                term interests, they're areas I feel help improve society.
               </span>
             </p>
           </div>
