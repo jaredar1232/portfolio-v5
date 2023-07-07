@@ -5,9 +5,7 @@ export default class Resume extends Component {
   render() {
     return (
       <ResumeWrapper>
-        <div
-          className="resume-button-container"
-        >
+        <div className="resume-button-container">
           <a
             href="https://d1o11p1jeyf1dw.cloudfront.net/Resume-JaredRothenberg.pdf"
             target="_blank"
@@ -32,11 +30,11 @@ export default class Resume extends Component {
 }
 
 const ResumeWrapper = styled.div`
-    padding: 0rem 0 5rem 0;
-    color: white;
-    @media (max-width: 56.25em) {
-      padding: 0rem 0 2rem 0;
-    }
+  padding: 0rem 0 2.5rem 0;
+  color: white;
+  @media (max-width: 56.25em) {
+    padding: 0rem 0 2rem 0;
+  }
 
   .resume-button-container {
     width: 20%;
@@ -65,13 +63,17 @@ const ResumeWrapper = styled.div`
     text-transform: uppercase;
 
     color: black;
-    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
+    background: -webkit-linear-gradient(
+      left,
+      rgb(102, 201, 255),
+      rgb(120, 139, 249)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
     text-align: center;
-    padding: 0.4rem .5rem .2rem .5rem;
+    padding: 0.4rem 0.5rem 0.2rem 0.5rem;
     border-radius: 10px;
     transition: all 0.3s;
     text-decoration: none;
@@ -79,7 +81,7 @@ const ResumeWrapper = styled.div`
     justify-content: center;
 
     svg {
-        fill: rgb(120, 139, 249);
+      fill: rgb(120, 139, 249);
     }
 
     @media (hover: hover) {
@@ -102,7 +104,6 @@ const ResumeWrapper = styled.div`
       box-shadow: 0 0.25rem 0.5rem rgba(255, 255, 255, 0.2);
       transform: translateY(0);
     }
-
   }
   .resume-svg {
     display: inline-block;

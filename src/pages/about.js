@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import styled from "styled-components"
 import { SEO } from "../components/seo"
 import headshot from "../../static/Headshot.webp"
@@ -13,57 +13,45 @@ export default function about() {
       </div>
       <div className="row-container">
         <div className="row">
-
-          <div
-            className="headshot-container"
-          >
-            <img
-              src={headshot}
-              alt="Headshot of Jared"
-              className="headshot"
-            />
+          <div className="headshot-container">
+            <img src={headshot} alt="Headshot of Jared" className="headshot" />
           </div>
 
           <div className="text-container">
-            <p
-              className="text"
-            >
-              <span className='paragraph fadeInOne'>Hello and welcome to my portfolio!</span>
-              <span className='paragraph fadeInTwo'>
-                I am a software engineer with a background in Economics
-                and Philosophy from the University of California Santa
-                Barbara. My foundation in programming was instilled in
-                me at HackReactor with most of what I now know being self
-                taught.
+            <p className="text">
+              <span className="paragraph fadeInOne">
+                Hello and welcome to my portfolio!
               </span>
-              <span className='paragraph fadeInThree'>
+              <span className="paragraph fadeInTwo">
+                I am a software engineer with a background in Economics and
+                Philosophy from the University of California Santa Barbara. My
+                foundation in programming started at HackReactor with most of
+                what I now know being self-taught and on the job knowledge.
+              </span>
+              <span className="paragraph fadeInThree">
                 I love working on cool products that cross at the intersections
                 of tech, medicine, health & fitness, and finance. In addition to
-                being long term interests, they're areas I feel help improve society.
+                being long term interests, they're areas I feel help improve
+                society.
               </span>
             </p>
           </div>
-
-
-
         </div>
       </div>
     </AboutSection>
   )
 }
 
-export const Head = () => (
-  <SEO title="Jared Rothenberg | About" />
-)
+export const Head = () => <SEO title="Jared Rothenberg | About" />
 
 const AboutSection = styled.section`
-    // adjust this padding if you change the writing
-    padding: 10rem 0 20rem 0;
-    color: black;
+  // adjust this padding if you change the writing
+  padding: 10rem 0 20rem 0;
+  color: black;
 
-    @media (max-width: 56.25em) {
-      padding: 10rem 0 5rem 0;
-    }
+  @media (max-width: 56.25em) {
+    padding: 10rem 0 5rem 0;
+  }
 
   .u-center-text {
     text-align: center;
@@ -76,7 +64,11 @@ const AboutSection = styled.section`
     font-weight: 700;
     display: inline-block;
     color: black;
-    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
+    background: -webkit-linear-gradient(
+      left,
+      rgb(102, 201, 255),
+      rgb(120, 139, 249)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -88,13 +80,12 @@ const AboutSection = styled.section`
     }
   }
 
-
   .row-container {
     max-width: 70%;
     margin: 0 auto;
 
     @media (max-width: 56.25em) {
-      max-width: 100%
+      max-width: 100%;
     }
   }
 
@@ -104,18 +95,17 @@ const AboutSection = styled.section`
     @media (max-width: 56.25em) {
       flex-direction: column;
     }
-
   }
 
   .text-container {
     flex: 1;
-      @media (max-width: 56.25em) {
-        padding: 5rem 3rem 0 3rem;
-        padding-top: 5rem;
-      }
-
-      margin: 0 auto;
+    @media (max-width: 56.25em) {
+      padding: 5rem 3rem 0 3rem;
+      padding-top: 5rem;
     }
+
+    margin: 0 auto;
+  }
 
   .text {
     font-size: 2.5rem;

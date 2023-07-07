@@ -7,9 +7,7 @@ export default class Footer extends Component {
     return (
       <FooterWrapper>
         <Resume />
-        <div
-          className="icon-container"
-        >
+        <div className="icon-container">
           <a
             href="https://www.linkedin.com/in/jared-rothenberg"
             className="footer-icon"
@@ -17,9 +15,7 @@ export default class Footer extends Component {
             rel="noreferrer"
             aria-label="LinkedIn"
           >
-            <i
-              className="fa fa-linkedin"
-            ></i>
+            <i className="fa fa-linkedin"></i>
           </a>
 
           <a
@@ -29,14 +25,14 @@ export default class Footer extends Component {
             rel="noreferrer"
             aria-label="Github"
           >
-            <i
-              className="fa fa-github"
-            ></i>
+            <i className="fa fa-github"></i>
           </a>
-          <a href="mailto:jaredar@gmail.com" className="footer-icon" aria-label="Email-Me">
-            <i
-              className="fa fa-envelope"
-            ></i>
+          <a
+            href="mailto:jaredar@gmail.com"
+            className="footer-icon"
+            aria-label="Email-Me"
+          >
+            <i className="fa fa-envelope"></i>
           </a>
         </div>
 
@@ -50,13 +46,13 @@ export default class Footer extends Component {
 }
 
 const FooterWrapper = styled.footer`
-    background-color: rgb(24, 30, 46);
-    padding: 3rem 0 3rem 0;
-    color: white; 
+  background-color: rgb(24, 30, 46);
+  padding: 1.5rem 0 1rem 0;
+  color: white;
 
-    @media (max-width: 56.25em) {
-      padding: 2rem 0 2rem 0;
-    }
+  @media (max-width: 56.25em) {
+    padding: 2rem 0 2rem 0;
+  }
 
   .icon-container {
     display: grid;
@@ -120,7 +116,7 @@ const FooterWrapper = styled.footer`
   }
 
   .u-center-text {
-    margin-top: 3rem;
+    margin-top: 2rem;
     text-align: center;
     font-size: 1.2rem;
   }

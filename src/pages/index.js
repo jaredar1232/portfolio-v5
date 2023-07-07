@@ -138,7 +138,7 @@ const HomeSection = styled.section`
     z-index: -1;
     transition: all 0.4s;
     color: transparent;
-    border: lightgrey solid 1px;
+    border: lightgrey solid 0.5px;
   }
 
   @media (hover: hover) {
