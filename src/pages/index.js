@@ -89,7 +89,7 @@ const HomeSection = styled.section`
   .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 3rem;
+    padding: 1rem 3rem;
     margin-top: 20rem;
     display: inline-block;
     border-radius: 1.4rem;
