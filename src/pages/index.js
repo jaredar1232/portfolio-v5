@@ -11,15 +11,15 @@ export default function Home() {
           <h1 className="heading__main">Jared Rothenberg</h1>
           <h2 className="heading__sub">Software Engineer</h2>
         </div>
-        <Link to="/about" className="btn btn--animated">Explore</Link>
+        <Link to="/about" className="btn btn--animated">
+          Explore
+        </Link>
       </div>
     </HomeSection>
   )
 }
 
-export const Head = () => (
-  <SEO />
-)
+export const Head = () => <SEO />
 
 const HomeSection = styled.section`
   height: 100vh;
@@ -57,7 +57,7 @@ const HomeSection = styled.section`
     letter-spacing: 3rem;
 
     @media (min-width: 56.26em) {
-      animation: fadeUpToDown .5s ease-out;
+      animation: fadeUpToDown 0.5s ease-out;
       animation-fill-mode: backwards;
     }
 
@@ -75,7 +75,7 @@ const HomeSection = styled.section`
     margin-top: 1rem;
 
     @media (min-width: 56.26em) {
-      animation: fadeDownToUp .5s ease-out;
+      animation: fadeDownToUp 0.5s ease-out;
       animation-fill-mode: backwards;
     }
 
@@ -89,10 +89,10 @@ const HomeSection = styled.section`
   .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 3rem;
     margin-top: 20rem;
     display: inline-block;
-    border-radius: 0rem;
+    border-radius: 1.4rem;
     transition: all 0.2s;
     position: relative;
     font-size: 1.6rem;
@@ -131,7 +131,7 @@ const HomeSection = styled.section`
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 0;
+    border-radius: 1.3rem;
     position: absolute;
     top: 0;
     left: 0;
