@@ -68,8 +68,8 @@ const FooterWrapper = styled.footer`
 
   .footer-icon {
     justify-self: center;
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 4rem;
+    height: 4rem;
     border: solid 2px white;
     border-radius: 10px;
     text-align: center;
@@ -111,8 +111,8 @@ const FooterWrapper = styled.footer`
   }
 
   .fa {
-    font-size: 4rem;
-    padding-top: 0.6rem;
+    font-size: 2.2rem;
+    padding-top: 0.8rem;
   }
 
   .u-center-text {
