@@ -66,7 +66,7 @@ const NavWrapper = styled.nav`
   border-radius: 1rem;
   padding: 0.3rem;
 
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
 
   // lets it go over the projects/jobs
@@ -140,7 +140,7 @@ const NavWrapper = styled.nav`
   .home__logo {
     position: absolute;
     transform: translate(-50%);
-    width: 40px;
+    width: 3rem;
     transition: all 0.3s;
 
     &:hover {
