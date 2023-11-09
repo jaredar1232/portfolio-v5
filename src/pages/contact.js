@@ -129,7 +129,7 @@ const ContactSection = styled.section`
   }
 
   .heading {
-    font-size: 5.5rem;
+    font-size: 4rem;
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
@@ -155,7 +155,7 @@ const ContactSection = styled.section`
     padding: 2rem 0 2rem 0;
     margin: 0 auto;
     color: black;
-    font-size: 2rem;
+    font-size: 1.5rem;
     max-width: 55rem;
   }
 
@@ -171,7 +171,7 @@ const ContactSection = styled.section`
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom:2.5rem;
     background-color: white;
     box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);
@@ -236,7 +236,7 @@ const ContactSection = styled.section`
       rgb(120, 139, 249)
     );
     color: white;
-    padding: 1.5rem 1.5rem;
+    padding: 1rem 1rem;
     margin: 1rem 0;
     border: none;
     border-radius: 4px;

@@ -81,7 +81,7 @@ const ProjectsSection = styled.section`
   }
 
   .heading {
-    font-size: 5.5rem;
+    font-size: 4rem;
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;

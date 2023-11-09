@@ -58,7 +58,7 @@ const AboutSection = styled.section`
   }
 
   .heading {
-    font-size: 5.5rem;
+    font-size: 4rem;
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
@@ -107,7 +107,7 @@ const AboutSection = styled.section`
   }
 
   .text {
-    font-size: 2.5rem;
+    font-size: 2rem;
     @media (max-width: 56.25em) {
       font-size: 1.6rem;
     }

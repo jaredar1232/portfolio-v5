@@ -91,7 +91,7 @@ const AJobSection = styled.section`
 
 
   .heading-secondary {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     text-align: center;
     color: black;
