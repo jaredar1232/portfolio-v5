@@ -1,4 +1,27 @@
-[
+[  
+  {
+  "name": "Intuit — Software Engineer II",
+  "width": 85,
+  "video": "https://d1o11p1jeyf1dw.cloudfront.net/Intuit.mp4",
+  "website": "https://www.intuit.com",
+  "details": {
+    "name": "Intuit | 11.22 - 10.23",
+    "description": "Intuit is the parent company of Turbo Tax, Credit Karma, Mailchip, Mint, and Quickbooks. I worked on the Turbo Tax product building out new UI's and user flows in the \"Tax Funnel\"",
+    "keyPoints": [
+      "Built new user flows in the TurboTax funnel using internal design library and in accordance with stakeholder requirements; conducting A/B Tests to determine the highest Start-to-Completion variation",
+      "Experimented with AI/GPT4 model endpoints to enable dynamic UI component inputs for next gen TurboTax products",
+      "Presented critical peak projects to 40+ engineers, including manager 2, manager 3, and Director level"
+    ],
+    "icons": [
+      "React",
+      "Typescript",
+      "Javascript",
+      "HTML5",
+      "CSS3",
+      "Atlassian"
+    ]
+  }
+},
   {
     "name": "The Zebra — Software Engineer II",
     "width": 85,
