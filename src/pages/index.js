@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { SEO } from "../components/seo"
-import { Link } from "gatsby"
+import AiChat from "../components/AiChat" // Import the AiChat component
 
 export default function Home() {
   return (
@@ -11,9 +11,7 @@ export default function Home() {
           <h1 className="heading__main">Jared Rothenberg</h1>
           <h2 className="heading__sub">Software Engineer</h2>
         </div>
-        <Link to="/about" className="btn btn--animated">
-          Explore
-        </Link>
+        <AiChat /> {/* Replace the button with the AiChat component */}
       </div>
     </HomeSection>
   )
@@ -75,6 +73,7 @@ const HomeSection = styled.section`
     margin-top: 1rem;
 
     @media (min-width: 56.26em) {
+      margin-bottom: 10rem;
       animation: fadeDownToUp 0.5s ease-out;
       animation-fill-mode: backwards;
     }
