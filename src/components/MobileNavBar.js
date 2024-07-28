@@ -1,81 +1,66 @@
-import React, { Component } from "react"
-import { Link } from 'gatsby'
+import { Link } from "gatsby"
 import styled from "styled-components"
 
-
-export default class Navbar extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
-  onClickHandler() {
+export default function Navbar() {
+  const onClickHandler = () => {
     document.getElementById("navi-toggle").click()
   }
 
-  render() {
-    return (
-      <NavbarWrapper>
-        <div className="navigation">
-          <input
-            type="checkbox"
-            className="navigation__checkbox"
-            id="navi-toggle"
-          ></input>
+  return (
+    <NavbarWrapper>
+      <div className="navigation">
+        <input
+          type="checkbox"
+          className="navigation__checkbox"
+          id="navi-toggle"
+        ></input>
 
-          <label htmlFor="navi-toggle" className="navigation__button">
-            <span className="navigation__icon">&nbsp;</span>
-          </label>
+        <label htmlFor="navi-toggle" className="navigation__button">
+          <span className="navigation__icon">&nbsp;</span>
+        </label>
 
-          <div className="navigation__background">&nbsp;</div>
+        <div className="navigation__background">&nbsp;</div>
 
-          <nav className="navigation__nav">
-            <ul className="navigation__list">
-              <li
-                className="navigation__item"
-                onClick={() => this.onClickHandler()}
-              >
-                <Link to="/" className="navigation__link">Home</Link>
-              </li>
+        <nav className="navigation__nav">
+          <ul className="navigation__list">
+            <li className="navigation__item" onClick={onClickHandler}>
+              <Link to="/" className="navigation__link">
+                Home
+              </Link>
+            </li>
 
-              <li
-                className="navigation__item"
-                onClick={() => this.onClickHandler()}
-              >
-                <Link to="/about" className="navigation__link">About</Link>
-              </li>
+            <li className="navigation__item" onClick={onClickHandler}>
+              <Link to="/about" className="navigation__link">
+                About
+              </Link>
+            </li>
 
-              <li
-                className="navigation__item"
-                onClick={() => this.onClickHandler()}
-              >
-                <Link to="/experience" className="navigation__link">Experience</Link>
-              </li>
+            <li className="navigation__item" onClick={onClickHandler}>
+              <Link to="/experience" className="navigation__link">
+                Experience
+              </Link>
+            </li>
 
-              <li
-                className="navigation__item"
-                onClick={() => this.onClickHandler()}
-              >
-                <Link to="/projects" className="navigation__link">Projects</Link>
-              </li>
+            <li className="navigation__item" onClick={onClickHandler}>
+              <Link to="/projects" className="navigation__link">
+                Projects
+              </Link>
+            </li>
 
-              <li
-                className="navigation__item"
-                onClick={() => this.onClickHandler()}
-              >
-                <Link to="/contact" className="navigation__link">Contact</Link>
-              </li>
-
-            </ul>
-          </nav>
-        </div>
-      </NavbarWrapper>
-    )
-  }
+            <li className="navigation__item" onClick={onClickHandler}>
+              <Link to="/contact" className="navigation__link">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </NavbarWrapper>
+  )
 }
 
 const NavbarWrapper = styled.div`
-// only shows on mobile
+  // only shows on mobile
   @media (min-width: 56.25em) {
     display: none;
   }

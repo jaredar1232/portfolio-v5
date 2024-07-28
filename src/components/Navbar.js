@@ -1,6 +1,6 @@
-import { Link } from 'gatsby'
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import { Link } from "gatsby"
+import { useEffect, useState } from "react"
+import styled from "styled-components"
 import whiteLogo from "../../static/logo-white.webp"
 import blackLogo from "../../static/logo-black.webp"
 
@@ -13,23 +13,22 @@ export default function Navbar({ path }) {
     switch (path) {
       case "/about/":
         setNavTextColor("black")
-        break;
+        break
       case "/experience/":
         setNavTextColor("black")
-        break;
+        break
       case "/":
         setNavTextColor("white")
-        break;
+        break
       case "/projects/":
         setNavTextColor("black")
-        break;
+        break
       case "/contact/":
         setNavTextColor("black")
-        break;
+        break
       default:
         console.error("there is an issue with the navigation color setter")
     }
-
   }, [path])
 
   // changes logo path/variable based on what the nav text color should be
@@ -39,17 +38,40 @@ export default function Navbar({ path }) {
 
   return (
     <NavWrapper navTextColor={navTextColor}>
-      <Link to="/about" className={`nav__link ${navTextColor}`} activeClassName="active" >About</Link>
-      <Link to="/experience" className={`nav__link ${navTextColor}`} activeClassName="active" >Experience</Link>
-      <Link to="/">
-        <img className='home__logo' src={logo} alt="logo" />
+      <Link
+        to="/about"
+        className={`nav__link ${navTextColor}`}
+        activeClassName="active"
+      >
+        About
       </Link>
-      <Link to="/projects" className={`nav__link ${navTextColor}`} activeClassName="active" >Projects</Link>
-      <Link to="/contact" className={`nav__link ${navTextColor}`} activeClassName="active" >Contact</Link>
+      <Link
+        to="/experience"
+        className={`nav__link ${navTextColor}`}
+        activeClassName="active"
+      >
+        Experience
+      </Link>
+      <Link to="/">
+        <img className="home__logo" src={logo} alt="logo" />
+      </Link>
+      <Link
+        to="/projects"
+        className={`nav__link ${navTextColor}`}
+        activeClassName="active"
+      >
+        Projects
+      </Link>
+      <Link
+        to="/contact"
+        className={`nav__link ${navTextColor}`}
+        activeClassName="active"
+      >
+        Contact
+      </Link>
     </NavWrapper>
   )
 }
-
 
 const NavWrapper = styled.nav`
   @media (max-width: 56.25em) {
@@ -99,7 +121,11 @@ const NavWrapper = styled.nav`
 
     &:hover {
       color: black;
-      background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
+      background: -webkit-linear-gradient(
+        left,
+        rgb(102, 201, 255),
+        rgb(120, 139, 249)
+      );
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;

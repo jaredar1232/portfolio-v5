@@ -92,7 +92,7 @@ const HomeSection = styled.section`
     padding: 1rem 3rem;
     margin-top: 20rem;
     display: inline-block;
-    border-radius: 1.4rem;
+    border-radius: 6px;
     transition: all 0.2s;
     position: relative;
     font-size: 1.6rem;
@@ -131,7 +131,7 @@ const HomeSection = styled.section`
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 1.3rem;
+    border-radius: 6px;
     position: absolute;
     top: 0;
     left: 0;

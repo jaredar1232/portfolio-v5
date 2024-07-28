@@ -1,64 +1,56 @@
-import React, { Component } from "react"
 import styled from "styled-components"
 import Icons from "./Icons"
 
-export default class Modal extends Component {
-  handleClose() {
+export default function Modal({ modalDetails, showModal, closeModal }) {
+  const handleClose = () => {
     const element = document.getElementById("modal")
     element.scrollTo(0, 0)
-    this.props.closeModal()
+    closeModal()
   }
 
-  render() {
-    const modalDetails = this.props.modalDetails
-    const showModal = this.props.showModal
+  return (
+    <ModalWrapper>
+      <div className={showModal ? "overlay" : "hide-modal"}>
+        <div
+          className={
+            showModal
+              ? "modal-functionality-shown"
+              : "modal-functionality-hidden"
+          }
+          onClick={handleClose}
+        ></div>
 
-    return (
-      <ModalWrapper>
-        <div className={showModal ? "overlay" : "hide-modal"}>
-          <div
-            className={
-              showModal
-                ? "modal-functionality-shown"
-                : "modal-functionality-hidden"
-            }
-            onClick={() => this.handleClose()}
-          ></div>
+        <div className="overlay__content" id="modal">
+          <div className="exit" onClick={handleClose}>
+            <span className="exit__icon">&nbsp;</span>
+          </div>
+          <h3 className="heading">{modalDetails.name}</h3>
 
-          <div className="overlay__content" id="modal">
-            <div className="exit" onClick={() => this.handleClose()}>
-              <span className="exit__icon">&nbsp;</span>
-            </div>
-            <h3 className="heading">{modalDetails.name}</h3>
-            <div className="description">
-              <b>Overview:&ensp;</b>
-              {modalDetails.description}
-            </div>
-
-            <ul className="keypoints">
-              {" "}
-              {modalDetails.keyPoints
-                ? modalDetails.keyPoints.map(keyPoint => (
-                  <li key={keyPoint.split()[0]}>&bull;&ensp;{keyPoint}</li>
-                ))
-                : null}
-            </ul>
-            <div className="icons">
-              {modalDetails.icons
-                ? modalDetails.icons.map(anIcon => (
+          <div className="icons">
+            {modalDetails.icons
+              ? modalDetails.icons.map(anIcon => (
                   <Icons anIcon={anIcon} key={anIcon} />
                 ))
-                : null}
-            </div>
+              : null}
           </div>
-        </div>
-      </ModalWrapper>
-    )
-  }
-}
 
-// .hide-modal and .overlay are used for placement of modal content
-// .modal-functionality-shown and .modal-functionality-hidden are used for closing modal functionality
+          <div className="description">
+            <b>Overview:&ensp;</b>
+            {modalDetails.description}
+          </div>
+
+          <ul className="keypoints">
+            {modalDetails.keyPoints
+              ? modalDetails.keyPoints.map(keyPoint => (
+                  <li key={keyPoint.split()[0]}>&bull;&ensp;{keyPoint}</li>
+                ))
+              : null}
+          </ul>
+        </div>
+      </div>
+    </ModalWrapper>
+  )
+}
 
 const ModalWrapper = styled.div`
   .hide-modal {
@@ -79,15 +71,15 @@ const ModalWrapper = styled.div`
     justify-content: center;
 
     &__content {
-        max-width: 130rem;
-        width: 60%;
-        height: 60%;
-        background-color: white;
-        box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-        position: relative;
-        border-radius: 10px;
-        overflow: auto;
-        animation: modalEffect 0.6s;
+      max-width: 130rem;
+      width: 60%;
+      height: 60%;
+      background-color: white;
+      box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+      position: relative;
+      border-radius: 10px;
+      overflow: auto;
+      animation: modalEffect 0.6s;
 
       ::-webkit-scrollbar {
         width: 0px;
@@ -223,8 +215,11 @@ const ModalWrapper = styled.div`
   }
 
   .icons {
-    text-align: center;
-    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 1rem;
   }
 
   @keyframes fadeIn {

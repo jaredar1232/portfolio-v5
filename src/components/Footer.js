@@ -1,48 +1,45 @@
-import React, { Component } from "react"
 import styled from "styled-components"
 import Resume from "./Resume.js"
 
-export default class Footer extends Component {
-  render() {
-    return (
-      <FooterWrapper>
-        <Resume />
-        <div className="icon-container">
-          <a
-            href="https://www.linkedin.com/in/jared-rothenberg"
-            className="footer-icon"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            <i className="fa fa-linkedin"></i>
-          </a>
+export default function Footer() {
+  return (
+    <FooterWrapper>
+      <Resume />
+      <div className="icon-container">
+        <a
+          href="https://www.linkedin.com/in/jared-rothenberg"
+          className="footer-icon"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i className="fa fa-linkedin"></i>
+        </a>
 
-          <a
-            href="https://github.com/jaredar1232"
-            className="footer-icon"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Github"
-          >
-            <i className="fa fa-github"></i>
-          </a>
-          <a
-            href="mailto:jaredar@gmail.com"
-            className="footer-icon"
-            aria-label="Email-Me"
-          >
-            <i className="fa fa-envelope"></i>
-          </a>
-        </div>
+        <a
+          href="https://github.com/jaredar1232"
+          className="footer-icon"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Github"
+        >
+          <i className="fa fa-github"></i>
+        </a>
+        <a
+          href="mailto:jaredar@gmail.com"
+          className="footer-icon"
+          aria-label="Email-Me"
+        >
+          <i className="fa fa-envelope"></i>
+        </a>
+      </div>
 
-        <div className="u-center-text">
-          Copyright &copy; 2020, &nbsp; Jared Rothenberg. &nbsp; All Rights
-          Reserved
-        </div>
-      </FooterWrapper>
-    )
-  }
+      <div className="u-center-text">
+        Copyright &copy; 2020, &nbsp; Jared Rothenberg. &nbsp; All Rights
+        Reserved
+      </div>
+    </FooterWrapper>
+  )
 }
 
 const FooterWrapper = styled.footer`
@@ -71,7 +68,7 @@ const FooterWrapper = styled.footer`
     width: 4rem;
     height: 4rem;
     border: solid 2px white;
-    border-radius: 10px;
+    border-radius: 6px;
     text-align: center;
     color: white;
     transition: all 0.3s;

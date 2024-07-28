@@ -2,10 +2,10 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import { SEO } from "../components/seo"
 
-const encode = (data) => {
+const encode = data => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
+    .join("&")
 }
 export default class Contact extends Component {
   constructor(props) {
@@ -20,17 +20,14 @@ export default class Contact extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-
-
-
   handleSubmit(event) {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
+      body: encode({ "form-name": "contact", ...this.state }),
     })
       .then(() => alert("Message Submitted!"))
-      .catch(error => alert(error));
+      .catch(error => alert(error))
 
     this.setState({
       name: "",
@@ -39,11 +36,11 @@ export default class Contact extends Component {
       message: "",
     })
 
-    event.preventDefault();
+    event.preventDefault()
   }
 
   handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   render() {
@@ -56,7 +53,13 @@ export default class Contact extends Component {
         </div>
 
         <div className="form-container">
-          <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.handleSubmit}>
+          <form
+            name="contact"
+            method="post"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={this.handleSubmit}
+          >
             <input type="hidden" name="form-name" value="contact" />
 
             <label>
@@ -109,7 +112,6 @@ export default class Contact extends Component {
                 Submit
               </button>
             </div>
-
           </form>
         </div>
       </ContactSection>
@@ -117,9 +119,7 @@ export default class Contact extends Component {
   }
 }
 
-export const Head = () => (
-  <SEO title="Jared Rothenberg | Contact" />
-)
+export const Head = () => <SEO title="Jared Rothenberg | Contact" />
 
 const ContactSection = styled.section`
   padding: 10rem 0 5rem 0;
@@ -135,7 +135,11 @@ const ContactSection = styled.section`
     display: inline-block;
     padding: 0 0 5rem 0;
     color: black;
-    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
+    background: -webkit-linear-gradient(
+      left,
+      rgb(102, 201, 255),
+      rgb(120, 139, 249)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -172,7 +176,7 @@ const ContactSection = styled.section`
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 1.5rem;
-    margin-bottom:2.5rem;
+    margin-bottom: 2.5rem;
     background-color: white;
     box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);
   }
@@ -182,43 +186,43 @@ const ContactSection = styled.section`
   }
 
   .input--name {
-    animation: slideIn .1s ease-out;
+    animation: slideIn 0.1s ease-out;
     animation-fill-mode: backwards;
     @media (max-width: 56.25em) {
-      animation: slideIn .2s ease-out;
+      animation: slideIn 0.2s ease-out;
       animation-delay: 0.3s;
       animation-fill-mode: backwards;
     }
   }
 
   .input--email {
-    animation: slideIn .1s ease-out;
+    animation: slideIn 0.1s ease-out;
     animation-delay: 0.1s;
     animation-fill-mode: backwards;
     @media (max-width: 56.25em) {
-      animation: slideIn .2s ease-out;
+      animation: slideIn 0.2s ease-out;
       animation-delay: 0.4s;
       animation-fill-mode: backwards;
     }
   }
 
   .input--subject {
-    animation: slideIn .1s ease-out;
+    animation: slideIn 0.1s ease-out;
     animation-delay: 0.2s;
     animation-fill-mode: backwards;
     @media (max-width: 56.25em) {
-      animation: slideIn .2s ease-out;
+      animation: slideIn 0.2s ease-out;
       animation-delay: 0.5s;
       animation-fill-mode: backwards;
     }
   }
 
   .input--message {
-    animation: slideIn .1s ease-out;
+    animation: slideIn 0.1s ease-out;
     animation-delay: 0.3s;
     animation-fill-mode: backwards;
     @media (max-width: 56.25em) {
-      animation: slideIn .2s ease-out;
+      animation: slideIn 0.2s ease-out;
       animation-delay: 0.6s;
       animation-fill-mode: backwards;
     }
@@ -239,7 +243,7 @@ const ContactSection = styled.section`
     padding: 1rem 1rem;
     margin: 1rem 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 2rem;
     min-width: 8rem;
@@ -254,7 +258,7 @@ const ContactSection = styled.section`
           rgb(101, 116, 204)
         );
         box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.4);
-        border-radius: 4px;
+        border-radius: 6px;
       }
     }
 
