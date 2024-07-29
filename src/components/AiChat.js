@@ -79,6 +79,7 @@ export default function AiChat({ onFocus }) {
         </div>
         <form onSubmit={handleSubmit} className="input-form">
           <input
+            className="input"
             type="text"
             value={input}
             onChange={e => setInput(e.target.value)}
@@ -116,7 +117,6 @@ const ChatWrapper = styled.div`
 
   .messages {
     max-height: 300px;
-    margin-bottom: 1rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow-y: auto;
@@ -130,7 +130,7 @@ const ChatWrapper = styled.div`
     font-size: 16px;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    margin: 0.5rem;
+    margin: 1rem;
     color: black;
 
     @media (min-width: 56.25em) {
@@ -143,6 +143,7 @@ const ChatWrapper = styled.div`
     background: #007bff;
     color: white;
     text-align: right;
+    line-height: 20px;
 
     @media (min-width: 56.25em) {
       padding: 1rem;
@@ -153,6 +154,8 @@ const ChatWrapper = styled.div`
   .assistant {
     background: #f1f1f1;
     text-align: left;
+    line-height: 20px;
+
     @media (min-width: 56.25em) {
       padding: 1rem;
       margin: 1rem 0;
@@ -175,6 +178,10 @@ const ChatWrapper = styled.div`
     @media (max-width: 56.25em) {
       font-size: 16px;
     }
+  }
+
+  input {
+    margin: 0.5rem 0;
   }
 
   button {
