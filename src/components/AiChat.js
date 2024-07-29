@@ -83,7 +83,7 @@ export default function AiChat({ onFocus }) {
             type="text"
             value={input}
             onChange={e => setInput(e.target.value)}
-            placeholder="Ask my AI assistant... 🙂"
+            placeholder=" Ask my AI assistant... 🙂"
           />
           <button type="submit">Send</button>
         </form>
@@ -116,6 +116,8 @@ const ChatWrapper = styled.div`
   }
 
   .messages {
+    display: flex;
+    flex-direction: column;
     max-height: 300px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -131,7 +133,8 @@ const ChatWrapper = styled.div`
     padding: 0.5rem 1rem;
     border-radius: 5px;
     margin: 1rem;
-    color: black;
+    max-width: 70%;
+    word-wrap: break-word;
 
     @media (min-width: 56.25em) {
       font-size: 1.2rem;
@@ -142,23 +145,23 @@ const ChatWrapper = styled.div`
   .user {
     background: #007bff;
     color: white;
+    align-self: flex-end;
     text-align: right;
     line-height: 20px;
 
     @media (min-width: 56.25em) {
-      padding: 1rem;
-      margin: 1rem 0;
+      padding: 0.5rem 1rem;
     }
   }
 
   .assistant {
     background: #f1f1f1;
+    align-self: flex-start;
     text-align: left;
     line-height: 20px;
 
     @media (min-width: 56.25em) {
-      padding: 1rem;
-      margin: 1rem 0;
+      padding: 0.5rem 1rem;
     }
   }
 
@@ -173,28 +176,29 @@ const ChatWrapper = styled.div`
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 16px;
 
-    @media (max-width: 56.25em) {
-      font-size: 16px;
+    @media (min-width: 56.25em) {
+      font-size: 1.1rem;
     }
   }
 
   input {
-    margin: 0.5rem 0;
+    padding: 0.5rem;
+    margin: 1rem 0;
   }
 
   button {
-    padding: 0.5rem;
     border: none;
     background: #007bff;
     color: white;
     border-radius: 5px;
     margin-left: 0.5rem;
     font-size: 1.1rem;
+    padding: 1rem;
 
-    @media (max-width: 56.25em) {
-      padding: 1rem;
+    @media (min-width: 56.25em) {
+      padding: 0.5rem;
     }
   }
 `
