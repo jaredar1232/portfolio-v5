@@ -133,7 +133,8 @@ const ContactSection = styled.section`
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    padding: 0 0 5rem 0;
+    padding: 0;
+
     color: black;
     background: -webkit-linear-gradient(
       left,
@@ -144,9 +145,9 @@ const ContactSection = styled.section`
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    @media (max-width: 56.25em) {
-      padding: 0;
-      font-size: 4rem;
+    @media (min-width: 56.25em) {
+      padding: 0 0 5rem 0;
+      font-size: 16px;
     }
   }
 

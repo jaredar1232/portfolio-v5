@@ -95,7 +95,7 @@ const HomeSection = styled.section`
 
   &.chat-focused .header__text-box {
     transform: translateY(-50%);
-    margin-top: 200px;
+    margin-top: 400px;
 
     @media (min-width: 56.25em) {
       margin-top: 300px;

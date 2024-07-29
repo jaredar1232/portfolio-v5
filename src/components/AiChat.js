@@ -95,7 +95,7 @@ const ChatWrapper = styled.div`
   .chat-box {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    padding: 0.5rem 1rem 1rem 1rem;
+    padding: 1rem;
     margin: 2rem auto;
     max-height: 500px;
     opacity: 0;
