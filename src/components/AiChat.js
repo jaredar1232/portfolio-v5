@@ -135,10 +135,12 @@ const ChatWrapper = styled.div`
     margin: 1rem;
     max-width: 70%;
     word-wrap: break-word;
+    color: black;
+    line-height: 20px;
 
     @media (min-width: 56.25em) {
       font-size: 1.2rem;
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
     }
   }
 
@@ -147,22 +149,12 @@ const ChatWrapper = styled.div`
     color: white;
     align-self: flex-end;
     text-align: right;
-    line-height: 20px;
-
-    @media (min-width: 56.25em) {
-      padding: 0.5rem 1rem;
-    }
   }
 
   .assistant {
     background: #f1f1f1;
     align-self: flex-start;
     text-align: left;
-    line-height: 20px;
-
-    @media (min-width: 56.25em) {
-      padding: 0.5rem 1rem;
-    }
   }
 
   .input-form {
