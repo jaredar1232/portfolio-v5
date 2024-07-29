@@ -1,17 +1,24 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { SEO } from "../components/seo"
 import AiChat from "../components/AiChat" // Import the AiChat component
 
 export default function Home() {
+  const [isChatFocused, setIsChatFocused] = useState(false)
+
+  const handleChatFocus = () => {
+    setIsChatFocused(true)
+  }
+
   return (
-    <HomeSection>
+    <HomeSection className={isChatFocused ? "chat-focused" : ""}>
       <div className="header__text-box">
         <div className="heading">
-          <h1 className="heading__main">Jared Rothenberg</h1>
+          <h1 className="heading__main">Jared{"\n"}Rothenberg</h1>
           <h2 className="heading__sub">Software Engineer</h2>
         </div>
-        <AiChat /> {/* Replace the button with the AiChat component */}
+        <AiChat onFocus={handleChatFocus} />{" "}
+        {/* Replace the button with the AiChat component */}
       </div>
     </HomeSection>
   )
@@ -29,19 +36,21 @@ const HomeSection = styled.section`
     url("/LandingImageBlueMedium.webp");
   background-size: cover;
   background-position: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
 
   .header__text-box {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
+    transition: all 0.5s ease-in-out;
   }
 
   .heading {
     color: #fff;
     text-transform: uppercase;
     backface-visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
 
     @media (max-width: 56.25em) {
       margin: 6rem 0 12rem 0;
@@ -53,6 +62,7 @@ const HomeSection = styled.section`
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3rem;
+    white-space: pre-line; /* Allows line break in name to apply */
 
     @media (min-width: 56.26em) {
       animation: fadeUpToDown 0.5s ease-out;
@@ -84,75 +94,12 @@ const HomeSection = styled.section`
     }
   }
 
-  .btn:link,
-  .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1rem 3rem;
-    margin-top: 20rem;
-    display: inline-block;
-    border-radius: 6px;
-    transition: all 0.2s;
-    position: relative;
-    font-size: 1.6rem;
-    font-weight: 400;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: lightgrey;
-    border: darkgrey solid 1px;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-
-    @media (max-width: 56.25em) {
-      padding: 1rem 3.5rem;
-    }
+  &.chat-focused .heading {
+    opacity: 0;
   }
 
-  @media (hover: hover) {
-    .btn:hover {
-      transform: translateY(-0.3rem);
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-      background-color: rgba(0, 0, 0, 0.8);
-      border: rgb(102, 201, 255) solid 1px;
-      color: rgb(102, 201, 255);
-    }
-  }
-
-  .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-    background-color: rgba(0, 0, 0, 0.4);
-    color: lightgrey;
-    border: darkgrey solid 1px;
-  }
-
-  .btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 6px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-    color: transparent;
-    border: lightgrey solid 0.5px;
-  }
-
-  @media (hover: hover) {
-    .btn:hover::after {
-      transform: scaleX(1.4) scaleY(1.6);
-      opacity: 0;
-    }
-  }
-
-  .btn--animated {
-    @media (min-width: 56.26em) {
-      animation: moveInButton 1s;
-      animation-fill-mode: backwards;
-      animation-delay: 1s;
-    }
+  &.chat-focused .header__text-box {
+    transform: translateY(-50%);
   }
 
   @keyframes fadeUpToDown {
@@ -175,16 +122,6 @@ const HomeSection = styled.section`
 
     100% {
       transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes moveInButton {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
       opacity: 1;
     }
   }

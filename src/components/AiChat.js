@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { prompt } from "../../static/AiPrompt"
 
-export default function AiChat() {
+export default function AiChat({ onFocus }) {
   const [input, setInput] = useState("")
   const [messages, setMessages] = useState([
     {
@@ -10,6 +10,9 @@ export default function AiChat() {
       content: prompt,
     },
   ])
+
+  const messagesEndRef = useRef(null)
+  const chatBoxRef = useRef(null)
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -44,15 +47,27 @@ export default function AiChat() {
     }
   }
 
+  const scrollToBottom = () => {
+    chatBoxRef.current?.scrollTo({
+      top: chatBoxRef.current.scrollHeight,
+      behavior: "smooth",
+    })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages])
+
   return (
-    <ChatWrapper>
+    <ChatWrapper onClick={onFocus}>
       <div className="chat-box">
-        <div className="messages">
+        <div className="messages" ref={chatBoxRef}>
           {messages.slice(1).map((msg, index) => (
             <div key={index} className={`message ${msg.role}`}>
               {msg.content}
             </div>
           ))}
+          <div ref={messagesEndRef} />
         </div>
         <form onSubmit={handleSubmit} className="input-form">
           <input
@@ -75,18 +90,23 @@ const ChatWrapper = styled.div`
     padding: 0.5rem 1rem 1rem 1rem;
     max-width: 400px;
     margin: 2rem auto;
+    max-height: 500px; /* Add a fixed height for the chat box */
   }
 
   .messages {
     max-height: 300px;
-    overflow-y: auto;
     margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow-y: auto; /* Allow vertical scrolling */
   }
 
   .message {
-    margin: 0.5rem 0;
     padding: 0.5rem;
     border-radius: 5px;
+    font-size: 1.2rem; /* Increased text size */
+    margin: 0.5rem;
+    color: black;
   }
 
   .user {
@@ -101,6 +121,7 @@ const ChatWrapper = styled.div`
 
   .input-form {
     display: flex;
+    align-items: center;
   }
 
   input {
@@ -108,6 +129,7 @@ const ChatWrapper = styled.div`
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1.1rem; /* Increased text size */
   }
 
   button {
@@ -117,5 +139,6 @@ const ChatWrapper = styled.div`
     color: white;
     border-radius: 5px;
     margin-left: 0.5rem;
+    font-size: 1.1rem; /* Increased text size */
   }
 `
