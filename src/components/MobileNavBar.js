@@ -95,6 +95,7 @@ const NavbarWrapper = styled.div`
 
       animation: navButtonBackgroundAppearMobile 1s;
       animation-fill-mode: backwards;
+      animation-delay: 0.4s; /* this line to delay the animation by 0.2 second */
       height: 5rem; // -2
       width: 5rem; // -2
       top: 3rem;
@@ -124,9 +125,10 @@ const NavbarWrapper = styled.div`
       z-index: 100;
       transition: transform 0.4s cubic-bezier(0.83, 0, 0.17, 1);
 
+      animation-delay: 0.4s; /* this line to delay the animation by 0.2 second */
       animation: navButtonBackgroundAppearMobile 0s;
       animation-fill-mode: backwards;
-      animation-delay: 1s;
+      animation-delay: 1s; // open menu background fade in time
     }
 
     &__nav {
@@ -138,7 +140,7 @@ const NavbarWrapper = styled.div`
 
       opacity: 0;
       width: 0;
-      transition: all 0.4s;
+      transition: all 0.4s; // NAV ITEMS FADE IN TIME
     }
 
     &__list {

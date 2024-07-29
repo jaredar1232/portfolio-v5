@@ -10,19 +10,11 @@ export default function AiChat({ onFocus }) {
       content: prompt,
     },
   ])
+  const [hasError, setHasError] = useState(false)
 
-  const messagesEndRef = useRef(null)
   const chatBoxRef = useRef(null)
 
-  const handleSubmit = async e => {
-    e.preventDefault()
-    if (input.trim() === "") return
-
-    const userMessage = { role: "user", content: input }
-    const newMessages = [...messages, userMessage]
-    setMessages(newMessages)
-    setInput("")
-
+  const fetchAssistantMessage = async newMessages => {
     try {
       const response = await fetch(
         "https://chatgpt-server-indol.vercel.app/api/chat",
@@ -44,7 +36,20 @@ export default function AiChat({ onFocus }) {
       setMessages(prevMessages => [...prevMessages, assistantMessage])
     } catch (error) {
       console.error("Error fetching AI response:", error.message)
+      setHasError(true)
     }
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    if (input.trim() === "") return
+
+    const userMessage = { role: "user", content: input }
+    const newMessages = [...messages, userMessage]
+    setMessages(newMessages)
+    setInput("")
+
+    fetchAssistantMessage(newMessages)
   }
 
   const scrollToBottom = () => {
@@ -58,6 +63,10 @@ export default function AiChat({ onFocus }) {
     scrollToBottom()
   }, [messages])
 
+  if (hasError) {
+    return null
+  }
+
   return (
     <ChatWrapper onClick={onFocus}>
       <div className="chat-box">
@@ -67,7 +76,6 @@ export default function AiChat({ onFocus }) {
               {msg.content}
             </div>
           ))}
-          <div ref={messagesEndRef} />
         </div>
         <form onSubmit={handleSubmit} className="input-form">
           <input
@@ -88,9 +96,22 @@ const ChatWrapper = styled.div`
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 0.5rem 1rem 1rem 1rem;
-    max-width: 400px;
     margin: 2rem auto;
-    max-height: 500px; /* Add a fixed height for the chat box */
+    max-height: 500px;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+    min-width: 350px;
+    width: 90%;
+
+    @media (min-width: 56.25em) {
+      max-width: 600px;
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
   }
 
   .messages {
@@ -98,30 +119,50 @@ const ChatWrapper = styled.div`
     margin-bottom: 1rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-y: auto;
+
+    @media (min-width: 56.25em) {
+      max-height: 400px;
+    }
   }
 
   .message {
-    padding: 0.5rem;
+    font-size: 16px;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
-    font-size: 1.2rem; /* Increased text size */
     margin: 0.5rem;
     color: black;
+
+    @media (min-width: 56.25em) {
+      font-size: 1.2rem;
+      padding: 0.5rem;
+    }
   }
 
   .user {
     background: #007bff;
     color: white;
     text-align: right;
+
+    @media (min-width: 56.25em) {
+      padding: 1rem;
+      margin: 1rem 0;
+    }
   }
 
   .assistant {
     background: #f1f1f1;
+    text-align: left;
+    @media (min-width: 56.25em) {
+      padding: 1rem;
+      margin: 1rem 0;
+    }
   }
 
   .input-form {
     display: flex;
     align-items: center;
+    margin: 0 auto;
   }
 
   input {
@@ -129,7 +170,11 @@ const ChatWrapper = styled.div`
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1.1rem; /* Increased text size */
+    font-size: 1.1rem;
+
+    @media (max-width: 56.25em) {
+      font-size: 16px;
+    }
   }
 
   button {
@@ -139,6 +184,10 @@ const ChatWrapper = styled.div`
     color: white;
     border-radius: 5px;
     margin-left: 0.5rem;
-    font-size: 1.1rem; /* Increased text size */
+    font-size: 1.1rem;
+
+    @media (max-width: 56.25em) {
+      padding: 1rem;
+    }
   }
 `

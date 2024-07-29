@@ -59,38 +59,33 @@ const HomeSection = styled.section`
 
   .heading__main {
     display: block;
-    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 3rem;
     white-space: pre-line; /* Allows line break in name to apply */
+    animation: fadeUpToDown 0.5s ease-out;
+    animation-fill-mode: backwards;
+    font-size: 3.5rem;
+    letter-spacing: 1rem;
 
-    @media (min-width: 56.26em) {
-      animation: fadeUpToDown 0.5s ease-out;
-      animation-fill-mode: backwards;
-    }
-
-    @media (max-width: 56.25em) {
-      font-size: 2.8rem;
-      letter-spacing: 1rem;
+    @media (min-width: 56.25em) {
+      letter-spacing: 3rem;
+      font-size: 6rem;
     }
   }
 
   .heading__sub {
     display: block;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 300;
-    letter-spacing: 1.75rem;
+    letter-spacing: 0.8rem;
+
     margin-top: 1rem;
+    animation: fadeDownToUp 0.5s ease-out;
+    animation-fill-mode: backwards;
 
     @media (min-width: 56.26em) {
       margin-bottom: 10rem;
-      animation: fadeDownToUp 0.5s ease-out;
-      animation-fill-mode: backwards;
-    }
-
-    @media (max-width: 56.25em) {
-      font-size: 1.3rem;
-      letter-spacing: 0.8rem;
+      font-size: 2rem;
+      letter-spacing: 1.75rem;
     }
   }
 
@@ -100,6 +95,11 @@ const HomeSection = styled.section`
 
   &.chat-focused .header__text-box {
     transform: translateY(-50%);
+    margin-top: 200px;
+
+    @media (min-width: 56.25em) {
+      margin-top: 300px;
+    }
   }
 
   @keyframes fadeUpToDown {
