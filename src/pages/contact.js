@@ -178,7 +178,7 @@ const ContactSection = styled.section`
     background-color: white;
     box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);
     font-size: 16px;
-    padding: 0;
+    padding: 10px 15px;
 
     @media (min-width: 56.25em) {
       font-size: 1.5rem;
