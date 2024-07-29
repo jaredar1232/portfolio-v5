@@ -133,8 +133,7 @@ const ContactSection = styled.section`
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    padding: 0;
-
+    padding: 0 0 5rem 0;
     color: black;
     background: -webkit-linear-gradient(
       left,
@@ -145,9 +144,9 @@ const ContactSection = styled.section`
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    @media (min-width: 56.25em) {
-      padding: 0 0 5rem 0;
-      font-size: 16px;
+    @media (max-width: 56.25em) {
+      padding: 0;
+      font-size: 4rem;
     }
   }
 
@@ -170,16 +169,21 @@ const ContactSection = styled.section`
 
   .form-text {
     width: 100%;
-    padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 1.5rem;
     margin-bottom: 2.5rem;
     background-color: white;
     box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);
+    font-size: 16px;
+    padding: 0;
+
+    @media (min-width: 56.25em) {
+      font-size: 1.5rem;
+      padding: 12px 20px;
+    }
   }
 
   .form-textarea {
