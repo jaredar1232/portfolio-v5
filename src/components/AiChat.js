@@ -101,10 +101,12 @@ const ChatWrapper = styled.div`
     max-height: 500px;
     opacity: 0;
     animation: fadeIn 1s forwards 0.5s;
+
     min-width: 350px;
     width: 90%;
 
     @media (min-width: 56.25em) {
+      animation: fadeIn 2s forwards 1s;
       max-width: 600px;
     }
   }
