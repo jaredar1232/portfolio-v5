@@ -159,7 +159,7 @@ const ContactSection = styled.section`
     padding: 2rem 0 2rem 0;
     margin: 0 auto;
     color: black;
-    font-size: 1.5rem;
+    font-size: 2rem;
     max-width: 55rem;
   }
 
