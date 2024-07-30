@@ -163,8 +163,13 @@ const ChatWrapper = styled.div`
 
     ul,
     ol {
-      padding-left: 1.5rem; /* Indentation for list items */
+      padding-left: 2.5rem; /* Indentation for list items */
+
       margin: 0; /* Remove default margin */
+
+      @media (min-width: 56.25em) {
+        padding-left: 1.5rem; /* Indentation for list items */
+      }
     }
   }
 
