@@ -18,7 +18,6 @@ export default function Home() {
           <h2 className="heading__sub">Software Engineer</h2>
         </div>
         <AiChat onFocus={handleChatFocus} />{" "}
-        {/* Replace the button with the AiChat component */}
       </div>
     </HomeSection>
   )
