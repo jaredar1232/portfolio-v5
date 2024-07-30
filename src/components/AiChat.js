@@ -180,7 +180,11 @@ const ChatWrapper = styled.div`
     width: 12px;
     height: 12px;
     margin: 10px 0;
-    background-color: #00aeff;
+    background-image: linear-gradient(
+      to right bottom,
+      rgb(102, 201, 255),
+      rgb(54 78 216)
+    );
     border-radius: 50%;
     display: inline-block;
     animation: bounce 0.6s infinite alternate;
