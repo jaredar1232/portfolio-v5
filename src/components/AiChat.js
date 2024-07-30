@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
+import MarkdownIt from "markdown-it"
 import { prompt } from "../../static/AiPrompt"
+
+const md = new MarkdownIt()
 
 export default function AiChat({ onFocus }) {
   const [input, setInput] = useState("")
@@ -76,9 +79,11 @@ export default function AiChat({ onFocus }) {
       <div className="chat-box">
         <div className="messages" ref={chatBoxRef}>
           {messages.slice(1).map((msg, index) => (
-            <div key={index} className={`message ${msg.role}`}>
-              {msg.content}
-            </div>
+            <div
+              key={index}
+              className={`message ${msg.role}`}
+              dangerouslySetInnerHTML={{ __html: md.render(msg.content) }}
+            />
           ))}
           {isLoading && (
             <div className="loader">
@@ -154,6 +159,12 @@ const ChatWrapper = styled.div`
     @media (min-width: 56.25em) {
       font-size: 1.2rem;
       padding: 0.5rem 1rem;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.5rem; /* Indentation for list items */
+      margin: 0; /* Remove default margin */
     }
   }
 
