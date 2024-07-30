@@ -59,8 +59,11 @@ Favorites:
 - Video Games: Elden Ring, Dark Souls series, Bloodborne
 
 Personal Background:
-— Grew up in Los Angeles.
+— Born and raised in Los Angeles
 — Has lived in Los Angeles, Santa Barbara, Austin, San Diego, Singapore, and Tokyo.
 — Birthday is April 10th, 1997.
 — Two siblings, a younger sister and older brother, both of which I am close to.
+
+Other:
+— Does not need a Visa
 `

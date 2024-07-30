@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import { useState } from "react"
 import styled from "styled-components"
 import { SEO } from "../components/seo"
 
@@ -7,29 +7,25 @@ const encode = data => {
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&")
 }
-export default class Contact extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
 
-  handleSubmit(event) {
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+
+  const handleSubmit = event => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state }),
+      body: encode({ "form-name": "contact", ...formData }),
     })
       .then(() => alert("Message Submitted!"))
       .catch(error => alert(error))
 
-    this.setState({
+    setFormData({
       name: "",
       email: "",
       subject: "",
@@ -39,84 +35,82 @@ export default class Contact extends Component {
     event.preventDefault()
   }
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value })
+  const handleChange = event => {
+    setFormData({ ...formData, [event.target.name]: event.target.value })
   }
 
-  render() {
-    return (
-      <ContactSection>
-        <div className="u-center-text">
-          <h2 className="heading" id="contact-me">
-            Contact Me
-          </h2>
-        </div>
+  return (
+    <ContactSection>
+      <div className="u-center-text">
+        <h2 className="heading" id="contact-me">
+          Contact Me
+        </h2>
+      </div>
 
-        <div className="form-container">
-          <form
-            name="contact"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={this.handleSubmit}
-          >
-            <input type="hidden" name="form-name" value="contact" />
+      <div className="form-container">
+        <form
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >
+          <input type="hidden" name="form-name" value="contact" />
 
-            <label>
-              Name<span className="asterisk">*</span>
-              <input
-                type="text"
-                name="name"
-                value={this.state.name}
-                required="required"
-                onChange={this.handleChange}
-                className="form-text input--name"
-              />
-            </label>
+          <label>
+            Name<span className="asterisk">*</span>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              required="required"
+              onChange={handleChange}
+              className="form-text input--name"
+            />
+          </label>
 
-            <label>
-              Email<span className="asterisk">*</span>
-              <input
-                type="email"
-                name="email"
-                value={this.state.email}
-                required="required"
-                onChange={this.handleChange}
-                className="form-text input--email"
-              />
-            </label>
+          <label>
+            Email<span className="asterisk">*</span>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              required="required"
+              onChange={handleChange}
+              className="form-text input--email"
+            />
+          </label>
 
-            <label>
-              Subject<span className="asterisk">*</span>
-              <input
-                type="text"
-                name="subject"
-                value={this.state.subject}
-                required="required"
-                onChange={this.handleChange}
-                className="form-text input--subject"
-              />
-            </label>
-            <label>
-              Message<span className="asterisk">*</span>
-              <textarea
-                name="message"
-                value={this.state.message}
-                onChange={this.handleChange}
-                required="required"
-                className="form-text form-textarea input--message"
-              />
-            </label>
-            <div className="center-submit">
-              <button type="submit" className="form-submit">
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
-      </ContactSection>
-    )
-  }
+          <label>
+            Subject<span className="asterisk">*</span>
+            <input
+              type="text"
+              name="subject"
+              value={formData.subject}
+              required="required"
+              onChange={handleChange}
+              className="form-text input--subject"
+            />
+          </label>
+          <label>
+            Message<span className="asterisk">*</span>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required="required"
+              className="form-text form-textarea input--message"
+            />
+          </label>
+          <div className="center-submit">
+            <button type="submit" className="form-submit">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </ContactSection>
+  )
 }
 
 export const Head = () => <SEO title="Jared Rothenberg | Contact" />

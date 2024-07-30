@@ -1,4 +1,3 @@
-import React from "react"
 import styled from "styled-components"
 import { SEO } from "../components/seo"
 import headshot from "../../static/Headshot.webp"

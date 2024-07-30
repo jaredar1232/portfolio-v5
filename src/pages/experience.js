@@ -1,77 +1,63 @@
-import React, { Component } from "react"
+import { useState } from "react"
 import styled from "styled-components"
 import AJob from "../components/AJob"
 import Modal from "../components/Modal"
 import { SEO } from "../components/seo"
 import experienceDataArray from "../../static/experienceData.json"
 
-export default class Experience extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showModal: false,
-      modalDetails: {},
-    }
-  }
+export default function Experience() {
+  const [showModal, setShowModal] = useState(false)
+  const [modalDetails, setModalDetails] = useState({})
 
-  modalOnClick = modalData => {
-    this.setState({
-      modalDetails: modalData,
-      showModal: true,
-    })
+  const modalOnClick = modalData => {
+    setModalDetails(modalData)
+    setShowModal(true)
     document.body.classList.add("no-scroll")
     const projectArray = document.getElementsByClassName("project")
-    for (var i = 0; i < projectArray.length; i++) {
+    for (let i = 0; i < projectArray.length; i++) {
       projectArray[i].pause()
     }
   }
 
-  closeModal = () => {
-    this.setState({
-      showModal: false,
-    })
+  const closeModal = () => {
+    setShowModal(false)
     document.body.classList.remove("no-scroll")
     const projectArray = document.getElementsByClassName("project")
-    for (var i = 0; i < projectArray.length; i++) {
+    for (let i = 0; i < projectArray.length; i++) {
       projectArray[i].play()
     }
   }
 
-  render() {
-    return (
-      <>
-        <Modal
-          modalDetails={this.state.modalDetails}
-          closeModal={this.closeModal}
-          showModal={this.state.showModal}
-        />
-        <ExperienceSection>
-          <div className="u-center-text">
-            <h2 className="heading" id="applications">
-              Experience
-            </h2>
-          </div>
-          {experienceDataArray.map(aJob => (
-            <AJob
-              aJob={aJob}
-              key={aJob.name}
-              modalOnClick={this.modalOnClick}
-              showModal={this.state.showModal}
-            />
-          ))}
-        </ExperienceSection>
-      </>
-    )
-  }
+  return (
+    <>
+      <Modal
+        modalDetails={modalDetails}
+        closeModal={closeModal}
+        showModal={showModal}
+      />
+      <ExperienceSection>
+        <div className="u-center-text">
+          <h2 className="heading" id="applications">
+            Experience
+          </h2>
+        </div>
+        {experienceDataArray.map(aJob => (
+          <AJob
+            aJob={aJob}
+            key={aJob.name}
+            modalOnClick={modalOnClick}
+            showModal={showModal}
+          />
+        ))}
+      </ExperienceSection>
+    </>
+  )
 }
 
-export const Head = () => (
-  <SEO title="Jared Rothenberg | Experience" />
-)
+export const Head = () => <SEO title="Jared Rothenberg | Experience" />
 
 const ExperienceSection = styled.section`
-    padding: 10rem 0 5rem 0;
-
+  padding: 10rem 0 5rem 0;
 
   .u-center-text {
     text-align: center;
@@ -83,7 +69,11 @@ const ExperienceSection = styled.section`
     font-weight: 700;
     display: inline-block;
     color: black;
-    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
+    background: -webkit-linear-gradient(
+      left,
+      rgb(102, 201, 255),
+      rgb(120, 139, 249)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

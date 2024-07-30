@@ -11,10 +11,12 @@ export default function AiChat({ onFocus }) {
     },
   ])
   const [hasError, setHasError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const chatBoxRef = useRef(null)
 
   const fetchAssistantMessage = async newMessages => {
+    setIsLoading(true)
     try {
       const response = await fetch(
         "https://chatgpt-server-indol.vercel.app/api/chat",
@@ -37,6 +39,8 @@ export default function AiChat({ onFocus }) {
     } catch (error) {
       console.error("Error fetching AI response:", error.message)
       setHasError(true)
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -76,6 +80,13 @@ export default function AiChat({ onFocus }) {
               {msg.content}
             </div>
           ))}
+          {isLoading && (
+            <div className="loader">
+              <span className="dot"></span>
+              <span className="dot"></span>
+              <span className="dot"></span>
+            </div>
+          )}
         </div>
         <form onSubmit={handleSubmit} className="input-form">
           <input
@@ -83,7 +94,7 @@ export default function AiChat({ onFocus }) {
             type="text"
             value={input}
             onChange={e => setInput(e.target.value)}
-            placeholder=" Ask my AI assistant... 🙂"
+            placeholder=" Ask my AI assistant..."
           />
           <button type="submit">Send</button>
         </form>
@@ -159,6 +170,37 @@ const ChatWrapper = styled.div`
     text-align: left;
   }
 
+  .loader {
+    align-self: center;
+    display: flex;
+    gap: 5px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    margin: 10px 0;
+    background-color: #00aeff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bounce 0.6s infinite alternate;
+  }
+
+  .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes bounce {
+    to {
+      opacity: 0.3;
+      transform: translate3d(0, -8px, 0);
+    }
+  }
+
   .input-form {
     display: flex;
     align-items: center;
@@ -184,7 +226,11 @@ const ChatWrapper = styled.div`
 
   button {
     border: none;
-    background: #007bff;
+    background-image: linear-gradient(
+      to right bottom,
+      rgb(102, 201, 255),
+      rgb(54 78 216)
+    );
     color: white;
     border-radius: 5px;
     margin-left: 0.5rem;

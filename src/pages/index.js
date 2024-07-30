@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import styled from "styled-components"
 import { SEO } from "../components/seo"
 import AiChat from "../components/AiChat" // Import the AiChat component
