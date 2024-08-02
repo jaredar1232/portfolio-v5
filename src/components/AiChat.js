@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import MarkdownIt from "markdown-it"
 import { prompt } from "../../static/AiPrompt"
@@ -17,6 +17,7 @@ export default function AiChat({ onFocus }) {
   const [isLoading, setIsLoading] = useState(false)
 
   const chatBoxRef = useRef(null)
+  const inputRef = useRef(null) // Add ref for the input field
 
   const fetchAssistantMessage = async newMessages => {
     setIsLoading(true)
@@ -44,6 +45,7 @@ export default function AiChat({ onFocus }) {
       setHasError(true)
     } finally {
       setIsLoading(false)
+      inputRef.current.focus() // Focus the input field after submission
     }
   }
 
@@ -95,6 +97,7 @@ export default function AiChat({ onFocus }) {
         </div>
         <form onSubmit={handleSubmit} className="input-form">
           <input
+            ref={inputRef} // Attach the ref to the input field
             className="input"
             type="text"
             value={input}
