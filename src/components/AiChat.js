@@ -5,6 +5,8 @@ import { prompt } from "../../static/AiPrompt"
 
 const md = new MarkdownIt()
 
+// Instead of using onSubmit, I use onClick to avoid the keyboard closing on ios/safari
+
 export default function AiChat({ onFocus }) {
   const [input, setInput] = useState("")
   const [messages, setMessages] = useState([
@@ -17,7 +19,7 @@ export default function AiChat({ onFocus }) {
   const [isLoading, setIsLoading] = useState(false)
 
   const chatBoxRef = useRef(null)
-  const inputRef = useRef(null) // Add ref for the input field
+  const inputRef = useRef(null)
 
   const fetchAssistantMessage = async newMessages => {
     setIsLoading(true)
@@ -45,12 +47,10 @@ export default function AiChat({ onFocus }) {
       setHasError(true)
     } finally {
       setIsLoading(false)
-      inputRef.current.focus() // Focus the input field after submission
     }
   }
 
-  const handleSubmit = async e => {
-    e.preventDefault()
+  const handleSendMessage = () => {
     if (input.trim() === "") return
 
     const userMessage = { role: "user", content: input }
@@ -59,6 +59,14 @@ export default function AiChat({ onFocus }) {
     setInput("")
 
     fetchAssistantMessage(newMessages)
+    inputRef.current?.focus() // Keep focus on input
+  }
+
+  const handleKeyDown = e => {
+    if (e.key === "Enter") {
+      e.preventDefault()
+      handleSendMessage()
+    }
   }
 
   const scrollToBottom = () => {
@@ -95,17 +103,20 @@ export default function AiChat({ onFocus }) {
             </div>
           )}
         </div>
-        <form onSubmit={handleSubmit} className="input-form">
+        <div className="input-form">
           <input
-            ref={inputRef} // Attach the ref to the input field
             className="input"
             type="text"
             value={input}
             onChange={e => setInput(e.target.value)}
             placeholder=" Ask my AI assistant..."
+            ref={inputRef}
+            onKeyDown={handleKeyDown} // Handles Enter key
           />
-          <button type="submit">Send</button>
-        </form>
+          <button type="button" onClick={handleSendMessage}>
+            Send
+          </button>
+        </div>
       </div>
     </ChatWrapper>
   )
