@@ -1,29 +1,30 @@
-[  
+[
   {
-  "name": "Intuit — Software Engineer II",
-  "width": 85,
-  "video": "https://d1o11p1jeyf1dw.cloudfront.net/Intuit.mp4",
-  "website": "https://www.intuit.com",
-  "details": {
-    "name": "Intuit | 11.22 - 11.23",
-    "description": "Intuit is the parent company of TurboTax, Credit Karma, Mailchip, Mint, and Quickbooks. I worked on the TurboTax product building out new UI's and user flows in the \"Tax Funnel\"",
-    "keyPoints": [
-      "Built new user flows in the TurboTax funnel using internal design library and in accordance with stakeholder requirements; conducting A/B Tests to determine the highest Start-to-Completion variation",
-      "Experimented with AI/GPT4 model endpoints to enable dynamic UI component inputs for next gen TurboTax products",
-      "Presented critical peak projects to 40+ engineers, including manager 2, manager 3, and director level"
-    ],
-    "icons": [
-      "React",
-      "Typescript",
-      "Javascript",
-      "HTML5",
-      "CSS3",
-      "Atlassian"
-    ]
-  }
-},
+    "name": "Intuit — Software Engineer II",
+    "width": 85,
+    "video": "https://d1o11p1jeyf1dw.cloudfront.net/Intuit.mp4",
+    "website": "https://www.intuit.com",
+    "details": {
+      "name": "Intuit | 11.22 - 11.23",
+      "description": "Intuit is the parent company of TurboTax, Credit Karma, Mailchip, Mint, and Quickbooks. I worked on the TurboTax product building out new UI's and user flows in the \"Tax Funnel\"",
+      "keyPoints": [
+        "Created new user flows in the TurboTax funnel using the internal design library, aligning with stakeholder requirements, and optimizing Start-to-Completion through A/B testing",
+        "Integrated AI/GPT-4 model endpoints to enable dynamic UI component inputs for next-gen TurboTax products",
+        "Presented key projects to over 40 engineers, including senior and director-level management"
+      ],
+      "icons": [
+        "React",
+        "Typescript",
+        "Javascript",
+        "HTML5",
+        "CSS3",
+        "Atlassian",
+        "Storybook"
+      ]
+    }
+  },
   {
-    "name": "The Zebra — Software Engineer II",
+    "name": "The Zebra — Software Engineer I & II",
     "width": 85,
     "video": "https://d1o11p1jeyf1dw.cloudfront.net/TheZebra-SWE2.mp4",
     "website": "https://www.thezebra.com",
@@ -31,10 +32,10 @@
       "name": "The Zebra | 03.21 - 11.22",
       "description": "The Zebra is an insurance tech company creating and innovating a new market space for insurance. We compare and advise on which insurance would be best for a consumer. Since launching my corporate software engineering career at The Zebra, I have had the unique opportunity to work on 3 different teams. I have worked on high volume landing pages, complex multi-party API’s on the backend, and most recently a user information funnel.",
       "keyPoints": [
-        "Provide mentorship to junior engineers through pair programming, code reviews, and 1:1 syncs",
-        "Increased policy sales and improved user experience by pioneering the company’s first transactional email using a custom API to interface with Iterable (email sending service)",
-        "Used Javascript, HTML, CSS, and Wagtail to create and edit landing page templates (including our homepage redesign) in accordance with designer’s provided specifications and Optimizely A/B test results to measurably increase user engagement",
-        "Participated in company Frontend and Backend extracurriculars that focused on org-wide initiatives; most recently, helped to rework the company interview process to increase candidate quality and equalize opportunity"
+        "Co-developed the world’s first 3rd-party insurance-policy sales funnel with zero agent interaction, catering to the 87% of users preferring online purchases with no human interaction",
+        "Developed and updated landing page templates, including a homepage redesign, using JavaScript, HTML, CSS, and Wagtail, resulting in increased user engagement based on Optimizely A/B testing",
+        "Boosted policy sales and user experience by creating the company’s first transactional email system, integrating it with Iterable via a custom API",
+        "Engaged in company-wide initiatives, including reworking the interview process to enhance candidate quality and ensure equal opportunity"
       ],
       "icons": [
         "React",
@@ -63,12 +64,7 @@
         "Updated and maintained pre-existing websites using React, Javascript, HTML, and CSS",
         "Worked within a small team to build out an MVP following scrum and agile practices"
       ],
-      "icons": [
-        "React",
-        "Javascript",
-        "HTML5",
-        "CSS3"
-      ]
+      "icons": ["React", "Javascript", "HTML5", "CSS3"]
     }
   }
 ]
