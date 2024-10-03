@@ -1,25 +1,32 @@
-import { Helmet } from 'react-helmet'
-import { useSiteMetadata } from "../hooks/use-site-metadata"
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { siteMetadata } from '../config/siteMetadataConfig';
 
-export const SEO = ({ title, description, pathname }) => {
-    const { title: defaultTitle, description: defaultDescription, siteUrl } = useSiteMetadata()
+export const SEO = ({ title, description }) => {
+    const router = useRouter();
+    const { title: defaultTitle, description: defaultDescription, siteUrl } = siteMetadata;
+
     const seo = {
-        title: title || defaultTitle,
+        title: title ? `${title} | ${defaultTitle}` : defaultTitle,
         description: description || defaultDescription,
-        url: `${siteUrl}${pathname || ``}`,
-    }
+        url: `${siteUrl}${router.asPath || ''}`,
+    };
 
     return (
-        <Helmet >
-            <script src="https://kit.fontawesome.com/894b2bd601.js" crossorigin="anonymous"></script>
-            <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-            <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-            ></meta>
-            <html lang="en" dir="ltr" />
+        <Head>
+            {/* Page Title */}
             <title>{seo.title}</title>
             <meta name="description" content={seo.description} />
-        </Helmet>
-    )
-}
+
+            {/* Open Graph Meta Tags */}
+            <meta property="og:title" content={seo.title} />
+            <meta property="og:description" content={seo.description} />
+            <meta property="og:url" content={seo.url} />
+            <meta property="og:type" content="website" />
+
+            {/* Additional Meta Tags */}
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
+    );
+};

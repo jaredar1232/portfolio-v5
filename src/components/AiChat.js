@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import MarkdownIt from "markdown-it"
-import { prompt } from "../../static/AiPrompt"
+import { prompt } from "../../public/AiPrompt"
 
 const md = new MarkdownIt()
 

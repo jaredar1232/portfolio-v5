@@ -1,79 +1,78 @@
-import { Link } from "gatsby"
+import Link from "next/link"
 import { useEffect, useState } from "react"
-import styled from "styled-components"
-import whiteLogo from "../../static/logo-white.webp"
-import blackLogo from "../../static/logo-black.webp"
+import styled, { createGlobalStyle } from "styled-components"
+import { useRouter } from "next/router"
 
-export default function Navbar({ path }) {
-  let [navTextColor, setNavTextColor] = useState("black")
-  let [logo, setLogo] = useState(whiteLogo)
+export default function Navbar() {
+  const router = useRouter()
+  const [navTextColor, setNavTextColor] = useState("black")
+  const [logoSrc, setLogoSrc] = useState("/logo-white.webp")
 
-  // changes nav text color based on what page we are on
   useEffect(() => {
-    switch (path) {
-      case "/about/":
+    switch (router.pathname) {
+      case "/about":
+      case "/experience":
+      case "/projects":
+      case "/contact":
         setNavTextColor("black")
-        break
-      case "/experience/":
-        setNavTextColor("black")
+        setLogoSrc("/logo-black.webp")
         break
       case "/":
         setNavTextColor("white")
-        break
-      case "/projects/":
-        setNavTextColor("black")
-        break
-      case "/contact/":
-        setNavTextColor("black")
+        setLogoSrc("/logo-white.webp")
         break
       default:
-        console.error("there is an issue with the navigation color setter")
+        console.error("There is an issue with the navigation color setter")
     }
-  }, [path])
-
-  // changes logo path/variable based on what the nav text color should be
-  useEffect(() => {
-    navTextColor === "white" ? setLogo(whiteLogo) : setLogo(blackLogo)
-  }, [navTextColor])
+  }, [router.pathname])
 
   return (
-    <NavWrapper navTextColor={navTextColor}>
-      <Link
-        to="/about"
-        className={`nav__link ${navTextColor}`}
-        activeClassName="active"
-      >
-        About
-      </Link>
-      <Link
-        to="/experience"
-        className={`nav__link ${navTextColor}`}
-        activeClassName="active"
-      >
-        Experience
-      </Link>
-      <Link to="/">
-        <img className="home__logo" src={logo} alt="logo" />
-      </Link>
-      <Link
-        to="/projects"
-        className={`nav__link ${navTextColor}`}
-        activeClassName="active"
-      >
-        Projects
-      </Link>
-      <Link
-        to="/contact"
-        className={`nav__link ${navTextColor}`}
-        activeClassName="active"
-      >
-        Contact
-      </Link>
-    </NavWrapper>
+    <>
+      <GlobalStyles />
+      <NavWrapper navTextColor={navTextColor}>
+        <Link
+          href="/about"
+          className={`nav__link ${
+            router.pathname === "/about" ? "active" : ""
+          }`}
+        >
+          About
+        </Link>
+        <Link
+          href="/experience"
+          className={`nav__link ${
+            router.pathname === "/experience" ? "active" : ""
+          }`}
+        >
+          Experience
+        </Link>
+        <Link href="/">
+          <Logo src={logoSrc} alt="logo" />
+        </Link>
+        <Link
+          href="/projects"
+          className={`nav__link ${
+            router.pathname === "/projects" ? "active" : ""
+          }`}
+        >
+          Projects
+        </Link>
+        <Link
+          href="/contact"
+          className={`nav__link ${
+            router.pathname === "/contact" ? "active" : ""
+          }`}
+        >
+          Contact
+        </Link>
+      </NavWrapper>
+    </>
   )
 }
 
 const NavWrapper = styled.nav`
+  --nav-text-color: ${({ navTextColor }) => navTextColor};
+
   @media (max-width: 56.25em) {
     display: none;
   }
@@ -91,32 +90,38 @@ const NavWrapper = styled.nav`
   font-size: 1.5rem;
   text-align: center;
 
-  // lets it go over the projects/jobs
   z-index: 1;
-
-  // glass effect
   backdrop-filter: blur(5px);
 
-  // conditional box shadow for white or black background & background colors incase text color and background color match
   ${({ navTextColor }) =>
     navTextColor === "black"
       ? `
     box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);
-    background-color: rgb(230, 232, 234, 0.5);`
-      : `box-shadow: 0px 5px 10px rgba(3, 3, 3, 0.568);
-      background-color: rgba(227,227,227,0.3);`}
+    background-color: rgba(230, 232, 234, 0.5);`
+      : `
+    box-shadow: 0px 5px 10px rgba(3, 3, 3, 0.568);
+    background-color: rgba(227, 227, 227, 0.3);`}
+`
 
-  // nav bar animation
-  animation: fadeInNavBar 1s;
-  animation-fill-mode: backwards;
-  animation-delay: 1s;
+const Logo = styled.img`
+  position: absolute;
+  transform: translate(-50%);
+  width: 3rem;
+  transition: all 0.3s;
 
+  &:hover {
+    transform: scale(1.3) translate(-40%, -4%);
+  }
+`
+
+const GlobalStyles = createGlobalStyle`
   .nav__link {
     text-decoration: none;
     transition: all 0.2s;
+    color: var(--nav-text-color);
 
     &:visited {
-      text-decoration: none;
+      color: var(--nav-text-color);
     }
 
     &:hover {
@@ -135,24 +140,7 @@ const NavWrapper = styled.nav`
     }
   }
 
-  // class for page dependent text color
-  .black {
-    color: black;
-
-    &:visited {
-      color: black;
-    }
-  }
-  .white {
-    color: white;
-
-    &:visited {
-      color: white;
-    }
-  }
-
-  // needs to remain under .black and .white for the cascade to work
-  .active {
+  .nav__link.active {
     background-image: linear-gradient(
       to right bottom,
       rgb(102, 201, 255),
@@ -161,26 +149,5 @@ const NavWrapper = styled.nav`
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-  }
-
-  .home__logo {
-    position: absolute;
-    transform: translate(-50%);
-    width: 3rem;
-    transition: all 0.3s;
-
-    &:hover {
-      transform: scale(1.3) translate(-40%, -4%);
-    }
-  }
-
-  @keyframes fadeInNavBar {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
   }
 `

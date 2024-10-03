@@ -1,7 +1,8 @@
 import { useState } from "react"
 import styled from "styled-components"
-import { SEO } from "../components/seo"
-import AiChat from "../components/AiChat" // Import the AiChat component
+import Head from "next/head"
+import AiChat from "../components/AiChat"
+import { siteMetadata } from "../config/siteMetadataConfig"
 
 export default function Home() {
   const [isChatFocused, setIsChatFocused] = useState(false)
@@ -11,19 +12,24 @@ export default function Home() {
   }
 
   return (
-    <HomeSection className={isChatFocused ? "chat-focused" : ""}>
-      <div className="header__text-box">
-        <div className="heading">
-          <h1 className="heading__main">Jared{"\n"}Rothenberg</h1>
-          <h2 className="heading__sub">Software Engineer</h2>
+    <>
+      <Head>
+        <title>{siteMetadata.title}</title>
+        <meta name="description" content={siteMetadata.description} />
+        {/* Add other meta tags as needed */}
+      </Head>
+      <HomeSection className={isChatFocused ? "chat-focused" : ""}>
+        <div className="header__text-box">
+          <div className="heading">
+            <h1 className="heading__main">Jared{"\n"}Rothenberg</h1>
+            <h2 className="heading__sub">Software Engineer</h2>
+          </div>
+          <AiChat onFocus={handleChatFocus} />
         </div>
-        <AiChat onFocus={handleChatFocus} />{" "}
-      </div>
-    </HomeSection>
+      </HomeSection>
+    </>
   )
 }
-
-export const Head = () => <SEO />
 
 const HomeSection = styled.section`
   height: 100vh;

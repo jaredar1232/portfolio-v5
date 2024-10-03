@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import Link from "next/link"
 import styled from "styled-components"
 
 export default function Navbar() {
@@ -24,31 +24,31 @@ export default function Navbar() {
         <nav className="navigation__nav">
           <ul className="navigation__list">
             <li className="navigation__item" onClick={onClickHandler}>
-              <Link to="/" className="navigation__link">
+              <Link href="/" className="navigation__link">
                 Home
               </Link>
             </li>
 
             <li className="navigation__item" onClick={onClickHandler}>
-              <Link to="/about" className="navigation__link">
+              <Link href="/about" className="navigation__link">
                 About
               </Link>
             </li>
 
             <li className="navigation__item" onClick={onClickHandler}>
-              <Link to="/experience" className="navigation__link">
+              <Link href="/experience" className="navigation__link">
                 Experience
               </Link>
             </li>
 
             <li className="navigation__item" onClick={onClickHandler}>
-              <Link to="/projects" className="navigation__link">
+              <Link href="/projects" className="navigation__link">
                 Projects
               </Link>
             </li>
 
             <li className="navigation__item" onClick={onClickHandler}>
-              <Link to="/contact" className="navigation__link">
+              <Link href="/contact" className="navigation__link">
                 Contact
               </Link>
             </li>

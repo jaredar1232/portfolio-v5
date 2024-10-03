@@ -2,8 +2,8 @@ import { useState } from "react"
 import styled from "styled-components"
 import AProject from "../components/AProject"
 import Modal from "../components/Modal"
-import { SEO } from "../components/seo"
-import projectDataArray from "../../static/projectData.json"
+import { SEO } from "../components/SEO"
+import projectDataArray from "../../public/projectData.json"
 
 export default function Projects() {
   const [showModal, setShowModal] = useState(false)

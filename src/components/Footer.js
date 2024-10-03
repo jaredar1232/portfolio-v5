@@ -13,7 +13,7 @@ export default function Footer() {
           rel="noreferrer"
           aria-label="LinkedIn"
         >
-          <i className="fa fa-linkedin"></i>
+          <i className="fa-brands fa-linkedin-in"></i>
         </a>
 
         <a
@@ -23,20 +23,20 @@ export default function Footer() {
           rel="noreferrer"
           aria-label="Github"
         >
-          <i className="fa fa-github"></i>
+          <i class="fa-brands fa-github"></i>
         </a>
         <a
           href="mailto:jaredar@gmail.com"
           className="footer-icon"
           aria-label="Email-Me"
         >
-          <i className="fa fa-envelope"></i>
+          <i className="fa-regular fa-envelope"></i>
         </a>
       </div>
 
       <div className="u-center-text">
-        Copyright &copy; 2020, &nbsp; Jared Rothenberg. &nbsp; All Rights
-        Reserved
+        Copyright &copy; {new Date().getFullYear()}, &nbsp; Jared Rothenberg.
+        &nbsp; All Rights Reserved
       </div>
     </FooterWrapper>
   )
@@ -107,9 +107,9 @@ const FooterWrapper = styled.footer`
     width: 100%;
   }
 
-  .fa {
-    font-size: 2.2rem;
-    padding-top: 0.8rem;
+  .footer-icon i {
+    font-size: 2.6rem;
+    padding-top: 0.6rem;
   }
 
   .u-center-text {

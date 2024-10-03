@@ -2,8 +2,8 @@ import { useState } from "react"
 import styled from "styled-components"
 import AJob from "../components/AJob"
 import Modal from "../components/Modal"
-import { SEO } from "../components/seo"
-import experienceDataArray from "../../static/experienceData.json"
+import { SEO } from "../components/SEO"
+import experienceDataArray from "../../public/experienceData.json"
 
 export default function Experience() {
   const [showModal, setShowModal] = useState(false)

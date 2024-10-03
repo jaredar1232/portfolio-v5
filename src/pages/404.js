@@ -1,5 +1,5 @@
-import { Link } from "gatsby"
-import { SEO } from "../components/seo"
+import Link from "next/link"
+import { SEO } from "../components/SEO"
 import styled from "styled-components"
 
 export default function NotFound() {
@@ -8,7 +8,7 @@ export default function NotFound() {
       <div className="not-found-container">
         <h1>404 PAGE NOT FOUND</h1>
         <span>You look a little lost friend, let me take you&nbsp;</span>
-        <Link to="/" className="link-home">
+        <Link href="/" className="link-home">
           home
         </Link>
       </div>
