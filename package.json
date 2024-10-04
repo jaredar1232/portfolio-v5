@@ -18,6 +18,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@next/bundle-analyzer": "^14.2.14",
+    "@vercel/speed-insights": "^1.0.12",
     "intersection-observer": "^0.12.2",
     "markdown-it": "^14.1.0",
     "next": "^14.2.14",
