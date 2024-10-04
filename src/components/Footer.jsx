@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Resume from "./Resume.js"
+import Resume from "./Resume"
 
 export default function Footer() {
   return (
