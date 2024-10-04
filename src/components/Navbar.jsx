@@ -32,17 +32,15 @@ export default function Navbar() {
       <NavWrapper navTextColor={navTextColor}>
         <Link
           href="/about"
-          className={`nav__link ${
-            router.pathname === "/about" ? "active" : ""
-          }`}
+          className={`nav__link ${router.pathname === "/about" ? "active" : ""
+            }`}
         >
           About
         </Link>
         <Link
           href="/experience"
-          className={`nav__link ${
-            router.pathname === "/experience" ? "active" : ""
-          }`}
+          className={`nav__link ${router.pathname === "/experience" ? "active" : ""
+            }`}
         >
           Experience
         </Link>
@@ -51,17 +49,15 @@ export default function Navbar() {
         </Link>
         <Link
           href="/projects"
-          className={`nav__link ${
-            router.pathname === "/projects" ? "active" : ""
-          }`}
+          className={`nav__link ${router.pathname === "/projects" ? "active" : ""
+            }`}
         >
           Projects
         </Link>
         <Link
           href="/contact"
-          className={`nav__link ${
-            router.pathname === "/contact" ? "active" : ""
-          }`}
+          className={`nav__link ${router.pathname === "/contact" ? "active" : ""
+            }`}
         >
           Contact
         </Link>
@@ -101,6 +97,20 @@ const NavWrapper = styled.nav`
       : `
     box-shadow: 0px 5px 10px rgba(3, 3, 3, 0.568);
     background-color: rgba(227, 227, 227, 0.3);`}
+
+  // Add the fade-in animation
+  animation: fadeInNavBar 1s;
+  animation-fill-mode: backwards;
+  animation-delay: 1s;
+
+  @keyframes fadeInNavBar {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `
 
 const Logo = styled.img`

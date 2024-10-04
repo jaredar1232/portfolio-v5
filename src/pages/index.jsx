@@ -44,7 +44,6 @@ const HomeSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.5s ease-in-out;
 
   .header__text-box {
     text-align: center;
