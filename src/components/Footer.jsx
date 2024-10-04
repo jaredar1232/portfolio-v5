@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import Resume from "./Resume";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 
 export default function Footer() {
   const [isMounted, setIsMounted] = useState(false);
@@ -22,7 +27,7 @@ export default function Footer() {
               rel="noreferrer"
               aria-label="LinkedIn"
             >
-              <i className="fa-brands fa-linkedin-in"></i>
+              <FontAwesomeIcon className="icon" icon={faLinkedinIn} />
             </a>
 
             <a
@@ -32,14 +37,14 @@ export default function Footer() {
               rel="noreferrer"
               aria-label="Github"
             >
-              <i className="fa-brands fa-github"></i>
+              <FontAwesomeIcon className="icon" icon={faGithub} />
             </a>
             <a
               href="mailto:jaredar@gmail.com"
               className="footer-icon"
               aria-label="Email-Me"
             >
-              <i className="fa-regular fa-envelope"></i>
+              <FontAwesomeIcon className="icon" icon={faEnvelope} />
             </a>
           </>
         )}
@@ -121,6 +126,11 @@ const FooterWrapper = styled.footer`
   .footer-icon i {
     font-size: 2.6rem;
     padding-top: 0.6rem;
+  }
+
+  .icon {
+    font-size: 2.6rem;
+    padding-top: 0.6rem; // Optional, adjust based on your layout needs
   }
 
   .u-center-text {
