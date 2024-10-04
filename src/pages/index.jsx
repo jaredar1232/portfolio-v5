@@ -1,22 +1,21 @@
-import { useState } from "react"
-import styled from "styled-components"
-import Head from "next/head"
-import AiChat from "../components/AiChat"
-import { siteMetadata } from "../config/siteMetadataConfig"
+import { useState } from "react";
+import styled from "styled-components";
+import Head from "next/head";
+import AiChat from "../components/AiChat";
+import { siteMetadata } from "../config/siteMetadataConfig";
 
 export default function Home() {
-  const [isChatFocused, setIsChatFocused] = useState(false)
+  const [isChatFocused, setIsChatFocused] = useState(false);
 
   const handleChatFocus = () => {
-    setIsChatFocused(true)
-  }
+    setIsChatFocused(true);
+  };
 
   return (
     <>
       <Head>
         <title>{siteMetadata.title}</title>
         <meta name="description" content={siteMetadata.description} />
-        {/* Add other meta tags as needed */}
       </Head>
       <HomeSection className={isChatFocused ? "chat-focused" : ""}>
         <div className="header__text-box">
@@ -24,14 +23,15 @@ export default function Home() {
             <h1 className="heading__main">Jared{"\n"}Rothenberg</h1>
             <h2 className="heading__sub">Software Engineer</h2>
           </div>
-          <AiChat onFocus={handleChatFocus} />
+          <AiChat className="ai-chat-container" onFocus={handleChatFocus} />
         </div>
       </HomeSection>
     </>
-  )
+  );
 }
 
 const HomeSection = styled.section`
+  /* Reserve space for the entire layout */
   height: 100vh;
   background-image: linear-gradient(
       to right bottom,
@@ -39,6 +39,7 @@ const HomeSection = styled.section`
       rgba(21, 26, 40, 0.194)
     ),
     url("/LandingImageBlueMedium.webp");
+  background-color: #5A6E7A;
   background-size: cover;
   background-position: right;
   display: flex;
@@ -48,6 +49,7 @@ const HomeSection = styled.section`
   .header__text-box {
     text-align: center;
     transition: all 0.5s ease-in-out;
+    min-height: 40vh; /* Reserve space for content */
   }
 
   .heading {
@@ -74,6 +76,9 @@ const HomeSection = styled.section`
       letter-spacing: 3rem;
       font-size: 6rem;
     }
+
+    /* Reserve space for the heading to avoid layout shifts */
+    min-height: 6rem;
   }
 
   .heading__sub {
@@ -81,7 +86,6 @@ const HomeSection = styled.section`
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 0.8rem;
-
     margin-top: 1rem;
     animation: fadeDownToUp 0.5s ease-out;
     animation-fill-mode: backwards;
@@ -91,19 +95,25 @@ const HomeSection = styled.section`
       font-size: 2rem;
       letter-spacing: 1.75rem;
     }
+
+    /* Reserve space for the subheading */
+    min-height: 3rem;
   }
 
-  &.chat-focused .heading {
-    opacity: 0;
-  }
+    &.chat-focused .heading {
+      opacity: 0;
+    }
 
-  &.chat-focused .header__text-box {
-    transform: translateY(-50%);
-    margin-top: 60px;
+    &.chat-focused .header__text-box {
+    transform: translateY(-50%) translateY(60px);
 
     @media (min-width: 56.25em) {
-      margin-top: 300px;
+      transform: translateY(-50%) translateY(300px);
     }
+  }
+
+  .ai-chat-container {
+    min-height: 300px; /* Adjust based on expected content */
   }
 
   @keyframes fadeUpToDown {
@@ -111,7 +121,6 @@ const HomeSection = styled.section`
       opacity: 0;
       transform: translateY(-5rem);
     }
-
     100% {
       opacity: 1;
       transform: translateY(0);
@@ -123,10 +132,9 @@ const HomeSection = styled.section`
       transform: translateY(5rem);
       opacity: 0;
     }
-
     100% {
       transform: translateY(0);
       opacity: 1;
     }
   }
-`
+`;
