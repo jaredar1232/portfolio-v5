@@ -1,32 +1,24 @@
-import { useState } from "react"
-import styled from "styled-components"
-import AProject from "../components/AProject"
-import Modal from "../components/Modal"
-import { SEO } from "../components/SEO"
-import projectDataArray from "../../public/projectData.json"
+import { useState } from "react";
+import styled from "styled-components";
+import AProject from "../components/AProject";
+import Modal from "../components/Modal";
+import { SEO } from "../components/SEO";
+import projectDataArray from "../../public/projectData.json";
 
 export default function Projects() {
-  const [showModal, setShowModal] = useState(false)
-  const [modalDetails, setModalDetails] = useState({})
+  const [showModal, setShowModal] = useState(false);
+  const [modalDetails, setModalDetails] = useState({});
 
-  const modalOnClick = modalData => {
-    setModalDetails(modalData)
-    setShowModal(true)
-    document.body.classList.add("no-scroll")
-    const projectArray = document.getElementsByClassName("project")
-    for (let i = 0; i < projectArray.length; i++) {
-      projectArray[i].pause()
-    }
-  }
+  const modalOnClick = (modalData) => {
+    setModalDetails(modalData);
+    setShowModal(true);
+    document.body.classList.add("no-scroll");
+  };
 
   const closeModal = () => {
-    setShowModal(false)
-    document.body.classList.remove("no-scroll")
-    const projectArray = document.getElementsByClassName("project")
-    for (let i = 0; i < projectArray.length; i++) {
-      projectArray[i].play()
-    }
-  }
+    setShowModal(false);
+    document.body.classList.remove("no-scroll");
+  };
 
   return (
     <>
@@ -41,7 +33,7 @@ export default function Projects() {
             Projects
           </h2>
         </div>
-        {projectDataArray.map(aProject => (
+        {projectDataArray.map((aProject) => (
           <AProject
             aProject={aProject}
             key={aProject.name}
@@ -51,7 +43,7 @@ export default function Projects() {
         ))}
       </ProjectsSection>
     </>
-  )
+  );
 }
 
 export const Head = () => <SEO title="Jared Rothenberg | Projects" />

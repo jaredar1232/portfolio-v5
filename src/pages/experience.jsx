@@ -1,32 +1,24 @@
-import { useState } from "react"
-import styled from "styled-components"
-import AJob from "../components/AJob"
-import Modal from "../components/Modal"
-import { SEO } from "../components/SEO"
-import experienceDataArray from "../../public/experienceData.json"
+import { useState } from "react";
+import styled from "styled-components";
+import AJob from "../components/AJob";
+import Modal from "../components/Modal";
+import { SEO } from "../components/SEO";
+import experienceDataArray from "../../public/experienceData.json";
 
 export default function Experience() {
-  const [showModal, setShowModal] = useState(false)
-  const [modalDetails, setModalDetails] = useState({})
+  const [showModal, setShowModal] = useState(false);
+  const [modalDetails, setModalDetails] = useState({});
 
-  const modalOnClick = modalData => {
-    setModalDetails(modalData)
-    setShowModal(true)
-    document.body.classList.add("no-scroll")
-    const projectArray = document.getElementsByClassName("project")
-    for (let i = 0; i < projectArray.length; i++) {
-      projectArray[i].pause()
-    }
-  }
+  const modalOnClick = (modalData) => {
+    setModalDetails(modalData);
+    setShowModal(true);
+    document.body.classList.add("no-scroll");
+  };
 
   const closeModal = () => {
-    setShowModal(false)
-    document.body.classList.remove("no-scroll")
-    const projectArray = document.getElementsByClassName("project")
-    for (let i = 0; i < projectArray.length; i++) {
-      projectArray[i].play()
-    }
-  }
+    setShowModal(false);
+    document.body.classList.remove("no-scroll");
+  };
 
   return (
     <>
@@ -41,7 +33,7 @@ export default function Experience() {
             Experience
           </h2>
         </div>
-        {experienceDataArray.map(aJob => (
+        {experienceDataArray.map((aJob) => (
           <AJob
             aJob={aJob}
             key={aJob.name}
@@ -51,7 +43,7 @@ export default function Experience() {
         ))}
       </ExperienceSection>
     </>
-  )
+  );
 }
 
 export const Head = () => <SEO title="Jared Rothenberg | Experience" />

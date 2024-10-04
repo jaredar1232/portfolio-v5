@@ -1,7 +1,39 @@
-import styled from "styled-components"
+import { useRef, useEffect } from "react";
+import styled from "styled-components";
 
-const AJob = ({ aJob, showModal, modalOnClick }) => {
-  const jobWidth = aJob.width
+export default function AJob({ aJob, showModal, modalOnClick }) {
+  const jobWidth = aJob.width;
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    let observer;
+
+    if (videoElement) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !showModal) {
+            // Play the video when it's in the viewport and modal is not open
+            videoElement.play();
+          } else {
+            // Pause the video when it's out of the viewport or modal is open
+            videoElement.pause();
+          }
+        },
+        {
+          threshold: 0.8, // Controls how much video needs to show to play
+        }
+      );
+
+      observer.observe(videoElement);
+    }
+
+    return () => {
+      if (observer && videoElement) {
+        observer.unobserve(videoElement);
+      }
+    };
+  }, [showModal]);
 
   return (
     <AJobSection jobWidth={jobWidth}>
@@ -11,11 +43,11 @@ const AJob = ({ aJob, showModal, modalOnClick }) => {
           playsInline
           muted
           loop
-          paused={`${!showModal}`}
-          autoPlay
+          ref={videoRef}
           className="project"
+          preload="metadata"
+          src={aJob.video}
         >
-          <source src={aJob.video} type="video/mp4"></source>
           Your browser does not support the video tag.
         </video>
       </div>
@@ -51,10 +83,9 @@ const AJob = ({ aJob, showModal, modalOnClick }) => {
         </div>
       </div>
     </AJobSection>
-  )
-}
+  );
+};
 
-export default AJob
 
 const AJobSection = styled.section`
   width: 65%;

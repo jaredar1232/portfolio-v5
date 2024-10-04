@@ -1,7 +1,40 @@
-import styled from "styled-components"
+import { useRef, useEffect } from "react";
+import styled from "styled-components";
 
 export default function AProject({ aProject, showModal, modalOnClick }) {
-  const projectWidth = aProject.width
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    let observer;
+
+    if (videoElement) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !showModal) {
+            // Play the video when it's in the viewport and modal is not open
+            videoElement.play();
+          } else {
+            // Pause the video when it's out of the viewport or modal is open
+            videoElement.pause();
+          }
+        },
+        {
+          threshold: 0.8, // Controls how much video needs to show to play
+        }
+      );
+
+      observer.observe(videoElement);
+    }
+
+    return () => {
+      if (observer && videoElement) {
+        observer.unobserve(videoElement);
+      }
+    };
+  }, [showModal]);
+
+  const projectWidth = aProject.width;
 
   return (
     <AProjectWrapper projectWidth={projectWidth}>
@@ -12,11 +45,11 @@ export default function AProject({ aProject, showModal, modalOnClick }) {
             playsInline
             muted
             loop
-            paused={`${!showModal}`}
-            autoPlay
+            ref={videoRef}
             className="project"
+            preload="metadata"
+            src={aProject.video}
           >
-            <source src={aProject.video} type="video/mp4"></source>
             Your browser does not support the video tag.
           </video>
         </div>
@@ -44,6 +77,7 @@ export default function AProject({ aProject, showModal, modalOnClick }) {
               className="button-details"
               onClick={() => modalOnClick(aProject.details)}
             >
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -58,7 +92,7 @@ export default function AProject({ aProject, showModal, modalOnClick }) {
         </div>
       </div>
     </AProjectWrapper>
-  )
+  );
 }
 
 const AProjectWrapper = styled.div`
