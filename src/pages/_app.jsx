@@ -1,6 +1,7 @@
 import React from "react"
 import { GlobalStyle } from "../styles/GlobalStyle"
 import Layout from "../components/Layout"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <SpeedInsights />
     </>
   )
 }
