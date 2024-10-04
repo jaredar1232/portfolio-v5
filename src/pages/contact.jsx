@@ -1,119 +1,180 @@
-import { useState } from "react"
-import styled from "styled-components"
-import { SEO } from "../components/SEO"
-
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
+import { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+import { useForm, ValidationError } from "@formspree/react";
+import { useRouter } from "next/router";
+import { SEO } from "../components/SEO";
 
 export default function Contact() {
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM);
+  const [showToast, setShowToast] = useState(false);
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const handleSubmit = event => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formData }),
-    })
-      .then(() => alert("Message Submitted!"))
-      .catch(error => alert(error))
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
-
-    event.preventDefault()
-  }
-
-  const handleChange = event => {
-    setFormData({ ...formData, [event.target.name]: event.target.value })
-  }
+  // Show toast and redirect to home page after 4 seconds
+  useEffect(() => {
+    if (state.succeeded) {
+      setShowToast(true);
+      setTimeout(() => {
+        setShowToast(false);
+        router.push("/"); // Redirect to home page
+      }, 4000);
+    }
+  }, [state.succeeded, router]);
 
   return (
     <ContactSection>
+      <SEO title="Jared Rothenberg | Contact" />
+
       <div className="u-center-text">
         <h2 className="heading" id="contact-me">
           Contact Me
         </h2>
       </div>
 
+      {showToast && (
+        <>
+          <Overlay />
+          <Toast>Thank you for your message! I will get back to you soon.</Toast>
+        </>
+      )}
+
       <div className="form-container">
-        <form
-          name="contact"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
-        >
-          <input type="hidden" name="form-name" value="contact" />
-
-          <label>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">
             Name<span className="asterisk">*</span>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              required="required"
-              onChange={handleChange}
-              className="form-text input--name"
-            />
           </label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            value={formData.name}
+            required
+            onChange={handleChange}
+            className="form-text input--name" // Class for animation
+          />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
 
-          <label>
+          <label htmlFor="email">
             Email<span className="asterisk">*</span>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              required="required"
-              onChange={handleChange}
-              className="form-text input--email"
-            />
           </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            value={formData.email}
+            required
+            onChange={handleChange}
+            className="form-text input--email" // Class for animation
+          />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
 
-          <label>
+          <label htmlFor="subject">
             Subject<span className="asterisk">*</span>
-            <input
-              type="text"
-              name="subject"
-              value={formData.subject}
-              required="required"
-              onChange={handleChange}
-              className="form-text input--subject"
-            />
           </label>
-          <label>
+          <input
+            id="subject"
+            type="text"
+            name="subject"
+            value={formData.subject}
+            required
+            onChange={handleChange}
+            className="form-text input--subject" // Class for animation
+          />
+          <ValidationError
+            prefix="Subject"
+            field="subject"
+            errors={state.errors}
+          />
+
+          <label htmlFor="message">
             Message<span className="asterisk">*</span>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required="required"
-              className="form-text form-textarea input--message"
-            />
           </label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            required
+            onChange={handleChange}
+            className="form-text form-textarea input--message" // Class for animation
+          />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+
           <div className="center-submit">
-            <button type="submit" className="form-submit">
+            <button
+              type="submit"
+              className="form-submit"
+              disabled={state.submitting}
+            >
               Submit
             </button>
           </div>
         </form>
       </div>
     </ContactSection>
-  )
+  );
 }
 
-export const Head = () => <SEO title="Jared Rothenberg | Contact" />
+// Styled Component for Toast Notification
+const Toast = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(102, 201, 255),
+    rgb(120, 139, 249)
+  );
+  color: white;
+  padding: 2.5rem 5rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  z-index: 1001;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    padding: 1.5rem 3rem;
+  }
+`;
+
+// Styled Component for Grey Overlay
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Slight transparent grey */
+  z-index: 1000; /* Below the toast but above the content */
+`;
+
+// Keyframes for slide-in animation
+const slideIn = keyframes`
+  0% {
+    transform: translateX(5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
 
 const ContactSection = styled.section`
   padding: 10rem 0 5rem 0;
@@ -129,11 +190,7 @@ const ContactSection = styled.section`
     display: inline-block;
     padding: 0 0 5rem 0;
     color: black;
-    background: -webkit-linear-gradient(
-      left,
-      rgb(102, 201, 255),
-      rgb(120, 139, 249)
-    );
+    background: -webkit-linear-gradient(left, rgb(102, 201, 255), rgb(120, 139, 249));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -184,47 +241,29 @@ const ContactSection = styled.section`
     height: 15rem;
   }
 
+  // Slide-in animations for form inputs
   .input--name {
-    animation: slideIn 0.1s ease-out;
+    animation: ${slideIn} 0.5s ease-out;
     animation-fill-mode: backwards;
-    @media (max-width: 56.25em) {
-      animation: slideIn 0.2s ease-out;
-      animation-delay: 0.3s;
-      animation-fill-mode: backwards;
-    }
+    animation-delay: 0s;
   }
 
   .input--email {
-    animation: slideIn 0.1s ease-out;
-    animation-delay: 0.1s;
+    animation: ${slideIn} 0.5s ease-out;
     animation-fill-mode: backwards;
-    @media (max-width: 56.25em) {
-      animation: slideIn 0.2s ease-out;
-      animation-delay: 0.4s;
-      animation-fill-mode: backwards;
-    }
+    animation-delay: 0.1s;
   }
 
   .input--subject {
-    animation: slideIn 0.1s ease-out;
-    animation-delay: 0.2s;
+    animation: ${slideIn} 0.5s ease-out;
     animation-fill-mode: backwards;
-    @media (max-width: 56.25em) {
-      animation: slideIn 0.2s ease-out;
-      animation-delay: 0.5s;
-      animation-fill-mode: backwards;
-    }
+    animation-delay: 0.2s;
   }
 
   .input--message {
-    animation: slideIn 0.1s ease-out;
-    animation-delay: 0.3s;
+    animation: ${slideIn} 0.5s ease-out;
     animation-fill-mode: backwards;
-    @media (max-width: 56.25em) {
-      animation: slideIn 0.2s ease-out;
-      animation-delay: 0.6s;
-      animation-fill-mode: backwards;
-    }
+    animation-delay: 0.3s;
   }
 
   .center-submit {
@@ -266,23 +305,4 @@ const ContactSection = styled.section`
       transform: translateY(0);
     }
   }
-
-  .img-container {
-    width: 35rem;
-    height: 35rem;
-    border-radius: 5px;
-    margin: 0 auto;
-    padding-top: 5rem;
-  }
-
-  @keyframes slideIn {
-    0% {
-      transform: translateX(5rem);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-`
+`;

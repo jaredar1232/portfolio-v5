@@ -1,87 +1,89 @@
-import { useState, useEffect, useRef } from "react"
-import styled from "styled-components"
-import MarkdownIt from "markdown-it"
-import { prompt } from "../../public/AiPrompt"
+import { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import MarkdownIt from "markdown-it";
+import { prompt } from "../../public/AiPrompt";
 
-const md = new MarkdownIt()
+const md = new MarkdownIt();
 
-// Instead of using onSubmit, I use onClick to avoid the keyboard closing on ios/safari
-
+// Instead of using onSubmit, I use onClick to avoid the keyboard closing on iOS/Safari
 export default function AiChat({ onFocus }) {
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
     {
       role: "system",
       content: prompt,
     },
-  ])
-  const [hasError, setHasError] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  ]);
+  const [hasError, setHasError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const chatBoxRef = useRef(null)
-  const inputRef = useRef(null)
+  const chatBoxRef = useRef(null);
+  const inputRef = useRef(null);
 
-  const fetchAssistantMessage = async newMessages => {
-    setIsLoading(true)
+  const fetchAssistantMessage = async (newMessages) => {
+    setIsLoading(true);
     try {
-      const response = await fetch(
-        "https://chatgpt-server-indol.vercel.app/api/chat",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ messages: newMessages }),
-        }
-      )
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ messages: newMessages }),
+      });
 
       if (!response.ok) {
-        const errorText = await response.text()
-        throw new Error(errorText)
+        const errorText = await response.text();
+        throw new Error(errorText || 'Unknown error');
       }
 
-      const assistantMessage = await response.json()
-      setMessages(prevMessages => [...prevMessages, assistantMessage])
+      const assistantMessage = await response.json();
+      setMessages((prevMessages) => [...prevMessages, assistantMessage]);
     } catch (error) {
-      console.error("Error fetching AI response:", error.message)
-      setHasError(true)
+      console.error('Error fetching AI response:', error.message);
+      setHasError(true);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const handleSendMessage = () => {
-    if (input.trim() === "") return
+    if (input.trim() === "") return;
 
-    const userMessage = { role: "user", content: input }
-    const newMessages = [...messages, userMessage]
-    setMessages(newMessages)
-    setInput("")
+    const userMessage = { role: "user", content: input };
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
+    setInput("");
 
-    fetchAssistantMessage(newMessages)
-    inputRef.current?.focus() // Keep focus on input
-  }
+    fetchAssistantMessage(newMessages);
+    inputRef.current?.focus(); // Keep focus on input
+  };
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      e.preventDefault()
-      handleSendMessage()
+      e.preventDefault();
+      handleSendMessage();
     }
-  }
+  };
 
   const scrollToBottom = () => {
     chatBoxRef.current?.scrollTo({
       top: chatBoxRef.current.scrollHeight,
       behavior: "smooth",
-    })
-  }
+    });
+  };
 
   useEffect(() => {
-    scrollToBottom()
-  }, [messages])
+    scrollToBottom();
+  }, [messages]);
 
   if (hasError) {
-    return null
+    return (
+      <ChatWrapper>
+        <div className="error-message">
+          An error occurred while fetching the AI response. Please try again later.
+        </div>
+      </ChatWrapper>
+    );
   }
 
   return (
@@ -108,7 +110,7 @@ export default function AiChat({ onFocus }) {
             className="input"
             type="text"
             value={input}
-            onChange={e => setInput(e.target.value)}
+            onChange={(e) => setInput(e.target.value)}
             placeholder=" Ask my AI assistant..."
             ref={inputRef}
             onKeyDown={handleKeyDown} // Handles Enter key
@@ -119,7 +121,7 @@ export default function AiChat({ onFocus }) {
         </div>
       </div>
     </ChatWrapper>
-  )
+  );
 }
 
 const ChatWrapper = styled.div`
@@ -178,7 +180,6 @@ const ChatWrapper = styled.div`
     ul,
     ol {
       padding-left: 2.5rem; /* Indentation for list items */
-
       margin: 0; /* Remove default margin */
 
       @media (min-width: 56.25em) {
@@ -213,7 +214,7 @@ const ChatWrapper = styled.div`
     background-image: linear-gradient(
       to right bottom,
       rgb(102, 201, 255),
-      rgb(54 78 216)
+      rgb(54, 78, 216)
     );
     border-radius: 50%;
     display: inline-block;
@@ -263,7 +264,7 @@ const ChatWrapper = styled.div`
     background-image: linear-gradient(
       to right bottom,
       rgb(102, 201, 255),
-      rgb(54 78 216)
+      rgb(54, 78, 216)
     );
     color: white;
     border-radius: 5px;
@@ -275,4 +276,11 @@ const ChatWrapper = styled.div`
       padding: 0.5rem;
     }
   }
-`
+
+  .error-message {
+    color: red;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+`;

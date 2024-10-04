@@ -86,7 +86,7 @@ const NavWrapper = styled.nav`
   font-size: 1.5rem;
   text-align: center;
 
-  z-index: 1;
+  z-index: 1001;
   backdrop-filter: blur(5px);
 
   ${({ navTextColor }) =>

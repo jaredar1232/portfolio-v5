@@ -1,37 +1,48 @@
-import styled from "styled-components"
-import Resume from "./Resume"
+import styled from "styled-components";
+import Resume from "./Resume";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true); // Ensure client-side rendering happens consistently
+  }, []);
+
   return (
     <FooterWrapper>
       <Resume />
       <div className="icon-container">
-        <a
-          href="https://www.linkedin.com/in/jared-rothenberg"
-          className="footer-icon"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="LinkedIn"
-        >
-          <i className="fa-brands fa-linkedin-in"></i>
-        </a>
+        {isMounted && (
+          <>
+            <a
+              href="https://www.linkedin.com/in/jared-rothenberg"
+              className="footer-icon"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i className="fa-brands fa-linkedin-in"></i>
+            </a>
 
-        <a
-          href="https://github.com/jaredar1232"
-          className="footer-icon"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Github"
-        >
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a
-          href="mailto:jaredar@gmail.com"
-          className="footer-icon"
-          aria-label="Email-Me"
-        >
-          <i className="fa-regular fa-envelope"></i>
-        </a>
+            <a
+              href="https://github.com/jaredar1232"
+              className="footer-icon"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Github"
+            >
+              <i className="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="mailto:jaredar@gmail.com"
+              className="footer-icon"
+              aria-label="Email-Me"
+            >
+              <i className="fa-regular fa-envelope"></i>
+            </a>
+          </>
+        )}
       </div>
 
       <div className="u-center-text">
@@ -39,7 +50,7 @@ export default function Footer() {
         &nbsp; All Rights Reserved
       </div>
     </FooterWrapper>
-  )
+  );
 }
 
 const FooterWrapper = styled.footer`
@@ -117,4 +128,4 @@ const FooterWrapper = styled.footer`
     text-align: center;
     font-size: 1.2rem;
   }
-`
+`;
