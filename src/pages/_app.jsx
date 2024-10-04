@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Script
+        rel="preconnect"
         src="https://kit.fontawesome.com/894b2bd601.js"
         crossOrigin="anonymous"
         strategy="beforeInteractive"
