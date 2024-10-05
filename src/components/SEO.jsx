@@ -1,20 +1,20 @@
-import Head from "next/head"
-import { useRouter } from "next/router"
-import { siteMetadata } from "../config/siteMetadataConfig"
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { siteMetadata } from "../config/siteMetadataConfig";
 
 export const SEO = ({ title, description }) => {
-  const router = useRouter()
+  const router = useRouter();
   const {
     title: defaultTitle,
     description: defaultDescription,
     siteUrl,
-  } = siteMetadata
+  } = siteMetadata;
 
   const seo = {
     title: title ? `${title} | ${defaultTitle}` : defaultTitle,
     description: description || defaultDescription,
     url: `${siteUrl}${router.asPath || ""}`,
-  }
+  };
 
   return (
     <Head>
@@ -28,9 +28,14 @@ export const SEO = ({ title, description }) => {
       <meta property="og:url" content={seo.url} />
       <meta property="og:type" content="website" />
 
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:description" content={seo.description} />
+
       {/* Additional Meta Tags */}
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      {/* Ensure viewport meta tag is only set once, ideally in _document.js */}
     </Head>
-  )
-}
+  );
+};

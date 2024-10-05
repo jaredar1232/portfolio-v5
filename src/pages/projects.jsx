@@ -22,6 +22,7 @@ export default function Projects() {
 
   return (
     <>
+      <SEO title="Projects" description="Projects of Jared Rothenberg" />
       <Modal
         modalDetails={modalDetails}
         closeModal={closeModal}

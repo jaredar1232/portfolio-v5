@@ -22,6 +22,7 @@ export default function Experience() {
 
   return (
     <>
+      <SEO title="Experience" description="Experience of Jared Rothenberg" />
       <Modal
         modalDetails={modalDetails}
         closeModal={closeModal}

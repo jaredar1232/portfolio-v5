@@ -33,8 +33,7 @@ export default function Contact() {
 
   return (
     <ContactSection>
-      <SEO title="Jared Rothenberg | Contact" />
-
+      <SEO title="Contact" description="Contact Jared Rothenberg" />
       <div className="u-center-text">
         <h2 className="heading" id="contact-me">
           Contact Me

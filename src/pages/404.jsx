@@ -4,19 +4,20 @@ import styled from "styled-components"
 
 export default function NotFound() {
   return (
-    <NotFoundSection>
-      <div className="not-found-container">
-        <h1>404 PAGE NOT FOUND</h1>
-        <span>You look a little lost friend, let me take you&nbsp;</span>
-        <Link href="/" className="link-home">
-          home
-        </Link>
-      </div>
-    </NotFoundSection>
+    <>
+      <SEO title="404" description="404 page" />
+      <NotFoundSection>
+        <div className="not-found-container">
+          <h1>404 PAGE NOT FOUND</h1>
+          <span>You look a little lost friend, let me take you&nbsp;</span>
+          <Link href="/" className="link-home">
+            home
+          </Link>
+        </div>
+      </NotFoundSection>
+    </>
   )
 }
-
-export const Head = () => <SEO />
 
 const NotFoundSection = styled.section`
   .not-found-container {

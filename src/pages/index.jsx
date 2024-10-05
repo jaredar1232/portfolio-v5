@@ -13,10 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>{siteMetadata.title}</title>
-        <meta name="description" content={siteMetadata.description} />
-      </Head>
+      <SEO title="Home" description="Homepage of Jared Rothenberg" />
       <HomeSection className={isChatFocused ? "chat-focused" : ""}>
         <div className="header__text-box">
           <div className="heading">
