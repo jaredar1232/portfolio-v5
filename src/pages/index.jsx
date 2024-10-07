@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Head from "next/head";
 import AiChat from "../components/AiChat";
 import { SEO } from "../components/SEO"
 
