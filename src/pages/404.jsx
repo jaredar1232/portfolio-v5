@@ -1,38 +1,23 @@
-import Link from "next/link"
-import { SEO } from "../components/SEO"
-import styled from "styled-components"
+import Link from "next/link";
+import { SEO } from "../components/SEO";
 
 export default function NotFound() {
   return (
-    <>
-      <SEO title="404" description="404 page" />
-      <NotFoundSection>
-        <div className="not-found-container">
-          <h1>404 PAGE NOT FOUND</h1>
-          <span>You look a little lost friend, let me take you&nbsp;</span>
-          <Link href="/" className="link-home">
+    <section className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="text-center">
+        <h1 className="text-7xl font-bold text-gray-600 py-60">
+          404 PAGE NOT FOUND
+        </h1>
+        <p className="text-3xl text-gray-500">
+          You look a little lost friend, let me take you&nbsp;
+          <Link href="/" className="text-lightSeaGreen no-underline hover:underline">
             home
           </Link>
-        </div>
-      </NotFoundSection>
-    </>
-  )
+          .
+        </p>
+      </div>
+    </section>
+  );
 }
 
-const NotFoundSection = styled.section`
-  .not-found-container {
-    text-align: center;
-    font-size: 2rem;
-    color: grey;
-  }
-
-  h1 {
-    padding: 15rem 0;
-    font-size: 4rem;
-  }
-
-  .link-home {
-    text-decoration: none;
-    color: lightseagreen;
-  }
-`
+export const Head = () => <SEO title="404" description="404 page" />

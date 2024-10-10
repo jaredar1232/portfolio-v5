@@ -1,165 +1,50 @@
-import styled from "styled-components"
-import { SEO } from "../components/SEO"
+import { SEO } from "../components/SEO";
 
-export default function about() {
+export default function About() {
   return (
-    <>
-      <SEO title="About" description="About Jared Rothenberg" />
-      <AboutSection>
-        <div className="u-center-text">
-          <h2 className="heading" id="about-me">
-            About Me
-          </h2>
-        </div>
-        <div className="row-container">
-          <div className="row">
-            <div className="headshot-container">
+    <section className="pt-40 pb-20 md:pb-80 text-black">
+      <div className="text-center pb-12">
+        <h2 className="text-5xl uppercase font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-customBlue to-customBlueDark mb-12 sm:mb-4"
+
+          id="about-me"
+        >
+          About Me
+        </h2>
+      </div>
+      <div className="mx-auto max-w-full md:max-w-[70%]">
+        <div className="flex flex-col md:flex-row">
+          <div className="flex-1 flex justify-center">
+            <div className="max-w-[70%] h-auto">
               <img
                 src="/Headshot.webp"
                 alt="Headshot of Jared"
-                className="headshot"
+                className="w-full h-auto rounded-[5px] shadow-headshot object-contain"
               />
             </div>
+          </div>
 
-            <div className="text-container">
-              <p className="text">
-                <span className="paragraph fadeInOne">
-                  Hello and welcome to my portfolio!
-                </span>
-                <span className="paragraph fadeInTwo">
-                  I am a software engineer with a background in Economics and
-                  Philosophy from the University of California Santa Barbara. My
-                  foundation in programming started at HackReactor with most of
-                  what I now know being self-taught and on the job knowledge.
-                </span>
-                <span className="paragraph fadeInThree">
-                  I love working on cool products that cross at the
-                  intersections of tech, health, fitness, and finance. In
-                  addition to being long term interests, they're areas I feel
-                  help improve society.
-                </span>
-              </p>
-            </div>
+          <div className="flex-1 mx-auto pt-10 px-8 md:pt-0 md:px-0">
+            <p className="text-base md:text-lg">
+              <span className="block animate-fadeIn">
+                Hello and welcome to my portfolio!
+              </span>
+              <span className="block mt-6 animate-fadeIn [animation-delay:0.1s]">
+                I am a software engineer with a background in Economics and
+                Philosophy from the University of California Santa Barbara. My
+                foundation in programming started at HackReactor with most of
+                what I now know being self-taught and on-the-job knowledge.
+              </span>
+              <span className="block mt-6 animate-fadeIn [animation-delay:0.2s]">
+                I love working on cool products that cross at the intersections
+                of tech, health, fitness, and finance. In addition to being
+                long-term interests, they're areas I feel help improve society.
+              </span>
+            </p>
           </div>
         </div>
-      </AboutSection>
-    </>
-  )
+      </div>
+    </section>
+  );
 }
 
-export const Head = () => <SEO title="Jared Rothenberg | About" />
-
-const AboutSection = styled.section`
-  // adjust this padding if you change the writing
-  padding: 10rem 0 20rem 0;
-  color: black;
-
-  @media (max-width: 56.25em) {
-    padding: 10rem 0 5rem 0;
-  }
-
-  .u-center-text {
-    text-align: center;
-    padding-bottom: 5rem;
-  }
-
-  .heading {
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: inline-block;
-    color: black;
-    background: -webkit-linear-gradient(
-      left,
-      rgb(102, 201, 255),
-      rgb(120, 139, 249)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 3rem;
-
-    @media (max-width: 56.25em) {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-    }
-  }
-
-  .row-container {
-    max-width: 70%;
-    margin: 0 auto;
-
-    @media (max-width: 56.25em) {
-      max-width: 100%;
-    }
-  }
-
-  .row {
-    display: flex;
-
-    @media (max-width: 56.25em) {
-      flex-direction: column;
-    }
-  }
-
-  .text-container {
-    flex: 1;
-    @media (max-width: 56.25em) {
-      padding: 5rem 3rem 0 3rem;
-      padding-top: 5rem;
-    }
-
-    margin: 0 auto;
-  }
-
-  .text {
-    font-size: 2rem;
-    @media (max-width: 56.25em) {
-      font-size: 1.6rem;
-    }
-  }
-
-  .paragraph {
-    &:not(:first-child) {
-      display: inline-block;
-      margin-top: 2.5rem;
-    }
-  }
-
-  .headshot-container {
-    flex: 1;
-    text-align: center;
-  }
-
-  .headshot {
-    max-width: 70%;
-    box-shadow: -0.5rem 0.5rem 1.4rem darkgray;
-    border-radius: 5px;
-  }
-
-  .fadeInOne {
-    animation: fadeIn 1.5s;
-    animation-fill-mode: backwards;
-  }
-
-  .fadeInTwo {
-    animation: fadeIn 1.5s;
-    animation-delay: 0.1s;
-    animation-fill-mode: backwards;
-  }
-
-  .fadeInThree {
-    animation: fadeIn 1.5s;
-    animation-delay: 0.2s;
-    animation-fill-mode: backwards;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-`
+export const Head = () => <SEO title="About" description="About Jared Rothenberg" />

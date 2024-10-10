@@ -1,6 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
-import AProject from "../components/AProject";
+import MediaCard from "../components/MediaCard";
 import Modal from "../components/Modal";
 import { SEO } from "../components/SEO";
 import projectDataArray from "../../public/projectData.json";
@@ -22,62 +21,44 @@ export default function Projects() {
 
   return (
     <>
-      <SEO title="Projects" description="Projects of Jared Rothenberg" />
+      {/* Modal Component */}
       <Modal
         modalDetails={modalDetails}
         closeModal={closeModal}
         showModal={showModal}
       />
-      <ProjectsSection>
-        <div className="u-center-text">
-          <h2 className="heading" id="applications">
+
+      {/* Projects Section */}
+      <section className="pt-40 pb-20 md:pb-40 text-black">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h2
+            className="text-5xl uppercase font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-customBlue to-customBlueDark mb-12 sm:mb-4"
+            id="applications"
+          >
             Projects
           </h2>
         </div>
-        {projectDataArray.map((aProject) => (
-          <AProject
-            aProject={aProject}
-            key={aProject.name}
-            modalOnClick={modalOnClick}
-            showModal={showModal}
-          />
-        ))}
-      </ProjectsSection>
+
+        {/* Projects Container */}
+        <div className="mx-auto w-[95%] md:w-[90%]">
+          <div className="flex flex-col gap-8">
+            {projectDataArray.map((aProject) => (
+              <MediaCard
+                item={aProject}
+                showModal={showModal}
+                modalOnClick={modalOnClick}
+                key={aProject.name}
+                type="project"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
 
-export const Head = () => <SEO title="Jared Rothenberg | Projects" />
-
-const ProjectsSection = styled.section`
-  padding: 10rem 0;
-
-  @media (max-width: 56.25em) {
-    padding: 10rem 0 5rem 0;
-  }
-
-  .u-center-text {
-    text-align: center;
-  }
-
-  .heading {
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: inline-block;
-    color: black;
-    background: -webkit-linear-gradient(
-      left,
-      rgb(102, 201, 255),
-      rgb(120, 139, 249)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 3rem;
-
-    @media (max-width: 56.25em) {
-      font-size: 4rem;
-    }
-  }
-`
+export const Head = () => (
+  <SEO title="Projects" description="Jared Rothenberg's projects" />
+);

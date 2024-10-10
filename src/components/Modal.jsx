@@ -1,244 +1,86 @@
-import styled from "styled-components"
-import Icons from "./Icons"
+import { useEffect } from 'react';
+import Icons from './Icons';
 
 export default function Modal({ modalDetails, showModal, closeModal }) {
   const handleClose = () => {
-    const element = document.getElementById("modal")
-    element.scrollTo(0, 0)
-    closeModal()
-  }
+    const element = document.getElementById('modal');
+    if (element) {
+      element.scrollTo(0, 0);
+    }
+    closeModal();
+  };
+
+  useEffect(() => {
+    // Prevent body scroll when modal is open
+    if (showModal) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }, [showModal]);
 
   return (
-    <ModalWrapper>
-      <div className={showModal ? "overlay" : "hide-modal"}>
-        <div
-          className={
-            showModal
-              ? "modal-functionality-shown"
-              : "modal-functionality-hidden"
-          }
+    <div
+      className={`${showModal
+        ? 'fixed inset-0 z-50 flex items-center justify-center'
+        : 'hidden'
+        }`}
+    >
+      {/* Overlay */}
+      <div
+        className="fixed inset-0 bg-black bg-opacity-80 animate-fadeInModal"
+        onClick={handleClose}
+      ></div>
+
+      {/* Modal Content */}
+      <div
+        id="modal"
+        className="relative bg-white rounded-lg shadow-2xl overflow-auto animate-modalEffect
+                   w-[95%] h-3/4
+                   md:w-4/5 md:h-3/5
+                   lg:w-1/2 lg:h-3/5"
+      >
+        {/* Exit Button */}
+        <button
+          className="absolute top-4 right-4 h-9 w-9 bg-white border border-black rounded-md shadow-md flex items-center justify-center cursor-pointer z-10 hover:bg-gray-200"
           onClick={handleClose}
-        ></div>
+        >
+          {/* Exit Icon */}
+          <span className="relative block w-6 h-6">
+            <span className="absolute top-1/2 left-0 w-full h-[3px] bg-gradient-to-br from-customBlue to-customBlueDark transform -translate-y-1/2 rotate-45"></span>
+            <span className="absolute top-1/2 left-0 w-full h-[3px] bg-gradient-to-br from-customBlue to-customBlueDark transform -translate-y-1/2 -rotate-45"></span>
+          </span>
+        </button>
 
-        <div className="overlay__content" id="modal">
-          <div className="exit" onClick={handleClose}>
-            <span className="exit__icon">&nbsp;</span>
-          </div>
-          <h3 className="heading">{modalDetails.name}</h3>
+        {/* Modal Heading */}
+        <h3 className="text-2xl md:text-xl uppercase text-center text-black pt-12 font-light">
+          {modalDetails.name}
+        </h3>
 
-          <div className="icons">
-            {modalDetails.icons
-              ? modalDetails.icons.map(anIcon => (
-                  <Icons anIcon={anIcon} key={anIcon} />
-                ))
-              : null}
-          </div>
-
-          <div className="description">
-            <b>Overview:&ensp;</b>
-            {modalDetails.description}
-          </div>
-
-          <ul className="keypoints">
-            {modalDetails.keyPoints
-              ? modalDetails.keyPoints.map(keyPoint => (
-                  <li key={keyPoint.split()[0]}>&bull;&ensp;{keyPoint}</li>
-                ))
-              : null}
-          </ul>
+        {/* Icons */}
+        <div className="flex flex-wrap justify-center items-center p-4">
+          {modalDetails.icons &&
+            modalDetails.icons.map((anIcon) => (
+              <Icons anIcon={anIcon} key={anIcon} />
+            ))}
         </div>
+
+        {/* Description */}
+        <div className="text-lg md:text-lg text-black px-8 md:px-4 py-6">
+          <b>Overview:&ensp;</b>
+          {modalDetails.description}
+        </div>
+
+        {/* Key Points */}
+        <ul className="text-sm md:text-base text-black list-none px-8 md:px-4 pb-10">
+          {modalDetails.keyPoints &&
+            modalDetails.keyPoints.map((keyPoint, index) => (
+              <li key={index} className="pt-2">
+                &bull;&ensp;{keyPoint}
+              </li>
+            ))}
+        </ul>
       </div>
-    </ModalWrapper>
-  )
+    </div>
+  );
 }
-
-const ModalWrapper = styled.div`
-  .hide-modal {
-    display: none;
-  }
-
-  .overlay {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    animation: fadeIn 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &__content {
-      max-width: 130rem;
-      width: 60%;
-      height: 60%;
-      background-color: white;
-      box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-      position: relative;
-      border-radius: 10px;
-      overflow: auto;
-      animation: modalEffect 0.6s;
-
-      ::-webkit-scrollbar {
-        width: 0px;
-      }
-
-      @media (max-width: 56.25em) {
-        width: 95%;
-        height: 75%;
-      }
-    }
-    @media (max-width: 56.25em) {
-      background-color: rgba(0, 0, 0, 0.9);
-    }
-  }
-
-  .modal-functionality-shown {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: transparent;
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .modal-functionality-hidden {
-    display: none;
-  }
-
-  .exit {
-    height: 3.6rem;
-    width: 3.6rem;
-    background-color: transparent;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 0 auto;
-    cursor: pointer;
-    z-index: 100;
-    box-shadow: 0.3rem 0.3rem 0.8rem rgba(0, 0, 0, 0.5);
-
-    position: sticky;
-    top: 1rem;
-    right: 1rem;
-    float: right;
-
-    // used to resolve mobile stutter animation (only shows on real phone)
-    @media (max-width: 56.25em) {
-      animation: fadeIn 0.2s;
-      animation-fill-mode: backwards;
-      animation-delay: 0.8s;
-    }
-
-    @media (hover: hover) {
-      &:hover {
-        background-image: linear-gradient(
-          to right bottom,
-          rgb(216, 216, 216),
-          rgb(216, 215, 215)
-        );
-        box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.5);
-      }
-    }
-  }
-
-  .exit__icon {
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 3rem;
-      height: 3px;
-      display: inline-block;
-      background-image: linear-gradient(
-        to right bottom,
-        rgb(102, 201, 255),
-        rgb(120, 139, 249)
-      );
-    }
-    &::before {
-      top: 1.5rem;
-      left: 0.2rem;
-      transform: rotate(45deg);
-    }
-    &::after {
-      top: 1.5rem;
-      right: 0.2rem;
-      transform: rotate(-45deg);
-    }
-  }
-
-  .heading {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    text-align: center;
-    color: black;
-    background-color: transparent;
-    padding-top: 3rem;
-    font-weight: 300;
-
-    @media (max-width: 56.25em) {
-      padding-top: 4rem;
-      font-size: 2.2rem;
-      font-weight: 400;
-    }
-  }
-
-  .description {
-    font-size: 2rem;
-    color: black;
-    padding: 3rem 4rem 5rem 4rem;
-
-    @media (max-width: 56.25em) {
-      padding: 2rem;
-    }
-  }
-
-  .keypoints {
-    font-size: 1.8rem;
-    color: black;
-    list-style-type: none;
-    padding: 0 4rem 5rem 4rem;
-
-    @media (max-width: 56.25em) {
-      font-size: 1.5rem;
-      padding-bottom: 2rem;
-    }
-
-    li {
-      padding-top: 1rem;
-    }
-  }
-
-  .icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes modalEffect {
-    from {
-      transform: scale(0);
-    }
-
-    to {
-      transform: scale(1);
-    }
-  }
-`

@@ -1,163 +1,59 @@
-import Link from "next/link"
-import { useEffect, useState } from "react"
-import styled, { createGlobalStyle } from "styled-components"
-import { useRouter } from "next/router"
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
-  const router = useRouter()
-  const [navTextColor, setNavTextColor] = useState("black")
-  const [logoSrc, setLogoSrc] = useState("/logo-white.webp")
+  const router = useRouter();
+  const isHome = router.pathname === "/";
 
-  useEffect(() => {
-    switch (router.pathname) {
-      case "/about":
-      case "/experience":
-      case "/projects":
-      case "/contact":
-        setNavTextColor("black")
-        setLogoSrc("/logo-black.webp")
-        break
-      case "/":
-        setNavTextColor("white")
-        setLogoSrc("/logo-white.webp")
-        break
-      default:
-        console.error("There is an issue with the navigation color setter")
-    }
-  }, [router.pathname])
+  const navBgClass = isHome
+    ? "bg-[rgba(227,227,227,0.3)] shadow-navbar-home"
+    : "bg-[rgba(230,232,234,0.5)] shadow-navbar-not-home";
+
+  const logoSrc = isHome ? "/logo-white.webp" : "/logo-black.webp";
 
   return (
-    <>
-      <GlobalStyles />
-      <NavWrapper navTextColor={navTextColor}>
-        <Link
-          href="/about"
-          className={`nav__link ${router.pathname === "/about" ? "active" : ""
-            }`}
-        >
-          About
-        </Link>
-        <Link
-          href="/experience"
-          className={`nav__link ${router.pathname === "/experience" ? "active" : ""
-            }`}
-        >
-          Experience
-        </Link>
-        <Link href="/">
-          <Logo src={logoSrc} alt="logo" />
-        </Link>
-        <Link
-          href="/projects"
-          className={`nav__link ${router.pathname === "/projects" ? "active" : ""
-            }`}
-        >
-          Projects
-        </Link>
-        <Link
-          href="/contact"
-          className={`nav__link ${router.pathname === "/contact" ? "active" : ""
-            }`}
-        >
-          Contact
-        </Link>
-      </NavWrapper>
-    </>
-  )
+    <nav
+      className={`fixed top-8 left-[15%] w-[70%] p-1 rounded-lg z-[1001] backdrop-blur-md hidden md:flex justify-around items-center opacity-0 animate-fadeIn ${navBgClass} overflow-hidden`}
+      style={{ animationDelay: "0.8s" }}
+    >
+      <NavLink href="/about" currentPath={router.pathname}>
+        About
+      </NavLink>
+      <NavLink href="/experience" currentPath={router.pathname}>
+        Experience
+      </NavLink>
+      <Link href="/">
+        <img
+          src={logoSrc}
+          alt="logo"
+          className="w-12 transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
+        />
+      </Link>
+      <NavLink href="/projects" currentPath={router.pathname}>
+        Projects
+      </NavLink>
+      <NavLink href="/contact" currentPath={router.pathname}>
+        Contact
+      </NavLink>
+    </nav>
+  );
 }
 
-const NavWrapper = styled.nav`
-  --nav-text-color: ${({ navTextColor }) => navTextColor};
+function NavLink({ href, children, currentPath }) {
+  const isActive = currentPath === href;
+  const baseClasses = `text-xl transition-all duration-300 no-underline`;
+  const activeColor = "text-[rgb(102,201,255)]"; // Active link color
+  const defaultColor = "text-black"; // Default link color
+  const hoverClasses = "hover:text-[rgb(102,201,255)] hover:-translate-y-0.5";
 
-  @media (max-width: 56.25em) {
-    display: none;
-  }
-
-  display: flex;
-  justify-content: space-around;
-
-  position: fixed;
-  top: 2rem;
-  left: 15%;
-  width: 70%;
-  border-radius: 1rem;
-  padding: 0.3rem;
-
-  font-size: 1.5rem;
-  text-align: center;
-
-  z-index: 1001;
-  backdrop-filter: blur(5px);
-
-  ${({ navTextColor }) =>
-    navTextColor === "black"
-      ? `
-    box-shadow: 0px 5px 10px rgba(201, 206, 211, 0.568);
-    background-color: rgba(230, 232, 234, 0.5);`
-      : `
-    box-shadow: 0px 5px 10px rgba(3, 3, 3, 0.568);
-    background-color: rgba(227, 227, 227, 0.3);`}
-
-  // Add the fade-in animation
-  animation: fadeInNavBar 1s;
-  animation-fill-mode: backwards;
-  animation-delay: 1s;
-
-  @keyframes fadeInNavBar {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-`
-
-const Logo = styled.img`
-  position: absolute;
-  transform: translate(-50%);
-  width: 3rem;
-  transition: all 0.3s;
-
-  &:hover {
-    transform: scale(1.3) translate(-40%, -4%);
-  }
-`
-
-const GlobalStyles = createGlobalStyle`
-  .nav__link {
-    text-decoration: none;
-    transition: all 0.2s;
-    color: var(--nav-text-color);
-
-    &:visited {
-      color: var(--nav-text-color);
-    }
-
-    &:hover {
-      color: black;
-      background: -webkit-linear-gradient(
-        left,
-        rgb(102, 201, 255),
-        rgb(120, 139, 249)
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      text-decoration: underline;
-      transform: translateY(-2px);
-    }
-  }
-
-  .nav__link.active {
-    background-image: linear-gradient(
-      to right bottom,
-      rgb(102, 201, 255),
-      rgb(120, 139, 249)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-`
+  return (
+    <Link
+      href={href}
+      aria-current={isActive ? "page" : undefined} // For accessibility
+      className={`${baseClasses} ${isActive ? activeColor : defaultColor
+        } ${hoverClasses}`}
+    >
+      {children}
+    </Link>
+  );
+}

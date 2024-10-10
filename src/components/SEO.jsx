@@ -1,14 +1,14 @@
+// components/SEO.jsx
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { siteMetadata } from "../config/siteMetadataConfig";
 
-export const SEO = ({ title, description }) => {
+export const SEO = ({
+  title = "Jared Rothenberg | Portfolio",
+  description = "Welcome to my portfolio.",
+}) => {
   const router = useRouter();
-  const {
-    title: defaultTitle,
-    description: defaultDescription,
-    siteUrl,
-  } = siteMetadata;
+  const { title: defaultTitle, description: defaultDescription, siteUrl } = siteMetadata;
 
   const seo = {
     title: title ? `${title} | ${defaultTitle}` : defaultTitle,
@@ -35,7 +35,6 @@ export const SEO = ({ title, description }) => {
 
       {/* Additional Meta Tags */}
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      {/* Ensure viewport meta tag is only set once, ideally in _document.js */}
     </Head>
   );
 };

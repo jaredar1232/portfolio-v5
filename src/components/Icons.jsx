@@ -1,38 +1,14 @@
-import styled from "styled-components"
-
 export default function Icons({ anIcon }) {
   return (
-    <IconsWrapper>
-      <div className="icon-container">
+    <div className="text-center m-2">
+      <div className="mx-auto rounded-md w-10 h-10 md:w-16 md:h-16">
         <img
-          className="icon-image"
+          className="w-full h-full"
           src={`/${anIcon}.png`}
           alt={`${anIcon} logo`}
         />
       </div>
-      <div className="icon-label">{anIcon}</div>
-    </IconsWrapper>
-  )
+      <div className="text-sm md:text-base text-black">{anIcon}</div>
+    </div>
+  );
 }
-
-const IconsWrapper = styled.div`
-  margin: 1.6rem;
-  text-align: center;
-
-  .icon-container {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 5px;
-    margin: 0 auto;
-  }
-
-  .icon-image {
-    height: 100%;
-    width: 100%;
-  }
-
-  .icon-label {
-    font-size: 1.6rem;
-    color: black;
-  }
-`

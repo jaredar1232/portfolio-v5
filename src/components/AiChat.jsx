@@ -1,11 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
 import MarkdownIt from "markdown-it";
 import { prompt } from "../../public/AiPrompt";
 
 const md = new MarkdownIt();
 
-// Instead of using onSubmit, I use onClick to avoid the keyboard closing on iOS/Safari
 export default function AiChat({ onFocus }) {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
@@ -23,23 +21,23 @@ export default function AiChat({ onFocus }) {
   const fetchAssistantMessage = async (newMessages) => {
     setIsLoading(true);
     try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
+      const response = await fetch("/api/chat", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ messages: newMessages }),
       });
 
       if (!response.ok) {
         const errorText = await response.text();
-        throw new Error(errorText || 'Unknown error');
+        throw new Error(errorText || "Unknown error");
       }
 
       const assistantMessage = await response.json();
       setMessages((prevMessages) => [...prevMessages, assistantMessage]);
     } catch (error) {
-      console.error('Error fetching AI response:', error.message);
+      console.error("Error fetching AI response:", error.message);
       setHasError(true);
     } finally {
       setIsLoading(false);
@@ -55,7 +53,7 @@ export default function AiChat({ onFocus }) {
     setInput("");
 
     fetchAssistantMessage(newMessages);
-    inputRef.current?.focus(); // Keep focus on input
+    inputRef.current?.focus();
   };
 
   const handleKeyDown = (e) => {
@@ -78,209 +76,63 @@ export default function AiChat({ onFocus }) {
 
   if (hasError) {
     return (
-      <ChatWrapper>
+      <div className="flex justify-center mt-8">
         <div className="error-message">
           An error occurred while fetching the AI response. Please try again later.
         </div>
-      </ChatWrapper>
+      </div>
     );
   }
 
   return (
-    <ChatWrapper onClick={onFocus}>
-      <div className="chat-box">
-        <div className="messages" ref={chatBoxRef}>
-          {messages.slice(1).map((msg, index) => (
-            <div
-              key={index}
-              className={`message ${msg.role}`}
-              dangerouslySetInnerHTML={{ __html: md.render(msg.content) }}
-            />
-          ))}
-          {isLoading && (
-            <div className="loader">
-              <span className="dot"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
-            </div>
-          )}
-        </div>
-        <div className="input-form">
+    <div onClick={onFocus} className="flex justify-center">
+      <div
+        className="bg-white bg-opacity-10 rounded-lg p-4 m-8 max-w-full sm:max-w-md w-11/12 md:w-2/3 lg:max-w-2xl opacity-0 animate-fadeIn"
+        style={{ animationDelay: "0.8s" }}
+      >
+        {messages.length > 1 && (
+          <div
+            className="flex flex-col max-h-80 md:max-h-96 bg-white bg-opacity-10 rounded-lg overflow-y-auto p-2"
+            ref={chatBoxRef}
+          >
+            {messages.slice(1).map((msg, index) => (
+              <div
+                key={index}
+                className={`py-1 px-2 my-1 rounded ${msg.role === "user"
+                  ? "bg-customBlueDark text-white self-end max-w-xs md:max-w-sm text-left"
+                  : "bg-customGray text-black self-start max-w-xs md:max-w-sm text-left"
+                  }`}
+                dangerouslySetInnerHTML={{ __html: md.render(msg.content) }}
+              />
+            ))}
+            {isLoading && (
+              <div className="loader flex space-x-1 self-center my-2">
+                <span className="dot animate-bounceFade [animation-delay:0ms]"></span>
+                <span className="dot animate-bounceFade [animation-delay:200ms]"></span>
+                <span className="dot animate-bounceFade [animation-delay:400ms]"></span>
+              </div>
+            )}
+          </div>
+        )}
+        <div className="flex items-center my-2 space-x-2">
           <input
-            className="input"
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder=" Ask my AI assistant..."
+            placeholder="Ask my AI assistant..."
             ref={inputRef}
-            onKeyDown={handleKeyDown} // Handles Enter key
+            onKeyDown={handleKeyDown}
+            className="flex-1 px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-customBlue"
           />
-          <button type="button" onClick={handleSendMessage}>
+          <button
+            type="button"
+            onClick={handleSendMessage}
+            className="px-4 py-2 bg-gradient-to-br from-customBlue to-customBlueDark text-white rounded-lg transition-colors duration-300"
+          >
             Send
           </button>
         </div>
       </div>
-    </ChatWrapper>
+    </div>
   );
 }
-
-const ChatWrapper = styled.div`
-  .chat-box {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 2rem auto;
-    max-height: 500px;
-    opacity: 0;
-    animation: fadeIn 1s forwards 0.5s;
-
-    min-width: 350px;
-    width: 90%;
-
-    @media (min-width: 56.25em) {
-      animation: fadeIn 2s forwards 1s;
-      max-width: 600px;
-    }
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-
-  .messages {
-    display: flex;
-    flex-direction: column;
-    max-height: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow-y: auto;
-
-    @media (min-width: 56.25em) {
-      max-height: 400px;
-    }
-  }
-
-  .message {
-    font-size: 16px;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    margin: 1rem;
-    max-width: 70%;
-    word-wrap: break-word;
-    color: black;
-    line-height: 20px;
-
-    @media (min-width: 56.25em) {
-      font-size: 1.2rem;
-      padding: 0.5rem 1rem;
-    }
-
-    ul,
-    ol {
-      padding-left: 2.5rem; /* Indentation for list items */
-      margin: 0; /* Remove default margin */
-
-      @media (min-width: 56.25em) {
-        padding-left: 1.5rem; /* Indentation for list items */
-      }
-    }
-  }
-
-  .user {
-    background: #007bff;
-    color: white;
-    align-self: flex-end;
-    text-align: right;
-  }
-
-  .assistant {
-    background: #f1f1f1;
-    align-self: flex-start;
-    text-align: left;
-  }
-
-  .loader {
-    align-self: center;
-    display: flex;
-    gap: 5px;
-  }
-
-  .dot {
-    width: 12px;
-    height: 12px;
-    margin: 10px 0;
-    background-image: linear-gradient(
-      to right bottom,
-      rgb(102, 201, 255),
-      rgb(54, 78, 216)
-    );
-    border-radius: 50%;
-    display: inline-block;
-    animation: bounce 0.6s infinite alternate;
-  }
-
-  .dot:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  .dot:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-
-  @keyframes bounce {
-    to {
-      opacity: 0.3;
-      transform: translate3d(0, -8px, 0);
-    }
-  }
-
-  .input-form {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  input {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-
-    @media (min-width: 56.25em) {
-      font-size: 1.1rem;
-    }
-  }
-
-  input {
-    padding: 0.5rem;
-    margin: 1rem 0;
-  }
-
-  button {
-    border: none;
-    background-image: linear-gradient(
-      to right bottom,
-      rgb(102, 201, 255),
-      rgb(54, 78, 216)
-    );
-    color: white;
-    border-radius: 5px;
-    margin-left: 0.5rem;
-    font-size: 1.1rem;
-    padding: 1rem;
-
-    @media (min-width: 56.25em) {
-      padding: 0.5rem;
-    }
-  }
-
-  .error-message {
-    color: red;
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 1.2rem;
-  }
-`;
