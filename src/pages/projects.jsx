@@ -42,7 +42,7 @@ export default function Projects() {
 
         {/* Projects Container */}
         <div className="mx-auto w-[95%] md:w-[90%]">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-24">
             {projectDataArray.map((aProject) => (
               <MediaCard
                 item={aProject}

@@ -20,7 +20,7 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
                     }
                 },
                 {
-                    threshold: 0.8,
+                    threshold: 1,
                 }
             );
 
