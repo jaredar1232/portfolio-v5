@@ -16,10 +16,14 @@ export default function Navbar() {
       className={`fixed top-8 left-[15%] w-[70%] p-1 rounded-lg z-[1001] backdrop-blur-md hidden md:flex justify-around items-center opacity-0 animate-fadeIn ${navBgClass} overflow-hidden`}
       style={{ animationDelay: "0.8s" }}
     >
-      <NavLink href="/about" currentPath={router.pathname}>
+      <NavLink href="/about" currentPath={router.pathname} isHome={isHome}>
         About
       </NavLink>
-      <NavLink href="/experience" currentPath={router.pathname}>
+      <NavLink
+        href="/experience"
+        currentPath={router.pathname}
+        isHome={isHome}
+      >
         Experience
       </NavLink>
       <Link href="/">
@@ -29,29 +33,28 @@ export default function Navbar() {
           className="w-12 transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
         />
       </Link>
-      <NavLink href="/projects" currentPath={router.pathname}>
+      <NavLink href="/projects" currentPath={router.pathname} isHome={isHome}>
         Projects
       </NavLink>
-      <NavLink href="/contact" currentPath={router.pathname}>
+      <NavLink href="/contact" currentPath={router.pathname} isHome={isHome}>
         Contact
       </NavLink>
     </nav>
   );
 }
 
-function NavLink({ href, children, currentPath }) {
+function NavLink({ href, children, currentPath, isHome }) {
   const isActive = currentPath === href;
-  const baseClasses = `text-xl transition-all duration-300 no-underline`;
-  const activeColor = "text-[rgb(102,201,255)]"; // Active link color
-  const defaultColor = "text-black"; // Default link color
-  const hoverClasses = "hover:text-[rgb(102,201,255)] hover:-translate-y-0.5";
+  const baseClasses = `text-xl transition-all duration-100 no-underline`;
+  const activeColor = "text-customBlue"; // Active link color
+  const defaultColor = isHome ? "text-white" : "text-black"; // Default link color based on isHome
+  const hoverClasses = "hover:text-customBlue hover:-translate-y-0.5";
 
   return (
     <Link
       href={href}
       aria-current={isActive ? "page" : undefined} // For accessibility
-      className={`${baseClasses} ${isActive ? activeColor : defaultColor
-        } ${hoverClasses}`}
+      className={`${baseClasses} ${isActive ? activeColor : defaultColor} ${hoverClasses}`}
     >
       {children}
     </Link>
