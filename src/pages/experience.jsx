@@ -41,7 +41,7 @@ export default function Experience() {
         </div>
 
         {/* Experience Container */}
-        <div className="mx-auto w-11/12 md:w-10/12">
+        <div className="mx-auto w-[95%] md:w-[90%]">
           <div className="flex flex-col gap-8">
             {experienceDataArray.map((aJob) => (
               <MediaCard
