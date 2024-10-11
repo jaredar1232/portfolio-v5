@@ -48,7 +48,7 @@ export default function Contact() {
           <div className="fixed inset-0 bg-black bg-opacity-50 z-[1000]"></div>
           {/* Toast Notification */}
           <div className="fixed inset-0 flex items-center justify-center z-[1001]">
-            <div className="bg-gradient-to-br from-[rgb(102,201,255)] to-[rgb(120,139,249)] text-white p-8 sm:p-10 rounded-lg shadow-lg text-2xl sm:text-3xl text-center">
+            <div className="bg-gradient-to-br from-customBlue to-customBlueDark text-white p-8 sm:p-10 rounded-lg shadow-lg text-2xl sm:text-3xl text-center">
               Thank you for your message! I will get back to you soon.
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function Contact() {
           <div className="text-center mt-8">
             <button
               type="submit"
-              className="form-submit"
+              className="w-[33%] min-w-[8rem] bg-gradient-to-br hover:to-customBlueMid from-customBlue to-customBlueDark text-white py-3 px-4 m-5 rounded-md text-2xl transition-all duration-300 cursor-pointer hover:shadow-custom-hover hover:-translate-y-0.5 active:transform active:translate-y-0"
               disabled={state.submitting}
             >
               Submit

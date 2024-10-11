@@ -5,10 +5,8 @@ export default function Icons({ anIcon }) {
     <div className="text-center m-2">
       <div className="mx-auto rounded-md w-10 h-10 md:w-16 md:h-16">
         <Image
-          style={{
-            width: '100%',
-            height: 'auto',
-          }}
+          width={65}
+          height={65}
           src={`/${anIcon}.webp`}
           alt={`${anIcon} logo`}
         />

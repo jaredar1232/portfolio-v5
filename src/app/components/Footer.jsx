@@ -14,7 +14,7 @@ export default function Footer() {
   }, []);
 
   const iconClasses =
-    "justify-self-center w-12 h-12 border-2 border-white rounded-md text-center text-white transition-all duration-300 cursor-pointer md:m-0 m-4 hover:border-[rgb(102,201,255)] hover:text-[rgb(102,201,255)] hover:shadow-[0_4px_8px_rgba(255,255,255,0.4)] hover:-translate-y-[2px] active:shadow-[0_2px_4px_rgba(255,255,255,0.2)]";
+    "justify-self-center w-12 h-12 border-2 border-white rounded-md text-center text-white transition-all duration-300 cursor-pointer md:m-0 m-4 hover:border-customBlue hover:text-customBlue hover:shadow-[0_4px_8px_rgba(255,255,255,0.4)] hover:-translate-y-[2px] active:shadow-[0_2px_4px_rgba(255,255,255,0.2)]";
 
   return (
     <footer className="bg-[rgb(24,30,46)] text-white pt-6 pb-4 md:pt-8 md:pb-8">

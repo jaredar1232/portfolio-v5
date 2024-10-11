@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import MarkdownIt from "markdown-it";
-import DOMPurify from "dompurify"; // For sanitizing HTML
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { prompt } from "../../../public/AiPrompt";
-
-const md = new MarkdownIt();
 
 export default function AiChat({ onFocus }) {
   const [input, setInput] = useState("");
@@ -85,7 +83,7 @@ export default function AiChat({ onFocus }) {
   if (hasError) {
     return (
       <div className="flex justify-center mt-8">
-        <div className="error-message text-red-500">
+        <div className="text-center mt-8 text-lg text-red-500">
           An error occurred while fetching the AI response: {errorMessage}. Please try again later.
         </div>
       </div>
@@ -95,7 +93,7 @@ export default function AiChat({ onFocus }) {
   return (
     <div onClick={onFocus} className="flex justify-center">
       <div
-        className="bg-white bg-opacity-10 rounded-lg p-4 m-8 max-w-full sm:max-w-md w-11/12 md:w-2/3 lg:max-w-2xl opacity-0 animate-fadeIn"
+        className="bg-white bg-opacity-10 rounded-xl px-4 py-2 m-8 max-w-full sm:max-w-md w-[95%] md:w-[66%] lg:max-w-2xl opacity-0 animate-fadeIn"
         style={{ animationDelay: "0.8s" }}
       >
         {messages.length > 1 && (
@@ -106,14 +104,21 @@ export default function AiChat({ onFocus }) {
             {messages.slice(1).map((msg, index) => (
               <div
                 key={index}
-                className={`py-1 px-2 my-1 rounded ${msg.role === "user"
-                  ? "bg-customBlueDark text-white self-end max-w-xs md:max-w-sm text-left"
+                className={`py-1 px-2 my-1 rounded leading-6 ${msg.role === "user"
+                  ? "bg-gradient-to-br from-customBlue to-customBlueDark text-white self-end max-w-xs md:max-w-sm text-left"
                   : "bg-customGray text-black self-start max-w-xs md:max-w-sm text-left"
                   }`}
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(md.render(msg.content)),
-                }}
-              />
+              >
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  className={`prose ${msg.role === "user"
+                    ? "text-white"
+                    : "text-black"
+                    }`}
+                >
+                  {msg.content}
+                </ReactMarkdown>
+              </div>
             ))}
             {isLoading && (
               <div className="loader flex space-x-1 self-center my-2">
@@ -132,12 +137,12 @@ export default function AiChat({ onFocus }) {
             placeholder="Ask my AI assistant..."
             ref={inputRef}
             onKeyDown={handleKeyDown}
-            className="flex-1 px-4 py-2 bg-white placeholder-gray-400 text-black border-2 border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="flex-1 px-4 py-1 bg-white placeholder-gray-400 text-black border-2 border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-customBlue"
           />
           <button
             type="button"
             onClick={handleSendMessage}
-            className="px-4 py-2 bg-gradient-to-br from-customBlue to-customBlueDark text-white rounded-lg transition-colors duration-300 disabled:from-[#a3b4d2] disabled:to-[#444b5a]"
+            className="px-4 py-1 bg-gradient-to-br from-customBlue to-customBlueDark hover:to-customBlueMid text-white rounded-lg transition-colors duration-300 disabled:from-[#a3b4d2] disabled:to-[#444b5a]"
             disabled={isLoading || input.trim() === ""}
           >
             Send

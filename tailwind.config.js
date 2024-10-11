@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customBlue: "#66C9FF",
-        customBlueMid: "#798bf9",
-        customBlueDark: "#0351A5",
+        customBlue: "#66C9FF", // Fails contrast tests
+        customBlueMid: "#798bf9", // Fails contrast tests
+        customBlueDark: "#034FA0", // Passes contrast, use for text
         customGray: "#f1f1f1",
         lightSeaGreen: "#20B2AA",
       },
@@ -19,7 +19,7 @@ module.exports = {
         "custom-active": "0 0.5rem 1rem rgba(0, 0, 0, 0.15)",
         headshot: "-8px 8px 22px rgba(169, 169, 169, 0.5)", // Custom shadow for the headshot
         "navbar-home": "0px 5px 10px rgba(3, 3, 3, 0.568)",
-        "navbar-not-home": "0px 5px 10px rgba(201, 206, 211, 0.568)",
+        "navbar-not-home": "0px 5px 10px rgba(201, 206, 211, 0.7)",
       },
       animation: {
         fadeIn: "fadeIn 0.8s ease-in-out forwards",
@@ -77,6 +77,7 @@ module.exports = {
     },
   },
   plugins: [
+    require("@tailwindcss/typography"),
     function ({ addUtilities }) {
       addUtilities(
         {

@@ -40,7 +40,7 @@ export default function About() {
               <span className="block mt-6 lg:animate-fadeIn lg:opacity-0" style={{ animationDelay: "0.2s" }}>
                 I love working on cool products that cross at the intersections
                 of tech, health, fitness, and finance. In addition to being
-                long-term interests, they're areas I feel help improve society.
+                long-term interests, they&#39;re areas I feel help improve society.
               </span>
             </p>
           </div>

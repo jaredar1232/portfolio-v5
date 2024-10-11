@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image'
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -25,10 +26,12 @@ export default function Navbar() {
         Experience
       </NavLink>
       <Link href="/">
-        <img
+        <Image
           src={logoSrc}
           alt="logo"
-          className="w-12 transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
+          width={40}
+          height={40}
+          className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
         />
       </Link>
       <NavLink href="/projects" currentPath={pathname}>

@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar"
 import MobileNavBar from "./components/MobileNavBar"
 import Footer from "./components/Footer"
-// import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "../styles/globals.css"
 
 export const metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
-        {/* <SpeedInsights /> */}
+        <SpeedInsights />
       </body>
     </html>
   )
