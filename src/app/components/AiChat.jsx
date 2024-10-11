@@ -93,7 +93,7 @@ export default function AiChat({ onFocus }) {
   return (
     <div onClick={onFocus} className="flex justify-center">
       <div
-        className="bg-white bg-opacity-10 rounded-xl px-4 py-2 m-8 max-w-full sm:max-w-md w-[95%] md:w-[66%] lg:max-w-2xl opacity-0 animate-fadeIn"
+        className="bg-white bg-opacity-10 rounded-xl px-4 pb-2 pt-3.5 m-8 max-w-full sm:max-w-md w-[95%] md:w-[66%] lg:max-w-2xl opacity-0 animate-fadeIn"
         style={{ animationDelay: "0.8s" }}
       >
         {messages.length > 1 && (
