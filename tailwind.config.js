@@ -15,7 +15,7 @@ module.exports = {
       },
       boxShadow: {
         custom: "0 1.5rem 4rem rgba(0, 0, 0, 0.25)",
-        "custom-hover": "0 1rem 2rem rgba(0, 0, 0, 0.15)",
+        "custom-hover": "0 0.6rem 1rem rgba(0, 0, 0, 0.25)",
         "custom-active": "0 0.5rem 1rem rgba(0, 0, 0, 0.15)",
         headshot: "-8px 8px 22px rgba(169, 169, 169, 0.5)", // Custom shadow for the headshot
         "navbar-home": "0px 5px 10px rgba(3, 3, 3, 0.568)",

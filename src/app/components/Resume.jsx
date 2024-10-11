@@ -1,7 +1,7 @@
 export default function Resume() {
   return (
     <div className="text-white pt-0 pb-10 md:pb-8">
-      <div className="w-full max-w-52 h-auto mx-auto">
+      <div className="w-full max-w-52 h-auto mx-auto hover:shadow-[0_4px_8px_rgba(255,255,255,0.4)] hover:-translate-y-[2px] active:shadow-[0_2px_4px_rgba(255,255,255,0.2)] rounded-md duration-300">
         <a
           href="https://d1o11p1jeyf1dw.cloudfront.net/Resume-JaredRothenberg.pdf"
           target="_blank"

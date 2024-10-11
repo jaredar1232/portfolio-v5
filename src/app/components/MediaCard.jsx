@@ -42,7 +42,7 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
             // Visit Icon SVG
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 md:w-6 md:h-6 fill-current text-customBlueDark transition-colors duration-200 group-hover:text-white"
+                className="w-5 h-5 md:w-6 md:h-6 fill-current text-customBlueDark transition-colors duration-0 group-hover:text-white"
                 viewBox="0 0 24 24"
             >
                 <path d="M15 2v5h5v15H4V2h11zm1-2H3v24h18V7l-5-5z" />
@@ -51,7 +51,7 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
             // GitHub Icon SVG
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 md:w-6 md:h-6 fill-current text-customBlueDark transition-colors duration-200 group-hover:text-white"
+                className="w-5 h-5 md:w-6 md:h-6 fill-current text-customBlueDark transition-colors duration-0 group-hover:text-white"
                 viewBox="0 0 24 24"
             >
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0
@@ -108,7 +108,7 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
                 justify-center text-transparent bg-clip-text bg-gradient-to-r
                 from-customBlue to-customBlueDark
                 hover:text-white hover:bg-clip-unset hover:text-fill-white
-                hover:shadow-custom-hover hover:-translate-y-1 hover:rounded-md
+                 hover:-translate-y-0.5 hover:rounded-md hover:shadow-custom-hover
                 active:shadow-custom-active"
                         target="_blank"
                         rel="noreferrer"
@@ -124,14 +124,14 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
                 justify-center text-transparent bg-clip-text bg-gradient-to-r
                 from-customBlue to-customBlueDark
                 hover:text-white hover:bg-clip-unset hover:text-fill-white
-                hover:shadow-custom-hover hover:-translate-y-1 hover:rounded-md
+                hover:shadow-custom-hover hover:-translate-y-0.5 hover:rounded-md
                 active:shadow-custom-active"
                         onClick={() => modalOnClick(item.details)}
                     >
                         {/* Details Icon SVG */}
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-5 h-5 md:w-6 md:h-6 fill-current text-customBlueDark transition-colors duration-200 group-hover:text-white"
+                            className="w-5 h-5 md:w-6 md:h-6 fill-current text-customBlueDark transition-colors duration-0 group-hover:text-white"
                             viewBox="0 0 24 24"
                         >
                             <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10
