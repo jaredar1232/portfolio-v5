@@ -4,9 +4,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const nextConfig = {
   reactStrictMode: true,
-  compiler: {
-    styledComponents: false,
-  },
 }
 
 module.exports = withBundleAnalyzer(nextConfig)

@@ -1,44 +1,39 @@
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./pages/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        customBlue: "rgb(102,201,255)",
-        customBlueDark: "rgb(54,78,216)",
-        customGray: "#f1f1f1",
-      },
-      boxShadow: {
-        "footer-hover": "0 6px 12px rgba(255, 255, 255, 0.4)",
-        "footer-active": "0 4px 8px rgba(255, 255, 255, 0.2)",
-        "custom-lg": "0 5px 10px rgba(102,201,255, 0.5)",
-        "custom-md": "0 2px 5px rgba(102,201,255, 0.3)",
-      },
-      animation: {
-        fadeInNavBar: "fadeInNavBar 1s backwards 1s",
-        fadeIn: "fadeIn 1s forwards",
-        bounce: "bounce 0.6s infinite alternate",
-      },
-      keyframes: {
-        fadeInNavBar: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
+const js = require("@eslint/js")
+const react = require("eslint-plugin-react")
+const globals = require("globals")
+
+module.exports = [
+  js.configs.recommended,
+  {
+    ignores: ["**/node_modules/**"],
+  },
+  {
+    files: ["src/**/*.js", "src/**/*.jsx"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
         },
-        fadeIn: {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
-        },
-        bounce: {
-          to: {
-            opacity: 0.3,
-            transform: "translate3d(0, -8px, 0)",
-          },
-        },
+      },
+      globals: {
+        ...globals.browser, // Includes globals like window, document, fetch, etc.
+        ...globals.node, // Includes Node.js globals like process, require, etc.
+      },
+    },
+    plugins: {
+      react,
+    },
+    rules: {
+      "react/react-in-jsx-scope": "off", // Disable React in scope for JSX files
+      "react/jsx-uses-react": "error", // Avoid false positives for unused React
+      "react/jsx-uses-vars": "error", // Avoid false positives for unused vars
+    },
+    settings: {
+      react: {
+        version: "detect", // Automatically detect the React version
       },
     },
   },
-  plugins: [],
-}
+]
