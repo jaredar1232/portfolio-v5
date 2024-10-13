@@ -120,7 +120,7 @@ export default function Contact() {
           <div className="text-center mt-8">
             <button
               type="submit"
-              className="w-[33%] min-w-[8rem] bg-gradient-to-br hover:to-customBlueMid from-customBlue to-customBlueDark text-white py-3 px-4 m-5 rounded-md text-2xl transition-all duration-300 cursor-pointer hover:shadow-custom-hover hover:-translate-y-0.5 active:transform active:translate-y-0"
+              className="w-[33%] min-w-[8rem] bg-gradient-to-r to-customBlueMid from-customBlue hover:to-customBlueDark text-white py-3 px-4 m-5 rounded-md text-2xl transition-all duration-300 cursor-pointer hover:shadow-custom-hover hover:-translate-y-0.5 active:transform active:translate-y-0"
               disabled={state.submitting}
             >
               Submit
