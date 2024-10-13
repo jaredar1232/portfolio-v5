@@ -11,6 +11,7 @@ module.exports = {
         customBlueMid: "#798bf9", // Fails contrast tests
         customBlueDark: "#034FA0", // Passes contrast, use for text
         customGray: "#f1f1f1",
+        customSand: "#4f5962",
         lightSeaGreen: "#20B2AA",
       },
       boxShadow: {
@@ -30,6 +31,7 @@ module.exports = {
         slideIn: "slideIn 0.5s ease-out backwards",
         fadeInModal: "fadeInModal 0.3s ease-in-out forwards",
         modalEffect: "modalEffect 0.6s ease-in-out forwards",
+        spin_custom: "spin_custom 1.5s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -72,6 +74,20 @@ module.exports = {
         modalEffect: {
           "0%": { transform: "scale(0)" },
           "100%": { transform: "scale(1)" },
+        },
+        spin_custom: {
+          "0%": {
+            transform: "rotate(0deg)",
+            boxShadow: "0 -3px 0 rgb(255, 255, 255)",
+          },
+          "50%": {
+            transform: "rotate(180deg)",
+            boxShadow: "0 -3px 0 rgb(255, 255, 255)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+            boxShadow: "0 -3px 0 rgb(255, 255, 255)",
+          },
         },
       },
     },

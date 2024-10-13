@@ -18,7 +18,7 @@ export default function Home() {
         <Image
           src="/LandingImageBlueMedium.webp"
           alt="Background Image"
-          layout="fill"
+          fill
           objectFit="cover" // Ensures the image covers the section
           className="object-right" // Shift the image to the right
           priority // Loads the image with priority for better performance
