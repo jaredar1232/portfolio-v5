@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         customBlue: "#00ceff", // Fails contrast tests
         customBlueDark: "#0075ff", // Fails contrast test
-        customBlueNavText: "#0050B3", // Passes contrast test, use for text
+        customBlueForText: "#0050B3", // Passes contrast test, use for text
         customGray: "#f1f1f1",
         customSand: "#4f5962",
         lightSeaGreen: "#20B2AA",

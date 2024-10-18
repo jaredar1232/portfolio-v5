@@ -6,7 +6,7 @@ export default function Resume() {
           href="https://d1o11p1jeyf1dw.cloudfront.net/Resume-JaredRothenberg.pdf"
           target="_blank"
           rel="noreferrer"
-          className="flex justify-center items-center w-full h-full font-normal uppercase text-xl md:text-lg text-customBlueDark bg-white text-center py-4 px-1 md:py-2 rounded-md transition-shadow duration-300 no-underline hover:bg-gradient-to-t hover:from-customBlue hover:to-customBlueDark hover:text-white hover:shadow-lg whitespace-nowrap"
+          className="flex justify-center items-center w-full h-full font-normal uppercase text-xl md:text-lg text-customBlueForText bg-white text-center py-4 px-1 md:py-2 rounded-md transition-shadow duration-300 no-underline hover:bg-gradient-to-t hover:from-customBlue hover:to-customBlueDark hover:text-white hover:shadow-lg whitespace-nowrap"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
