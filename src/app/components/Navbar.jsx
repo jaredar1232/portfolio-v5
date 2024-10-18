@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-8 left-1/2 bg-[rgb(4, 4, 4)] transform -translate-x-1/2 w-[70%] p-1 rounded-lg z-[1001] backdrop-blur-md hidden md:flex justify-around items-center animate-fadeIn ${navBgClass} overflow-hidden`}
+      className={`fixed top-8 left-1/2 bg-[rgb(4, 4, 4)] transform -translate-x-1/2 w-[70%] p-1 rounded-lg z-[1001] backdrop-blur-md hidden md:flex justify-around items-center opacity-0 animate-fadeIn ${navBgClass} overflow-hidden`}
       style={{ animationDelay: "0.8s" }}
     >
       <NavLink href="/about" currentPath={pathname}>
