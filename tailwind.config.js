@@ -7,12 +7,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customBlue: "#66C9FF", // Fails contrast tests
-        customBlueMid: "#798bf9", // Fails contrast tests
-        customBlueDark: "#034FA0", // Passes contrast, use for text
+        customBlue: "#00ceff", // Fails contrast tests
+        customBlueDark: "#0075ff", // Passes contrast, use for text
         customGray: "#f1f1f1",
         customSand: "#4f5962",
         lightSeaGreen: "#20B2AA",
+      },
+      backgroundColor: {
+        "navbar-home": "rgba(227 227 227 /0.3)",
+        "navbar-not-home": "rgba(255 255 255 / 0.47)",
       },
       boxShadow: {
         custom: "0 1.5rem 4rem rgba(0, 0, 0, 0.25)",
@@ -27,7 +30,7 @@ module.exports = {
         bounceFade: "bounceFade 0.6s infinite alternate",
         fadeUpToDown: "fadeUpToDown 0.5s ease-out backwards",
         fadeDownToUp: "fadeDownToUp 0.5s ease-out backwards",
-        liftOff: "liftOff 2s ease-out 0.2s backwards",
+        liftOff: "liftOff 2s ease-out forwards",
         slideIn: "slideIn 0.5s ease-out backwards",
         fadeInModal: "fadeInModal 0.3s ease-in-out forwards",
         modalEffect: "modalEffect 0.6s ease-in-out forwards",
@@ -53,14 +56,9 @@ module.exports = {
         liftOff: {
           "0%": {
             boxShadow: "0 0 0 rgba(0, 0, 0, 0.5)",
-            border: "1px lightgray solid",
-          },
-          "50%": {
-            boxShadow: "0 1rem 2rem rgba(0, 0, 0, 0.3)",
           },
           "100%": {
             boxShadow: "0 1.5rem 4rem rgba(0, 0, 0, 0.25)",
-            border: "1px white solid",
           },
         },
         slideIn: {

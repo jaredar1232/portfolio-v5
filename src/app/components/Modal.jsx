@@ -47,8 +47,8 @@ export default function Modal({ modalDetails, showModal, closeModal }) {
         >
           {/* Exit Icon */}
           <span className="relative block w-6 h-6">
-            <span className="absolute top-1/2 left-0 w-full h-[3px] bg-gradient-to-br from-customBlue to-customBlueDark transform -translate-y-1/2 rotate-45"></span>
-            <span className="absolute top-1/2 left-0 w-full h-[3px] bg-gradient-to-br from-customBlue to-customBlueDark transform -translate-y-1/2 -rotate-45"></span>
+            <span className="absolute top-1/2 left-0 w-full h-[3px] bg-gradient-to-l from-customBlue to-customBlueDark transform -translate-y-1/2 rotate-45"></span>
+            <span className="absolute top-1/2 left-0 w-full h-[3px] bg-gradient-to-r from-customBlue to-customBlueDark transform -translate-y-1/2 -rotate-45"></span>
           </span>
         </button>
 

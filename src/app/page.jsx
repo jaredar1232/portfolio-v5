@@ -19,7 +19,7 @@ export default function Home() {
           src="/LandingImageBlueMedium.webp"
           alt="Background Image"
           fill
-          objectFit="cover" // Ensures the image covers the section
+          style={{ objectFit: "cover" }}
           className="object-right" // Shift the image to the right
           priority // Loads the image with priority for better performance
         />

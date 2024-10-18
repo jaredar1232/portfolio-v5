@@ -35,7 +35,7 @@ export default function Contact() {
     <section className="px-8 pt-40 pb-20 md:pb-80 text-black overflow-x-hidden">
       <div className="text-center pb-12">
         <h2
-          className="text-5xl uppercase font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-customBlue to-customBlueDark mb-12 sm:mb-4"
+          className="text-5xl uppercase font-bold inline-block text-transparent bg-clip-text bg-gradient-to-t from-customBlue to-customBlueDark mb-12 sm:mb-4"
           id="contact-me"
         >
           Contact Me
@@ -48,7 +48,7 @@ export default function Contact() {
           <div className="fixed inset-0 bg-black bg-opacity-50 z-[1000]"></div>
           {/* Toast Notification */}
           <div className="fixed inset-0 flex items-center justify-center z-[1001]">
-            <div className="bg-gradient-to-br from-customBlue to-customBlueDark text-white p-8 sm:p-10 rounded-lg shadow-lg text-2xl sm:text-3xl text-center">
+            <div className="bg-gradient-to-t from-customBlue to-customBlueDark text-white p-8 sm:p-10 rounded-lg shadow-lg text-2xl sm:text-3xl text-center">
               Thank you for your message! I will get back to you soon.
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function Contact() {
           <div className="text-center mt-8">
             <button
               type="submit"
-              className="w-[33%] min-w-[8rem] bg-gradient-to-r to-customBlueMid from-customBlue hover:to-customBlueDark text-white py-3 px-4 m-5 rounded-md text-2xl transition-all duration-300 cursor-pointer hover:shadow-custom-hover hover:-translate-y-0.5 active:transform active:translate-y-0"
+              className="w-[33%] min-w-[8rem] bg-gradient-to-t to-customBlueDark from-customBlue hover:to-[#0077ffe2] text-white py-3 px-4 m-5 rounded-md text-2xl transition-all duration-300 cursor-pointer hover:shadow-custom-hover hover:-translate-y-0.5 active:transform active:translate-y-0"
               disabled={state.submitting}
             >
               Submit

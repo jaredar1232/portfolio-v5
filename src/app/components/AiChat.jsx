@@ -105,7 +105,7 @@ export default function AiChat({ onFocus }) {
               <div
                 key={index}
                 className={`py-1 px-2 my-1 rounded leading-6 ${msg.role === "user"
-                  ? "bg-gradient-to-br from-customBlue to-customBlueDark text-white self-end max-w-xs md:max-w-sm text-left"
+                  ? "bg-gradient-to-t from-customBlue to-customBlueDark text-white self-end max-w-xs md:max-w-sm text-left"
                   : "bg-customGray text-black self-start max-w-xs md:max-w-sm text-left"
                   }`}
               >
@@ -142,7 +142,7 @@ export default function AiChat({ onFocus }) {
           <button
             type="button"
             onClick={handleSendMessage}
-            className="px-4 py-1 bg-gradient-to-br from-customBlue to-customBlueDark hover:to-customBlueMid text-white rounded-lg transition-colors duration-300 disabled:from-[#a3b4d2] disabled:to-[#444b5a]"
+            className="px-4 py-1 bg-gradient-to-t from-customBlue to-customBlueDark hover:to-[#267de1] text-white rounded-lg transition-colors duration-300 disabled:from-[#a3b4d2] disabled:to-[#444b5a]"
             disabled={isLoading || input.trim() === ""}
           >
             Send

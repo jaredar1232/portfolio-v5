@@ -27,7 +27,7 @@ export default function MobileNavBar() {
     <div className="md:hidden">
       {/* Overlay Circle */}
       <div
-        className={`fixed inset-0 bg-gradient-to-br from-customBlue to-customBlueMid transition-all duration-300 ease-in-out ${isOpen
+        className={`fixed inset-0 bg-gradient-to-t from-customBlue to-customBlueDark transition-all duration-300 ease-in-out ${isOpen
           ? 'z-40 [clip-path:circle(150%_at_calc(100%_-_1.5rem)_1.5rem)]'
           : 'z-20 [clip-path:circle(0%_at_calc(100%_-_1.5rem)_1.5rem)]'
           }`}
@@ -87,7 +87,7 @@ export default function MobileNavBar() {
         onClick={toggleMenu}
         aria-label="Toggle navigation menu"
         aria-expanded={isOpen}
-        className={`fixed animate-fadeIn opacity-0 top-3 right-3 z-50 pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-customBlue to-customBlueMid shadow-md shadow-blue-500/50 transition-transform duration-300 ${isOpen ? 'transform scale-110' : ''
+        className={`fixed animate-fadeIn opacity-0 top-3 right-3 z-50 pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-t from-customBlue to-customBlueDark shadow-md shadow-blue-500/50 transition-transform duration-300 ${isOpen ? 'transform scale-110' : ''
           }`}
         style={{ animationDelay: "0.8s" }}
       >

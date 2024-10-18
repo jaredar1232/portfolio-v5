@@ -1,38 +1,10 @@
-// components/MediaCard.jsx
-
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import Loading from "./Loading";
 
 export default function MediaCard({ item, showModal, modalOnClick, type }) {
+    const [loading, setLoading] = useState(true);
     const mediaWidth = item.width;
     const videoRef = useRef(null);
-
-    useEffect(() => {
-        const videoElement = videoRef.current;
-        let observer;
-
-        if (videoElement) {
-            observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting && !showModal) {
-                        videoElement.play();
-                    } else {
-                        videoElement.pause();
-                    }
-                },
-                {
-                    threshold: 1,
-                }
-            );
-
-            observer.observe(videoElement);
-        }
-
-        return () => {
-            if (observer && videoElement) {
-                observer.unobserve(videoElement);
-            }
-        };
-    }, [showModal]);
 
     // Determine button properties based on the type
     const buttonProps = {
@@ -75,6 +47,43 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
         ),
     };
 
+    const handleLoadedData = () => {
+        setLoading(false);
+    };
+
+    // Intersection Observer to play/pause video based on visibility
+    useEffect(() => {
+        const videoElement = videoRef.current;
+        if (!videoElement) return;
+
+        // Check if the video is already loaded
+        if (videoElement.readyState >= 3) { // HAVE_FUTURE_DATA
+            setLoading(false);
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !showModal) {
+                    videoElement.play().catch((error) => {
+                        console.error("Error playing video:", error);
+                    });
+                } else {
+                    videoElement.pause();
+                }
+            },
+            {
+                threshold: 1, // Percentage of video needed in viewport to play
+            }
+        );
+
+        observer.observe(videoElement);
+
+        // Cleanup on unmount
+        return () => {
+            observer.unobserve(videoElement);
+        };
+    }, [showModal]);
+
     return (
         <section
             className="w-[95%] md:w-[80%] lg:w-[65%] max-w-screen-lg mx-auto mb-20 p-4 md:p-8 rounded-3xl shadow-custom animate-liftOff"
@@ -87,14 +96,24 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
                 className="relative mx-auto my-0"
                 style={{ width: `${mediaWidth}%` }}
             >
+                {loading && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 rounded-lg">
+                        <Loading />
+                    </div>
+                )}
                 <video
                     playsInline
                     muted
                     loop
+                    autoPlay
                     ref={videoRef}
-                    className="rounded-lg border border-gray-300 w-full"
-                    preload="metadata"
+                    className={`rounded-lg border border-gray-300 w-full ${loading
+                        ? "opacity-0"
+                        : "opacity-100 transition-opacity duration-300"
+                        }`}
+                    preload="auto"
                     src={item.video}
+                    onLoadedData={handleLoadedData}
                 >
                     Your browser does not support the video tag.
                 </video>
@@ -104,12 +123,12 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
                     <a
                         href={buttonProps.href}
                         className="group text-sm md:text-lg lg:text-xl no-underline border-b border-b-customBlueDark py-1
-                md:py-2 px-2 md:px-4 transition-all duration-200 flex items-center
-                justify-center text-transparent bg-clip-text bg-gradient-to-r
-                from-customBlue to-customBlueDark
-                hover:text-white hover:bg-clip-unset hover:text-fill-white
-                 hover:-translate-y-0.5 hover:rounded-md hover:shadow-custom-hover
-                active:shadow-custom-active"
+                        md:py-2 px-2 md:px-4 transition-all duration-200 flex items-center
+                        justify-center text-transparent bg-clip-text bg-gradient-to-t
+                        from-customBlue to-customBlueDark
+                        hover:text-white hover:bg-clip-unset hover:text-fill-white
+                        hover:-translate-y-0.5 hover:rounded-md hover:shadow-custom-hover
+                        active:shadow-custom-active"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -120,12 +139,12 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
                 <div className="justify-self-center">
                     <button
                         className="group text-sm md:text-lg lg:text-xl no-underline border-b border-b-customBlueDark py-1
-                md:py-2 px-2 md:px-4 transition-all duration-200 flex items-center
-                justify-center text-transparent bg-clip-text bg-gradient-to-r
-                from-customBlue to-customBlueDark
-                hover:text-white hover:bg-clip-unset hover:text-fill-white
-                hover:shadow-custom-hover hover:-translate-y-0.5 hover:rounded-md
-                active:shadow-custom-active"
+                        md:py-2 px-2 md:px-4 transition-all duration-200 flex items-center
+                        justify-center text-transparent bg-clip-text bg-gradient-to-t
+                        from-customBlue to-customBlueDark
+                        hover:text-white hover:bg-clip-unset hover:text-fill-white
+                        hover:shadow-custom-hover hover:-translate-y-0.5 hover:rounded-md
+                        active:shadow-custom-active"
                         onClick={() => modalOnClick(item.details)}
                     >
                         {/* Details Icon SVG */}

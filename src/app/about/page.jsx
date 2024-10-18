@@ -5,7 +5,7 @@ export default function About() {
     <section className="pt-40 pb-20 md:pb-80 text-black">
       <div className="text-center pb-12">
         <h2
-          className="text-5xl uppercase font-bold inline-block text-transparent bg-clip-text bg-gradient-to-r from-customBlue to-customBlueDark mb-12 sm:mb-4"
+          className="text-5xl uppercase font-bold inline-block text-transparent bg-clip-text bg-gradient-to-t from-customBlue to-customBlueDark mb-12 sm:mb-4"
           id="about-me"
         >
           About Me

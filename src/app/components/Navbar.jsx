@@ -9,14 +9,14 @@ export default function Navbar() {
   const isHome = pathname === "/";
 
   const navBgClass = isHome
-    ? "bg-[rgba(227,227,227,0.3)] shadow-navbar-home"
-    : "bg-[rgba(230,232,234,0.5)] shadow-navbar-not-home";
+    ? "bg-navbar-home shadow-navbar-home"
+    : "bg-navbar-not-home shadow-navbar-not-home";
 
   const logoSrc = isHome ? "/logo-white.webp" : "/logo-black.webp";
 
   return (
     <nav
-      className={`fixed top-8 left-1/2 transform -translate-x-1/2 w-[70%] p-1 rounded-lg z-[1001] backdrop-blur-md hidden md:flex justify-around items-center opacity-0 animate-fadeIn ${navBgClass} overflow-hidden`}
+      className={`fixed top-8 left-1/2 bg-[rgb(4, 4, 4)] transform -translate-x-1/2 w-[70%] p-1 rounded-lg z-[1001] backdrop-blur-md hidden md:flex justify-around items-center animate-fadeIn ${navBgClass} overflow-hidden`}
       style={{ animationDelay: "0.8s" }}
     >
       <NavLink href="/about" currentPath={pathname}>
