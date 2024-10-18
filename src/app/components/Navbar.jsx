@@ -47,7 +47,7 @@ export default function Navbar() {
 function NavLink({ href, children, currentPath }) {
   const isActive = currentPath === href;
   const baseClasses = `text-xl transition-all duration-300 no-underline`;
-  const activeColor = "text-customBlueDark"; // Active link color
+  const activeColor = "text-customBlueNavText"; // Check contrast passes lighthouse
   const defaultColor = currentPath === "/" ? "text-white" : "text-black"; // Default link color based on isHome
   const hoverClasses = "hover:text-customBlue hover:-translate-y-0.5";
 
