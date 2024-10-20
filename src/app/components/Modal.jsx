@@ -35,7 +35,7 @@ export default function Modal({ modalDetails, showModal, closeModal }) {
       {/* Modal Content */}
       <div
         id="modal"
-        className="relative bg-white rounded-lg shadow-2xl overflow-auto animate-modalEffect
+        className="relative bg-white md:p-5 rounded-lg shadow-2xl overflow-auto animate-modalEffect
                    w-[95%] h-3/4
                    md:w-4/5 md:h-3/5
                    lg:w-1/2 lg:h-3/5"
