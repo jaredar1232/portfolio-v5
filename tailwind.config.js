@@ -77,15 +77,15 @@ module.exports = {
         spin_custom: {
           "0%": {
             transform: "rotate(0deg)",
-            boxShadow: "0 -3px 0 rgb(255, 255, 255)",
+            boxShadow: "0 -3px 0 #0075ff",
           },
           "50%": {
             transform: "rotate(180deg)",
-            boxShadow: "0 -3px 0 rgb(255, 255, 255)",
+            boxShadow: "0 -3px 0 #00ceff",
           },
           "100%": {
             transform: "rotate(360deg)",
-            boxShadow: "0 -3px 0 rgb(255, 255, 255)",
+            boxShadow: "0 -3px 0 #0075ff",
           },
         },
       },
