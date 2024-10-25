@@ -59,6 +59,7 @@ export default function MobileNavBar() {
             <Link
               href="/experience"
               className="text-white text-3xl uppercase hover:text-customBlue transition duration-200"
+              prefetch={true}
             >
               Experience
             </Link>
@@ -67,6 +68,7 @@ export default function MobileNavBar() {
             <Link
               href="/projects"
               className="text-white text-3xl uppercase hover:text-customBlue transition duration-200"
+              prefetch={true}
             >
               Projects
             </Link>
