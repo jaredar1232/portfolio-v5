@@ -16,7 +16,7 @@ module.exports = {
       },
       backgroundColor: {
         "navbar-home": "rgba(227 227 227 /0.3)",
-        "navbar-not-home": "rgba(255 255 255 / 0.47)",
+        "navbar-not-home": "rgba(255 255 255 / 0.65)",
       },
       boxShadow: {
         custom: "0 1.5rem 4rem rgba(0, 0, 0, 0.25)",
