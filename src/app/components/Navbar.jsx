@@ -22,7 +22,7 @@ export default function Navbar() {
       <NavLink href="/about" currentPath={pathname}>
         About
       </NavLink>
-      <NavLink href="/experience" currentPath={pathname}>
+      <NavLink href="/experience" currentPath={pathname} prefetch={true}>
         Experience
       </NavLink>
       <Link href="/">
@@ -34,7 +34,7 @@ export default function Navbar() {
           className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
         />
       </Link>
-      <NavLink href="/projects" currentPath={pathname}>
+      <NavLink href="/projects" currentPath={pathname} prefetch={true}>
         Projects
       </NavLink>
       <NavLink href="/contact" currentPath={pathname}>
