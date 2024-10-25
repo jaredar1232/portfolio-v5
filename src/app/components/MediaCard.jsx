@@ -127,7 +127,7 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
                         justify-center text-transparent bg-clip-text bg-gradient-to-t
                         from-customBlue to-customBlueDark
                         hover:text-white hover:bg-clip-unset hover:text-fill-white
-                        hover:-translate-y-0.5 hover:rounded-md hover:shadow-custom-hover
+                        hover:-translate-y-0.5 rounded-t-md hover:rounded-md hover:shadow-custom-hover
                         active:shadow-custom-active"
                         target="_blank"
                         rel="noreferrer"
@@ -143,7 +143,7 @@ export default function MediaCard({ item, showModal, modalOnClick, type }) {
                         justify-center text-transparent bg-clip-text bg-gradient-to-t
                         from-customBlue to-customBlueDark
                         hover:text-white hover:bg-clip-unset hover:text-fill-white
-                        hover:shadow-custom-hover hover:-translate-y-0.5 hover:rounded-md
+                        hover:shadow-custom-hover hover:-translate-y-0.5 rounded-t-md hover:rounded-md
                         active:shadow-custom-active"
                         onClick={() => modalOnClick(item.details)}
                     >
