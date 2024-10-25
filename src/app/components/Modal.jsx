@@ -41,13 +41,13 @@ export default function Modal({ modalDetails, showModal, closeModal }) {
       >
         {/* Exit Button */}
         <button
-          className="absolute top-4 right-4 h-9 w-9 bg-white border border-black rounded-md shadow-md flex items-center justify-center cursor-pointer z-10 hover:bg-gray-200"
+          className="group absolute top-4 right-4 h-9 w-9 bg-white border border-black rounded-md shadow-md flex items-center justify-center cursor-pointer z-10 hover:bg-gradient-to-t hover:from-customBlue hover:to-customBlueDark transition-all hover:shadow-custom-hover hover:-translate-y-[1px] duration-200"
           onClick={handleClose}
         >
           {/* Exit Icon */}
           <span className="relative block w-6 h-6">
-            <span className="absolute top-1/2 left-0 w-full h-[3px] bg-gradient-to-l from-customBlue to-customBlueDark transform -translate-y-1/2 rotate-45"></span>
-            <span className="absolute top-1/2 left-0 w-full h-[3px] bg-gradient-to-r from-customBlue to-customBlueDark transform -translate-y-1/2 -rotate-45"></span>
+            <span className="absolute top-1/2 left-0 w-full h-[3px] bg-gradient-to-l from-customBlue to-customBlueDark transform -translate-y-1/2 rotate-45 group-hover:from-white group-hover:to-white  transition-all duration-0"></span>
+            <span className="absolute top-1/2 left-0 w-full h-[3px] bg-gradient-to-r from-customBlue to-customBlueDark transform -translate-y-1/2 -rotate-45 group-hover:from-white group-hover:to-white transition-all duration-0"></span>
           </span>
         </button>
 
